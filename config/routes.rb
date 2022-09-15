@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resource :users do
     get '/dashboard', to: "users#show"
   end
+  
 end
