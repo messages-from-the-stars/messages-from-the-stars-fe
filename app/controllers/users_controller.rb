@@ -7,6 +7,9 @@ class UsersController < ApplicationController
       update_user(user_info)
       set_session(@user)
       redirect_to dashboard_users_path
+    else
+      redirect_to root_path
+      flash[:error] = 'Invalid Credentials'
     end
   end
 
