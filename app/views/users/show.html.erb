@@ -1,1 +1,13 @@
 <h1>User Dashboard<h1>
+
+<h3>Your Satellites<h3>
+
+<% if @satellites %>
+<div id="satellites">
+    <% @satellites.each do |s| %>
+        <div class="satellite">
+        <p>Satellite Id: <%= s.id %></p>
+        <p>Norad Id: <%= s.norad_id %></p>
+        </div>
+    <% end %>
+<% end %>

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    @satellites = SatelliteFacade.get_user_satellites(session[:user_id])
   end
 
   private
