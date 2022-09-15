@@ -29,3 +29,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+<<<<<<< HEAD
+=======
+/coverage
+# Ignore application configuration
+/config/application.yml
+>>>>>>> ebad98e (Initial commit)
