@@ -39,7 +39,7 @@ RSpec.describe 'Dashboard page' do
             expect(current_path).to eq("/users/dashboard")
 
             expect(page).to have_content("Your Satellites")
-            save_and_open_page
+
             within ("#satellites") do 
                 expect(page.all('.satellite')[0]).to have_content("128366")
                 expect(page.all('.satellite')[1]).to have_content("123456")

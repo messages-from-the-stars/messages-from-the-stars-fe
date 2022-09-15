@@ -17,6 +17,9 @@ RSpec.describe 'OAuth Login with Google' do
               "token" => "Token",
             },
           })
+       @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
+            
+        allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
     end
 
     it 'redirects and creates a new user' do
