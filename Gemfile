@@ -49,7 +49,10 @@ group :development, :test do
   gem 'pry'
   gem 'factory_bot_rails'
   gem 'faker'
+<<<<<<< HEAD
 >>>>>>> ebad98e (Initial commit)
+=======
+>>>>>>> 7f0dcaaa14653fd68297058930bea2dfa5e58383
 end
 
 group :development do
@@ -61,6 +64,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+
   gem 'webmock'
   gem 'vcr'
   gem 'launchy'

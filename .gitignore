@@ -30,8 +30,14 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /coverage
 # Ignore application configuration
 /config/application.yml
 >>>>>>> ebad98e (Initial commit)
+=======
+/coverage
+# Ignore application configuration
+/config/application.yml
+>>>>>>> 7f0dcaaa14653fd68297058930bea2dfa5e58383
