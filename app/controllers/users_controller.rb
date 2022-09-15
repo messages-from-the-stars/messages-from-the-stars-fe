@@ -25,5 +25,6 @@ class UsersController < ApplicationController
     @user.uid = user_info['uid']
     @user.token = user_info['credentials']['token']
     @user.save
+    
   end
 end
