@@ -8,8 +8,16 @@ class SatelliteFacade
     end 
 
     def self.get_satellite(sat_id)
-      json = SatelliteService.get_satellite(sat_id)[:info]
-      SatelliteAPI.new(json)
+        json = SatelliteService.get_satellite(sat_id)[:info]
+        SatelliteAPI.new(json)
+    end
+
+    def self.above_satellites(lat_long)
+        json = SatelliteService.get_satellites_in_range(lat_long)[:above]
+        binding.pry
+        json.map.first(10) do |data|
+            SatelliteAPI.new(data)
+        end
     end
 
 end 
