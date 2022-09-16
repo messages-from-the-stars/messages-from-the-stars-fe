@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @satellites = SatelliteFacade.get_user_satellites(session[:user_id])
+    @visible_times = @satellites.map do |satellite|
+      SatelliteFacade.get_satellite_visibility(satellite.id, @lat, @long)
+    end.flatten  
   end
 
   private

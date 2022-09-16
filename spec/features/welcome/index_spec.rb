@@ -32,8 +32,10 @@ RSpec.describe 'landing page' do
         })
 
       @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
-            
+      @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
+
       allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
+      allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
 
       visit root_path
 

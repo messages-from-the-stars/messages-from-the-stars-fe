@@ -18,7 +18,9 @@ RSpec.describe 'OAuth Login with Google' do
             },
           })
         @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
-            
+        @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
+
+        allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
         allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
     end
 

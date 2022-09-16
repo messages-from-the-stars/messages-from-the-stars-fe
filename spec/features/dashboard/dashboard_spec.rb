@@ -19,8 +19,10 @@ RSpec.describe 'Dashboard page' do
             })
             
             @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
+            @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
             
             allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
+            allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
 
             visit '/auth/google_oauth2'
         end
@@ -54,6 +56,19 @@ RSpec.describe 'Dashboard page' do
             click_on("Discover Satellites")
 
             expect(current_path).to eq("/users/discover")
+        end 
+
+        it 'show when my satellites will be visible in the next 10 days' do
+            visit '/users/dashboard'
+
+            within ("#satellites") do 
+                expect(page.all('.satellite')[0]).to have_content("128366")
+                expect(page.all('.satellite')[0]).to have_content("Visibility in the next 10 days")
+                expect(page.all('.satellite')[0]).to have_content("Sep 16, at 5:41 PM")
+                expect(page.all('.satellite')[0]).to have_content("Sep 16, at 7:23 PM")
+                expect(page.all('.satellite')[0]).to have_content("Sep 17, at 6:47 PM")
+                expect(page.all('.satellite')[0]).to have_content("Sep 17, at 8:30 PM")
+            end
         end 
     end
 

@@ -8,6 +8,12 @@
         <div class="satellite">
         <p>Satellite Id: <%= s.id %></p>
         <p>Norad Id: <%= s.norad_id %></p>
+        <h4>Visibility in the next 10 days</h4>
+        <% @visible_times.each do |vis_time| %>
+            <% if s.id == vis_time.sat_id %>
+                <p><%= vis_time.starting_time %></p>
+            <% end %>
+        <% end %>
         </div>
     <% end %>
 <% end %>
