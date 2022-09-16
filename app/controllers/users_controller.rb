@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:show]
 
   def create
     user_info = request.env['omniauth.auth']
