@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/positions/1/20.1/-70.99/3500/10?apiKey=space_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Sep 2022 22:56:36 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '1310'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"satname\":\"SL-1 R\\/B\",\"satid\":1,\"transactionscount\":2},\"positions\":[{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false},{\"satlatitude\":0,\"satlongitude\":0,\"sataltitude\":0,\"azimuth\":0,\"elevation\":0,\"ra\":0,\"dec\":0,\"timestamp\":0,\"eclipsed\":false}]}"
+  recorded_at: Thu, 15 Sep 2022 22:56:36 GMT
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/positions/25544/39.55/39.55/-104.96/70?apiKey=space_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Sep 2022 23:23:28 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"satname\":\"SPACE STATION\",\"satid\":25544,\"transactionscount\":7},\"positions\":[{\"satlatitude\":51.07006669,\"satlongitude\":-21.99504896,\"sataltitude\":423.34,\"azimuth\":306.48,\"elevation\":-17.12,\"ra\":257.57529646,\"dec\":14.51412352,\"timestamp\":1663284208,\"eclipsed\":true},{\"satlatitude\":51.08144295,\"satlongitude\":-21.89827974,\"sataltitude\":423.34,\"azimuth\":306.48,\"elevation\":-17.08,\"ra\":257.60357476,\"dec\":14.54432263,\"timestamp\":1663284209,\"eclipsed\":true},{\"satlatitude\":51.09273166,\"satlongitude\":-21.80146511,\"sataltitude\":423.34,\"azimuth\":306.48,\"elevation\":-17.04,\"ra\":257.63187588,\"dec\":14.5745291,\"timestamp\":1663284210,\"eclipsed\":true},{\"satlatitude\":51.10393321,\"satlongitude\":-21.70460154,\"sataltitude\":423.34,\"azimuth\":306.48,\"elevation\":-17,\"ra\":257.66020104,\"dec\":14.60474419,\"timestamp\":1663284211,\"eclipsed\":true},{\"satlatitude\":51.11504751,\"satlongitude\":-21.60768935,\"sataltitude\":423.34,\"azimuth\":306.49,\"elevation\":-16.97,\"ra\":257.68855036,\"dec\":14.63496792,\"timestamp\":1663284212,\"eclipsed\":true},{\"satlatitude\":51.1260745,\"satlongitude\":-21.51072889,\"sataltitude\":423.35,\"azimuth\":306.49,\"elevation\":-16.93,\"ra\":257.71692393,\"dec\":14.66520033,\"timestamp\":1663284213,\"eclipsed\":true},{\"satlatitude\":51.13701409,\"satlongitude\":-21.41372048,\"sataltitude\":423.35,\"azimuth\":306.49,\"elevation\":-16.89,\"ra\":257.74532186,\"dec\":14.69544147,\"timestamp\":1663284214,\"eclipsed\":true},{\"satlatitude\":51.14786621,\"satlongitude\":-21.31666448,\"sataltitude\":423.35,\"azimuth\":306.49,\"elevation\":-16.85,\"ra\":257.77374425,\"dec\":14.72569136,\"timestamp\":1663284215,\"eclipsed\":true},{\"satlatitude\":51.15863122,\"satlongitude\":-21.21955732,\"sataltitude\":423.35,\"azimuth\":306.49,\"elevation\":-16.81,\"ra\":257.80219234,\"dec\":14.75595126,\"timestamp\":1663284216,\"eclipsed\":true},{\"satlatitude\":51.16930819,\"satlongitude\":-21.12240715,\"sataltitude\":423.35,\"azimuth\":306.49,\"elevation\":-16.77,\"ra\":257.83066395,\"dec\":14.78621878,\"timestamp\":1663284217,\"eclipsed\":true},{\"satlatitude\":51.17989746,\"satlongitude\":-21.02521041,\"sataltitude\":423.35,\"azimuth\":306.5,\"elevation\":-16.74,\"ra\":257.85916033,\"dec\":14.81649516,\"timestamp\":1663284218,\"eclipsed\":true},{\"satlatitude\":51.19039897,\"satlongitude\":-20.92796744,\"sataltitude\":423.36,\"azimuth\":306.5,\"elevation\":-16.7,\"ra\":257.88768158,\"dec\":14.84678044,\"timestamp\":1663284219,\"eclipsed\":true},{\"satlatitude\":51.20081264,\"satlongitude\":-20.8306786,\"sataltitude\":423.36,\"azimuth\":306.5,\"elevation\":-16.66,\"ra\":257.91622782,\"dec\":14.87707467,\"timestamp\":1663284220,\"eclipsed\":true},{\"satlatitude\":51.21113841,\"satlongitude\":-20.73334422,\"sataltitude\":423.36,\"azimuth\":306.5,\"elevation\":-16.62,\"ra\":257.94479914,\"dec\":14.90737788,\"timestamp\":1663284221,\"eclipsed\":true},{\"satlatitude\":51.2213762,\"satlongitude\":-20.63596467,\"sataltitude\":423.36,\"azimuth\":306.5,\"elevation\":-16.58,\"ra\":257.97339565,\"dec\":14.9376901,\"timestamp\":1663284222,\"eclipsed\":true},{\"satlatitude\":51.23152635,\"satlongitude\":-20.53853636,\"sataltitude\":423.36,\"azimuth\":306.5,\"elevation\":-16.54,\"ra\":258.00201861,\"dec\":14.96801259,\"timestamp\":1663284223,\"eclipsed\":true},{\"satlatitude\":51.24158797,\"satlongitude\":-20.4410675,\"sataltitude\":423.36,\"azimuth\":306.5,\"elevation\":-16.51,\"ra\":258.03066582,\"dec\":14.99834296,\"timestamp\":1663284224,\"eclipsed\":true},{\"satlatitude\":51.2515614,\"satlongitude\":-20.3435545,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.47,\"ra\":258.05933855,\"dec\":15.02868246,\"timestamp\":1663284225,\"eclipsed\":true},{\"satlatitude\":51.26144657,\"satlongitude\":-20.24599774,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.43,\"ra\":258.0880369,\"dec\":15.05903113,\"timestamp\":1663284226,\"eclipsed\":true},{\"satlatitude\":51.27124342,\"satlongitude\":-20.14839755,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.39,\"ra\":258.11676099,\"dec\":15.08938901,\"timestamp\":1663284227,\"eclipsed\":true},{\"satlatitude\":51.28095188,\"satlongitude\":-20.05075431,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.35,\"ra\":258.14551091,\"dec\":15.11975614,\"timestamp\":1663284228,\"eclipsed\":true},{\"satlatitude\":51.29057187,\"satlongitude\":-19.95306836,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.31,\"ra\":258.17428679,\"dec\":15.15013255,\"timestamp\":1663284229,\"eclipsed\":true},{\"satlatitude\":51.30010372,\"satlongitude\":-19.85533613,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.27,\"ra\":258.2030899,\"dec\":15.18051952,\"timestamp\":1663284230,\"eclipsed\":true},{\"satlatitude\":51.30954621,\"satlongitude\":-19.75756978,\"sataltitude\":423.37,\"azimuth\":306.51,\"elevation\":-16.24,\"ra\":258.23191686,\"dec\":15.2109134,\"timestamp\":1663284231,\"eclipsed\":true},{\"satlatitude\":51.3189008,\"satlongitude\":-19.65975394,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-16.2,\"ra\":258.26077243,\"dec\":15.24131914,\"timestamp\":1663284232,\"eclipsed\":true},{\"satlatitude\":51.32816628,\"satlongitude\":-19.56190077,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-16.16,\"ra\":258.28965324,\"dec\":15.2717331,\"timestamp\":1663284233,\"eclipsed\":true},{\"satlatitude\":51.33734297,\"satlongitude\":-19.46400669,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-16.12,\"ra\":258.31856056,\"dec\":15.30215655,\"timestamp\":1663284234,\"eclipsed\":true},{\"satlatitude\":51.34643081,\"satlongitude\":-19.36607208,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-16.08,\"ra\":258.34749452,\"dec\":15.33258953,\"timestamp\":1663284235,\"eclipsed\":true},{\"satlatitude\":51.35542973,\"satlongitude\":-19.2680973,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-16.04,\"ra\":258.37645522,\"dec\":15.36303208,\"timestamp\":1663284236,\"eclipsed\":true},{\"satlatitude\":51.36434003,\"satlongitude\":-19.17007877,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-16,\"ra\":258.40544394,\"dec\":15.39348547,\"timestamp\":1663284237,\"eclipsed\":true},{\"satlatitude\":51.37316057,\"satlongitude\":-19.0720287,\"sataltitude\":423.38,\"azimuth\":306.52,\"elevation\":-15.97,\"ra\":258.43445731,\"dec\":15.42394606,\"timestamp\":1663284238,\"eclipsed\":true},{\"satlatitude\":51.38189272,\"satlongitude\":-18.97393166,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.93,\"ra\":258.46350011,\"dec\":15.45441879,\"timestamp\":1663284239,\"eclipsed\":true},{\"satlatitude\":51.39053534,\"satlongitude\":-18.87579987,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.89,\"ra\":258.49256895,\"dec\":15.48490004,\"timestamp\":1663284240,\"eclipsed\":true},{\"satlatitude\":51.39908874,\"satlongitude\":-18.77762975,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.85,\"ra\":258.52166512,\"dec\":15.51539106,\"timestamp\":1663284241,\"eclipsed\":true},{\"satlatitude\":51.40755285,\"satlongitude\":-18.67942167,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.81,\"ra\":258.55078873,\"dec\":15.54589191,\"timestamp\":1663284242,\"eclipsed\":true},{\"satlatitude\":51.41592761,\"satlongitude\":-18.58117601,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.77,\"ra\":258.57993991,\"dec\":15.57640262,\"timestamp\":1663284243,\"eclipsed\":true},{\"satlatitude\":51.42421297,\"satlongitude\":-18.48289315,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.73,\"ra\":258.60911878,\"dec\":15.60692324,\"timestamp\":1663284244,\"eclipsed\":true},{\"satlatitude\":51.43240886,\"satlongitude\":-18.38457344,\"sataltitude\":423.39,\"azimuth\":306.53,\"elevation\":-15.69,\"ra\":258.63832546,\"dec\":15.63745381,\"timestamp\":1663284245,\"eclipsed\":true},{\"satlatitude\":51.44051556,\"satlongitude\":-18.28621332,\"sataltitude\":423.39,\"azimuth\":306.54,\"elevation\":-15.65,\"ra\":258.66756124,\"dec\":15.6679956,\"timestamp\":1663284246,\"eclipsed\":true},{\"satlatitude\":51.44853235,\"satlongitude\":-18.18782108,\"sataltitude\":423.39,\"azimuth\":306.54,\"elevation\":-15.62,\"ra\":258.6968239,\"dec\":15.6985462,\"timestamp\":1663284247,\"eclipsed\":true},{\"satlatitude\":51.4564595,\"satlongitude\":-18.08939313,\"sataltitude\":423.4,\"azimuth\":306.54,\"elevation\":-15.58,\"ra\":258.72611473,\"dec\":15.72910689,\"timestamp\":1663284248,\"eclipsed\":true},{\"satlatitude\":51.46429696,\"satlongitude\":-17.99092986,\"sataltitude\":423.4,\"azimuth\":306.54,\"elevation\":-15.54,\"ra\":258.75543386,\"dec\":15.7596777,\"timestamp\":1663284249,\"eclipsed\":true},{\"satlatitude\":51.47204468,\"satlongitude\":-17.89243164,\"sataltitude\":423.4,\"azimuth\":306.54,\"elevation\":-15.5,\"ra\":258.78478141,\"dec\":15.79025869,\"timestamp\":1663284250,\"eclipsed\":true},{\"satlatitude\":51.47970259,\"satlongitude\":-17.79389886,\"sataltitude\":423.4,\"azimuth\":306.54,\"elevation\":-15.46,\"ra\":258.81415752,\"dec\":15.82084989,\"timestamp\":1663284251,\"eclipsed\":true},{\"satlatitude\":51.48727065,\"satlongitude\":-17.6953319,\"sataltitude\":423.4,\"azimuth\":306.54,\"elevation\":-15.42,\"ra\":258.84356229,\"dec\":15.85145135,\"timestamp\":1663284252,\"eclipsed\":true},{\"satlatitude\":51.49474909,\"satlongitude\":-17.59672717,\"sataltitude\":423.4,\"azimuth\":306.54,\"elevation\":-15.38,\"ra\":258.87299705,\"dec\":15.88206435,\"timestamp\":1663284253,\"eclipsed\":true},{\"satlatitude\":51.50213727,\"satlongitude\":-17.49809299,\"sataltitude\":423.4,\"azimuth\":306.55,\"elevation\":-15.34,\"ra\":258.90245955,\"dec\":15.91268648,\"timestamp\":1663284254,\"eclipsed\":true},{\"satlatitude\":51.50943543,\"satlongitude\":-17.39942578,\"sataltitude\":423.4,\"azimuth\":306.55,\"elevation\":-15.3,\"ra\":258.9319511,\"dec\":15.943319,\"timestamp\":1663284255,\"eclipsed\":true},{\"satlatitude\":51.51664353,\"satlongitude\":-17.30072592,\"sataltitude\":423.4,\"azimuth\":306.55,\"elevation\":-15.26,\"ra\":258.96147184,\"dec\":15.97396197,\"timestamp\":1663284256,\"eclipsed\":true},{\"satlatitude\":51.52376151,\"satlongitude\":-17.20199381,\"sataltitude\":423.4,\"azimuth\":306.55,\"elevation\":-15.22,\"ra\":258.99102189,\"dec\":16.00461544,\"timestamp\":1663284257,\"eclipsed\":true},{\"satlatitude\":51.53078931,\"satlongitude\":-17.10322983,\"sataltitude\":423.4,\"azimuth\":306.55,\"elevation\":-15.19,\"ra\":259.02060139,\"dec\":16.03527944,\"timestamp\":1663284258,\"eclipsed\":true},{\"satlatitude\":51.5377269,\"satlongitude\":-17.00443436,\"sataltitude\":423.41,\"azimuth\":306.55,\"elevation\":-15.15,\"ra\":259.05021046,\"dec\":16.06595403,\"timestamp\":1663284259,\"eclipsed\":true},{\"satlatitude\":51.54457449,\"satlongitude\":-16.90560383,\"sataltitude\":423.41,\"azimuth\":306.55,\"elevation\":-15.11,\"ra\":259.07985042,\"dec\":16.09664049,\"timestamp\":1663284260,\"eclipsed\":true},{\"satlatitude\":51.55133149,\"satlongitude\":-16.80674657,\"sataltitude\":423.41,\"azimuth\":306.55,\"elevation\":-15.07,\"ra\":259.10951903,\"dec\":16.12733639,\"timestamp\":1663284261,\"eclipsed\":true},{\"satlatitude\":51.55799811,\"satlongitude\":-16.70785899,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-15.03,\"ra\":259.13921762,\"dec\":16.15804303,\"timestamp\":1663284262,\"eclipsed\":true},{\"satlatitude\":51.56457433,\"satlongitude\":-16.6089415,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.99,\"ra\":259.1689463,\"dec\":16.18876044,\"timestamp\":1663284263,\"eclipsed\":true},{\"satlatitude\":51.57106008,\"satlongitude\":-16.50999448,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.95,\"ra\":259.19870523,\"dec\":16.21948868,\"timestamp\":1663284264,\"eclipsed\":true},{\"satlatitude\":51.57745533,\"satlongitude\":-16.41101833,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.91,\"ra\":259.22849453,\"dec\":16.2502278,\"timestamp\":1663284265,\"eclipsed\":true},{\"satlatitude\":51.58376002,\"satlongitude\":-16.31201344,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.87,\"ra\":259.25831435,\"dec\":16.28097784,\"timestamp\":1663284266,\"eclipsed\":true},{\"satlatitude\":51.58997436,\"satlongitude\":-16.21297622,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.83,\"ra\":259.28816601,\"dec\":16.3117401,\"timestamp\":1663284267,\"eclipsed\":true},{\"satlatitude\":51.59609756,\"satlongitude\":-16.11391902,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.79,\"ra\":259.31804606,\"dec\":16.34251091,\"timestamp\":1663284268,\"eclipsed\":true},{\"satlatitude\":51.60213057,\"satlongitude\":-16.0148263,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.75,\"ra\":259.34795944,\"dec\":16.37329526,\"timestamp\":1663284269,\"eclipsed\":true},{\"satlatitude\":51.6080726,\"satlongitude\":-15.91571041,\"sataltitude\":423.41,\"azimuth\":306.56,\"elevation\":-14.71,\"ra\":259.37790268,\"dec\":16.40408951,\"timestamp\":1663284270,\"eclipsed\":true},{\"satlatitude\":51.61392385,\"satlongitude\":-15.81656777,\"sataltitude\":423.41,\"azimuth\":306.57,\"elevation\":-14.67,\"ra\":259.40787712,\"dec\":16.43489493,\"timestamp\":1663284271,\"eclipsed\":true},{\"satlatitude\":51.61968429,\"satlongitude\":-15.71739877,\"sataltitude\":423.41,\"azimuth\":306.57,\"elevation\":-14.63,\"ra\":259.43788292,\"dec\":16.46571158,\"timestamp\":1663284272,\"eclipsed\":true},{\"satlatitude\":51.62535387,\"satlongitude\":-15.61820382,\"sataltitude\":423.41,\"azimuth\":306.57,\"elevation\":-14.59,\"ra\":259.4679202,\"dec\":16.49653951,\"timestamp\":1663284273,\"eclipsed\":true},{\"satlatitude\":51.63093278,\"satlongitude\":-15.51897932,\"sataltitude\":423.41,\"azimuth\":306.57,\"elevation\":-14.55,\"ra\":259.49799032,\"dec\":16.52738001,\"timestamp\":1663284274,\"eclipsed\":true},{\"satlatitude\":51.63642031,\"satlongitude\":-15.41973766,\"sataltitude\":423.42,\"azimuth\":306.57,\"elevation\":-14.52,\"ra\":259.5280898,\"dec\":16.55822941,\"timestamp\":1663284275,\"eclipsed\":true},{\"satlatitude\":51.64181729,\"satlongitude\":-15.32046325,\"sataltitude\":423.42,\"azimuth\":306.57,\"elevation\":-14.48,\"ra\":259.55822362,\"dec\":16.58909273,\"timestamp\":1663284276,\"eclipsed\":true},{\"satlatitude\":51.64712304,\"satlongitude\":-15.22116849,\"sataltitude\":423.42,\"azimuth\":306.57,\"elevation\":-14.44,\"ra\":259.58838829,\"dec\":16.6199663,\"timestamp\":1663284277,\"eclipsed\":true}]}"
+  recorded_at: Thu, 15 Sep 2022 23:23:28 GMT
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/positions/25544/39.55/39.55/-104.96/5?apiKey=space_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Sep 2022 23:32:27 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '1017'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"satname\":\"SPACE STATION\",\"satid\":25544,\"transactionscount\":10},\"positions\":[{\"satlatitude\":44.63184317,\"satlongitude\":27.76864559,\"sataltitude\":421.28,\"azimuth\":303.95,\"elevation\":14.83,\"ra\":286.8650366,\"dec\":35.28415327,\"timestamp\":1663284747,\"eclipsed\":true},{\"satlatitude\":44.59987234,\"satlongitude\":27.84321141,\"sataltitude\":421.27,\"azimuth\":303.91,\"elevation\":14.98,\"ra\":287.02857451,\"dec\":35.34931864,\"timestamp\":1663284748,\"eclipsed\":true},{\"satlatitude\":44.56784715,\"satlongitude\":27.91769103,\"sataltitude\":421.26,\"azimuth\":303.88,\"elevation\":15.12,\"ra\":287.19380029,\"dec\":35.41474091,\"timestamp\":1663284749,\"eclipsed\":true},{\"satlatitude\":44.53576646,\"satlongitude\":27.99208747,\"sataltitude\":421.25,\"azimuth\":303.85,\"elevation\":15.27,\"ra\":287.36074956,\"dec\":35.48042338,\"timestamp\":1663284750,\"eclipsed\":true},{\"satlatitude\":44.50363294,\"satlongitude\":28.0663948,\"sataltitude\":421.24,\"azimuth\":303.82,\"elevation\":15.42,\"ra\":287.52943838,\"dec\":35.54636133,\"timestamp\":1663284751,\"eclipsed\":true}]}"
+  recorded_at: Thu, 15 Sep 2022 23:32:27 GMT
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/positions/25544////?apiKey=space_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Sep 2022 23:32:28 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '44'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"error\":\"Incorrect number of parameters\"}"
+  recorded_at: Thu, 15 Sep 2022 23:32:28 GMT
+recorded_with: VCR 6.1.0

@@ -5,4 +5,9 @@ class SatelliteService
         BaseService.get_json(response)
     end
 
+    def self.get_satellite(sat_id)
+      response = BaseService.n2yo_conn.get("tle/#{sat_id}")
+      BaseService.get_json(response)
+    end
+
 end 

@@ -6,4 +6,9 @@ Rails.application.routes.draw do
     get '/dashboard', to: "users#show"
   end
   
+  namespace :api do
+    namespace :v1 do
+      resources :satellites, only: [:show]
+    end
+  end
 end
