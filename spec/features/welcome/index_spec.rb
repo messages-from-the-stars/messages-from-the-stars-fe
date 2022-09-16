@@ -31,6 +31,10 @@ RSpec.describe 'landing page' do
           },
         })
 
+      @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
+            
+      allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
+
       visit root_path
 
       expect(page).to have_link('Log In')
