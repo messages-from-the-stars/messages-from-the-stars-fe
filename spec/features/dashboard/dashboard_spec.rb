@@ -45,5 +45,24 @@ RSpec.describe 'Dashboard page' do
                 expect(page.all('.satellite')[1]).to have_content("123456")
             end 
         end 
+
+        it 'has a link to discover satellites' do
+            visit '/users/dashboard'
+            
+            expect(page).to have_content("Discover Satellites")
+
+            click_on("Discover Satellites")
+
+            expect(current_path).to eq("/users/discover")
+        end 
     end
+
+     context '#sadpath' do
+        it 'redirects a non-logged in user to the landing page' do
+            visit '/users/dashboard'
+            
+            expect(current_path).to eq("/")
+        end
+
+     end 
 end  

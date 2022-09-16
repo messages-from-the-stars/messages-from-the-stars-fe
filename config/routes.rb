@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'users#create'
   resource :users do
     get '/dashboard', to: "users#show"
+    get '/discover', to: "discover#index"
   end
   
   namespace :api do

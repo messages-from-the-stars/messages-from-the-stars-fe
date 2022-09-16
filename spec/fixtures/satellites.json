@@ -4,14 +4,80 @@
             "id": "39847",
             "type": "satellite",
             "attributes": {
-                "norad_id": "128366"
+                "norad_id": "128366",
+                "satname": "Weather"
             }
         },
         {
             "id": "9986",
             "type": "satellite",
             "attributes": {
-                "norad_id": "123456"
+                "norad_id": "123456",
+                "satname": "Tsiklon"
+            }
+        },
+        {
+            "id": "45879",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "145696",
+                "satname": "Strela"
+            }
+        },
+        {
+            "id": "78946",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "987564",
+                "satname": "Starlink"
+            }
+        },
+        {
+            "id": "97542",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "469853",
+                "satname": "GOES"
+            }
+        },
+        {
+            "id": "98756",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "357489",
+                "satname": "Geodetic"
+            }
+        },
+        {
+            "id": "97564",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "569876",
+                "satname": "Galileo"
+            }
+        },
+        {
+            "id": "78941",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "678945",
+                "satname": "Education"
+            }
+        },
+        {
+            "id": "49865",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "198712",
+                "satname": "CubeSats"
+            }
+        },
+        {
+            "id": "76541",
+            "type": "satellite",
+            "attributes": {
+                "norad_id": "695847",
+                "satname": "Molniya"
             }
         }
     ]
