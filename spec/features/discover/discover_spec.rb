@@ -46,10 +46,12 @@ RSpec.describe 'Discover page' do
 
       within '#satellites0' do
         expect(page).to have_content("Name: ESSA 3 (TOS-A) ID: 2435")
+        expect(page).to have_content("Launched on: 1966-10-02")
       end
 
       within '#satellites1' do
         expect(page).to have_content("Name: DELTA 1 DEB ID: 2700")
+        expect(page).to have_content("Launched on: 1965-11-06")
       end
     end
   end
