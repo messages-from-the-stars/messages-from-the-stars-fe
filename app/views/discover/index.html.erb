@@ -1,1 +1,6 @@
-<h1>Discover Satellites<h1>
+<h1>Satellites Above You<h1>
+<% @satellites.each_with_index do |satellite, index| %>
+<div id="satellites<%= index %>">
+<p> Name: <%= satellite.satname %> ID: <%= satellite.satid %></p><br>
+</div>
+<% end %>

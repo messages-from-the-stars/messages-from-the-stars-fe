@@ -10,7 +10,7 @@ RSpec.describe SatelliteFacade do
 
       lat_long = [39.6431, -104.8987]
       results = SatelliteFacade.above_satellites(lat_long)
-
+      
       expect(results.count).to eq(10)
     end
   end
