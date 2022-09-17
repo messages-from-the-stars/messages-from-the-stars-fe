@@ -23,4 +23,13 @@ RSpec.describe 'message show page' do
 
     expect(page).to have_content("Message: #{@message_content}")
   end
+
+  it 'displays starting lat/lng for message' do
+
+    visit "/api/v1/messages/#{@message_id}"
+
+    expect(page).to have_content("Start Lat: #{@message_start_lat}")
+
+    expect(page).to have_content("Start Lng: #{@message_start_lng}")
+  end
 end
