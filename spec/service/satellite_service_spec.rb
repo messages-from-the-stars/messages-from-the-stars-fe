@@ -7,9 +7,8 @@ RSpec.describe SatelliteService do
       @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
 
       allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
-
-      lat_long = [39.6431, -104.8987]
-      ss = SatelliteService.get_satellites_in_range(lat_long)
+      
+      ss = SatelliteService.get_satellites_in_range(39.6431, -104.8987)
       sr = ss[:above].first
 
       expect(ss).to be_a(Hash)

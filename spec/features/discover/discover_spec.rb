@@ -16,11 +16,7 @@ RSpec.describe 'Discover page' do
         "token" => "Token",
         },
     })
-    
-    remote_ip = '161.185.160.93'
 
-    lat_long = [39.6431, -104.8987]
-          
     @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
     @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
     @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
@@ -43,7 +39,6 @@ RSpec.describe 'Discover page' do
     end
 
     it 'should display max ten satellites in range of user' do
-
       visit discover_users_path
 
       within '#satellites0' do
@@ -71,7 +66,7 @@ RSpec.describe 'Discover page' do
 
         click_link('View Satellite Info')
       end
-      
+
       expect(current_path).to eq(api_v1_satellite_path(satellite.satid))
       expect(page).to have_content("DELTA 1 DEB's Show")
     end
