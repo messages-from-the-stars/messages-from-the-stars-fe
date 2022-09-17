@@ -60,20 +60,20 @@ RSpec.describe 'Discover page' do
 
   describe '#link_satellite_show' do
     it 'Below the satellite Name and ID is a link to the satellite show page' do
-      satellite = DiscoverSatellite.new(satid: 2435, satname: 'ESSA 3 (TOS-A)', launch_date: '1965-11-06')
+      satellite = DiscoverSatellite.new(satid: 2700, satname: 'DELTA 1 DEB', launch_date: '1965-11-06')
 
       visit discover_users_path
 
-      within '#satellites0' do
+      within '#satellites1' do
 
-        expect(page).to have_content("Name: ESSA 3 (TOS-A) ID: 2435")
-        expect(page).to have_link(" View Satellite Info")
+        expect(page).to have_content("Name: DELTA 1 DEB ID: 2700")
+        expect(page).to have_link("View Satellite Info")
 
         click_link('View Satellite Info')
-
-        expect(current_path).to eq(api_v1_satellite_path(satellite.satid))
-        expect(page).to have_content("ESSA 3 (TOS-A)'s Show")
       end
+      
+      expect(current_path).to eq(api_v1_satellite_path(satellite.satid))
+      expect(page).to have_content("DELTA 1 DEB's Show")
     end
   end
 end
