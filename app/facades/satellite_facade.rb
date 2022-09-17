@@ -12,8 +12,8 @@ class SatelliteFacade
         SatelliteAPI.new(json)
     end
 
-    def self.above_satellites(lat_long)
-        json = SatelliteService.get_satellites_in_range(lat_long)[:above]
+    def self.above_satellites(lat, long)
+        json = SatelliteService.get_satellites_in_range(lat, long)[:above]
         json[0..9].map do |data|
             DiscoverSatellite.new(data)
         end
