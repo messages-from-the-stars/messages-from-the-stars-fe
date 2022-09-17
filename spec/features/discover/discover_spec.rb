@@ -22,12 +22,14 @@ RSpec.describe 'Discover page' do
     lat_long = [39.6431, -104.8987]
           
     @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
-            
-    allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
-
+    @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
+    @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
     @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
 
     allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+    allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
+    allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
+    allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
 
     visit '/auth/google_oauth2'
   end

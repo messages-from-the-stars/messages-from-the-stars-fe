@@ -1,0 +1,78 @@
+{
+    "info": {
+        "satid": 39847,
+        "satname": "SL-16 DEB",
+        "transactionscount": 2,
+        "passescount": 4
+    },
+    "passes": [
+        {
+            "startAz": 353.78,
+            "startAzCompass": "N",
+            "startEl": 0.16,
+            "startUTC": 1663371670,
+            "maxAz": 42.99,
+            "maxAzCompass": "NE",
+            "maxEl": 10.31,
+            "maxUTC": 1663372005,
+            "endAz": 93.56,
+            "endAzCompass": "E",
+            "endEl": 6.33,
+            "endUTC": 1663372350,
+            "mag": 100000,
+            "duration": 530,
+            "startVisibility": 1663371670
+        },
+        {
+            "startAz": 338.47,
+            "startAzCompass": "NNW",
+            "startEl": 0.27,
+            "startUTC": 1663377780,
+            "maxAz": 66.73,
+            "maxAzCompass": "ENE",
+            "maxEl": 64.11,
+            "maxUTC": 1663378230,
+            "endAz": 149.12,
+            "endAzCompass": "SE",
+            "endEl": 64.1,
+            "endUTC": 1663378680,
+            "mag": 100000,
+            "duration": 445,
+            "startVisibility": 1663377780
+        },
+        {
+            "startAz": 341.82,
+            "startAzCompass": "NNW",
+            "startEl": 0.02,
+            "startUTC": 1663462070,
+            "maxAz": 61.02,
+            "maxAzCompass": "ENE",
+            "maxEl": 41.13,
+            "maxUTC": 1663462515,
+            "endAz": 137.68,
+            "endAzCompass": "SE",
+            "endEl": 37.03,
+            "endUTC": 1663462960,
+            "mag": 100000,
+            "duration": 505,
+            "startVisibility": 1663462070
+        },
+        {
+            "startAz": 323.35,
+            "startAzCompass": "NW",
+            "startEl": 0.09,
+            "startUTC": 1663468240,
+            "maxAz": 256.43,
+            "maxAzCompass": "W",
+            "maxEl": 25.48,
+            "maxUTC": 1663468655,
+            "endAz": 190.68,
+            "endAzCompass": "S",
+            "endEl": 24.25,
+            "endUTC": 1663469070,
+            "mag": 100000,
+            "duration": 360,
+            "startVisibility": 1663468240
+        }
+    ]
+}
