@@ -16,7 +16,7 @@ class SatelliteService
     end
 
     def self.get_satellite_visibility(id, lat, long)
-        response = BaseService.n2yo_connection.get("/rest/v1/satellite/visualpasses//#{id}/#{lat}/#{long}/0/10/300/&apiKey=J5ZTGL-KKTATM-TUCKZ5-4XEF")
+        response = BaseService.n2yo_connection.get("/rest/v1/satellite/visualpasses//#{id}/#{lat}/#{long}/0/7/300/&apiKey=J5ZTGL-KKTATM-TUCKZ5-4XEF")
         JSON.parse(response.body, symbolize_names: true)
     end
 

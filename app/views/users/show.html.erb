@@ -1,17 +1,22 @@
 <h1>User Dashboard<h1>
-<h3><<%= link_to 'Discover Satellites', discover_users_path %>></h3>
+<h3><%= link_to 'Discover Satellites', discover_users_path %></h3>
 <h3>Your Satellites</h3>
 
 <% if @satellites %>
 <div id="satellites">
     <% @satellites.each do |s| %>
         <div class="satellite">
-        <p>Satellite Id: <%= s.id %></p>
-        <p>Norad Id: <%= s.norad_id %></p>
-        <h4>Visibility in the next 10 days</h4>
+        <h3>Satellite Id: <%= s.id %></h3>
+        <h4>Norad Id: <%= s.norad_id %></h4>
+        <h4>Visibility in the next 7 days</h4>
         <% @visible_times.each do |vis_time| %>
             <% if s.id == vis_time.sat_id %>
                 <p><%= vis_time.starting_time %></p>
+                <% @weather_forecasts.each do |forecast| %>
+                    <% if vis_time.starting_time.include?(forecast.date) %>
+                        <p>Weather: <%= forecast.status %> </p>
+                    <% end %>
+                <% end %>
             <% end %>
         <% end %>
         </div>

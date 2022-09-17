@@ -8,8 +8,8 @@ class SatelliteFacade
     end 
 
     def self.get_satellite(sat_id)
-      json = SatelliteService.get_satellite(sat_id)[:info]
-      SatelliteAPI.new(json)
+        json = SatelliteService.get_satellite(sat_id)[:info]
+        SatelliteAPI.new(json)
     end
 
     def self.get_satellite_visibility(sat_id, lat, long)

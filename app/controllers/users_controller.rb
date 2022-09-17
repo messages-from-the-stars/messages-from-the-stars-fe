@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @visible_times = @satellites.map do |satellite|
       SatelliteFacade.get_satellite_visibility(satellite.id, @lat, @long)
     end.flatten  
+    @weather_forecasts = WeatherFacade.get_weather_forecast(@lat, @long)
   end
 
   private
