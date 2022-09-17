@@ -6,8 +6,8 @@
 <div id="satellites">
     <% @satellites.each do |s| %>
         <div class="satellite">
-        <h3>Satellite Id: <%= s.id %></h3>
-        <h4>Norad Id: <%= s.norad_id %></h4>
+        <h3>Satellite Id: <%= s.id</h3> %>
+        <h4>Norad Id: <%= s.norad_id</h4> %>
         <h4>Visibility in the next 7 days</h4>
         <% @visible_times.each do |vis_time| %>
             <% if s.id == vis_time.sat_id %>

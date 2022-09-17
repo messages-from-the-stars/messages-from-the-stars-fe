@@ -8,5 +8,4 @@ class WeatherFacade
         end 
     end 
 
-
 end
