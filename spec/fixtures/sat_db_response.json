@@ -1,0 +1,9 @@
+{
+    "data": {
+        "id": "2",
+        "type": "satellite",
+        "attributes": {
+            "norad_id": 42061
+        }
+    }
+}
