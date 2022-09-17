@@ -3,5 +3,6 @@
 <div id="satellites<%= index %>">
 <p>Name: <%= satellite.satname %> ID: <%= satellite.satid %><p><br>
 <p>Launched on: <%= satellite.launch_date %><p><br>
+<p><%= link_to, 'View Satellite Info', api_v1_satellite_path(satellite.satid) %><p><br>
 </div>
 <% end %>
