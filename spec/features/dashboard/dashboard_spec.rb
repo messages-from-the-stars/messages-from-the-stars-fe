@@ -22,6 +22,10 @@ RSpec.describe 'Dashboard page' do
             
             allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
 
+            @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
+
+            allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+
             visit '/auth/google_oauth2'
         end
 
