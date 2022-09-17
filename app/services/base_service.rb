@@ -12,7 +12,7 @@ class BaseService
 
     def self.n2yo_connection
         Faraday.new(url: 'https://api.n2yo.com') do |faraday|
-            faraday.params['apiKey'] = ENV['space_key']
+            faraday.headers['apiKey'] = ENV['n2yo_Key']
         end
     end
 
@@ -20,5 +20,7 @@ class BaseService
         JSON.parse(response.body, symbolize_names: true)
     end 
 
-
+    def self.open_weather_conn
+        Faraday.new(url: 'https://api.openweathermap.org/')
+    end 
 end 

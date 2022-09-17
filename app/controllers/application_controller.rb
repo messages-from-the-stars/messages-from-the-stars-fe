@@ -1,14 +1,21 @@
 class ApplicationController < ActionController::Base
-  helper_method :logged_in_user
+  helper_method :logged_in_user, :remote_ip, :lat_long 
 
   def remote_ip
-    if request.remote_ip == '127.0.0.1'
+    if request.remote_ip == '127.0.0.1' || request.remote_ip == '::1'
       #hard coded as backup New York City
-      '161.185.160.93'
+      lat_long('161.185.160.93')
     else
-      request.remote_ip
+      lat_long(request.remote_ip)
     end
   end
+
+  def lat_long(ip)
+    location = Geocoder.search(ip)
+    lat_long = location.first.coordinates
+    @lat = lat_long[0]
+    @long = lat_long[1]
+  end 
 
     
 
