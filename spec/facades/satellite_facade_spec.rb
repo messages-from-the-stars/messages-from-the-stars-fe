@@ -27,4 +27,5 @@ RSpec.describe SatelliteFacade do
         expect(satellites).to be_a(Array)
         expect(satellites).to be_all(Satellite)
     end
+  end
 end
