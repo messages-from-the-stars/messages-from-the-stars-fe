@@ -1,7 +1,7 @@
 class SatelliteService
 
     def self.get_user_satellites(user_id)
-        response = BaseService.connection.get("/api/v1/users/#{user_id}/satellites")
+        response = BaseService.connection.get("api/v1/satellites/find_by_user_id?user_id=#{user_id}")
         BaseService.get_json(response)
     end
 
