@@ -12,6 +12,12 @@ class SatelliteFacade
         SatelliteAPI.new(json)
     end
 
+    def self.get_satellite_position(norad_id)
+        json = SatelliteService.get_satellite_position(norad_id)
+        SatellitePosition.new(json)
+    end
+
+  
     def self.above_satellites(lat, long)
         json = SatelliteService.get_satellites_in_range(lat, long)[:above]
         json[0..9].map do |data|
@@ -26,6 +32,10 @@ class SatelliteFacade
                 SatelliteVisibility.new(visibility_data, sat_id)
             end
         end  
-    end 
+    end
+    
+    def self.get_norad_id(sat_db_id)
+        json = SatelliteService.get_norad_id(sat_db_id)
+    end
 
 end 

@@ -5,8 +5,18 @@ class SatelliteService
         BaseService.get_json(response)
     end
 
+    def self.get_norad_id(sat_db_id)
+        response = BaseService.connection.get("api/v1/satellites/#{sat_db_id}")
+        BaseService.get_json(response)
+    end
+
     def self.get_satellite(sat_id)
         response = BaseService.n2yo_conn.get("tle/#{sat_id}")
+        BaseService.get_json(response)
+    end
+
+    def self.get_satellite_position(norad_id)
+        response = BaseService.n2yo_conn.get("positions/#{norad_id}/39.739/104.990/0/1")
         BaseService.get_json(response)
     end
 
