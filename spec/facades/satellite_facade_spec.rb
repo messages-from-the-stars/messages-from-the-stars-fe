@@ -8,8 +8,7 @@ RSpec.describe SatelliteFacade do
 
       allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
 
-      lat_long = [39.6431, -104.8987]
-      results = SatelliteFacade.above_satellites(lat_long)
+      results = SatelliteFacade.above_satellites(39.6431, -104.8987)
       
       expect(results.count).to eq(10)
     end
