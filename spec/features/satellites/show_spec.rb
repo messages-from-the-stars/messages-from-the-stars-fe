@@ -21,14 +21,16 @@ RSpec.describe 'Satellite Show Page' do
       @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
       @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
       @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
+      @position = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
       
       allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
       allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
       allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
-
+      
       @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-
+      
       allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+      allow(SatelliteService).to receive(:get_satellite_position).and_return(@position)
 
       @sat_call = JSON.parse(File.read('spec/fixtures/satellite.json'), symbolize_names: true)
       @sat_id = @sat_call[:info][:satid]
@@ -42,12 +44,24 @@ RSpec.describe 'Satellite Show Page' do
       
       expect(page).to have_content("NORAD ID: 25544")
       expect(page).to have_content('Satellite Name: SPACE STATION')
-      expect(page).to have_content('Current Latitude / Longitude')
+      expect(page).to have_content("Current Latitude / Longitude: -6.24147627, 91.26942017")
       expect(page).to have_content("Visibility in the next 7 days")
 
-      within "visibility1" do
+      within "#visibility0" do
         expect(page).to have_content("Date: Sep 16, at 5:41 PM")
         expect(page).to have_content("Weather Forecast: Clear")
+      end
+      within "#visibility1" do
+        expect(page).to have_content("Date: Sep 16, at 7:23 PM")
+        expect(page).to have_content("Weather Forecast: Clear")
+      end
+      within "#visibility2" do
+        expect(page).to have_content("Date: Sep 17, at 6:47 PM")
+        expect(page).to have_content("Weather Forecast: Clouds")
+      end
+      within "#visibility3" do
+        expect(page).to have_content("Date: Sep 17, at 8:30 PM")
+        expect(page).to have_content("Weather Forecast: Clouds")
       end
     end
 
