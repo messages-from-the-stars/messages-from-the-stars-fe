@@ -14,7 +14,7 @@ RSpec.describe MessageFacade do
 
       results = MessageFacade.get_message(message_id)
 
-      expect(results.count).to eq(1)
+      expect(results).to be_a Message
 
     end
 

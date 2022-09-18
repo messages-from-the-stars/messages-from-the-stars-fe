@@ -19,6 +19,8 @@ RSpec.describe 'message show page' do
 
     @sat_name = @sat_position_call[:info][:satname]
 
+    @norad_id = @sat_position_call[:info][:satid]
+
     @sat_lat = @sat_position_call[:positions].first[:satlatitude]
     @sat_lng = @sat_position_call[:positions].first[:satlongitude]
 
@@ -47,5 +49,18 @@ RSpec.describe 'message show page' do
     expect(page).to have_content("Current Lng:")
 
     #this is working, but lat/long are always off by a tiny bit and test fails if including specific numbers
+  end
+
+  it 'displays satellite name' do
+    visit "/messages/#{@message_id}"
+
+    expect(page).to have_content(@sat_name)
+  end
+
+  it 'displays satellite norad id number' do
+    visit "/messages/#{@message_id}"
+
+
+    expect(page).to have_content(@norad_id)
   end
 end
