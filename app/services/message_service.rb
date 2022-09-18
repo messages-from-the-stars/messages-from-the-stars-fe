@@ -12,14 +12,17 @@ class MessageService
       start_lng: long,
       content: message
     })
-    response = BaseService.connection.post("api/v1/messages/") do |req|
+    headers = {"CONTENT_TYPE"=>"application/json"}
+    params = JSON.generate(message: message_params)
+    response = BaseService.connection.post("api/v1/messages/", headers: headers, params: params) 
+    # do |req|
       # req.params['satellite_id'] = sat_id
       # req.params['start_lat'] = lat
       # req.params['start_ng'] = long
-      # req.params['content'] = message
-      req.headers['Content-Type'] = 'application/json'
-      req.params[:message] = message_params
-    end 
+      # req.params['content'] = messageq
+      # req.headers['Content-Type'] = 'application/json'
+      # req.body = JSON.generate(message: message_params)
+    # end 
     binding.pry 
     BaseService.get_json(response)
   end

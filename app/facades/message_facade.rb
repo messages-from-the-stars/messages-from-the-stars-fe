@@ -7,6 +7,7 @@ class MessageFacade
   end
 
   def self.create_message(lat, long, message, sat_id)
+    sat_id = sat_id.to_i
     json = MessageService.create_message(lat, long, message, sat_id)
   end
 
