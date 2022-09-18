@@ -32,4 +32,20 @@ RSpec.describe SatelliteService do
       .to be_a Integer 
     end
   end
+
+  describe '#get_sat_message' do
+    it 'returns satellites with messages' do
+
+      @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+
+      allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
+      
+      ss = SatelliteService.get_sat_message(13002)
+      sr = ss[:data].first
+      expect(ss).to be_a(Hash)
+      expect(ss[:data]).to be_a(Array)
+      expect(sr[:attributes]).to have_key(:satellite_id)
+      expect(sr[:attributes][:satellite_id]).to be_a(Integer)
+    end
+  end
 end
