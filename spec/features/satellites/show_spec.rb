@@ -82,7 +82,15 @@ RSpec.describe 'Satellite Show Page' do
       end
     end
 
-    it 'has a button to add satellite to users tracking' do
+    xit 'can post a message' do
+      visit "api/v1/satellites/#{@sat_id}"
+
+      click_on "Add New Message to SPACE STATION"
+
+      expect(current_path).to eq("messages/new")
+    end
+
+    xit 'has a button to add satellite to users tracking' do
       visit "api/v1/satellites/#{@sat_id}"
 
       click_on "Add SPACE STATION to Tracking"
