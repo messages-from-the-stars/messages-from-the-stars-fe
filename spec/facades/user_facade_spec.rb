@@ -11,8 +11,6 @@ RSpec.describe UserFacade do
             results = UserFacade.find_or_create_user("Bob Bobbycus", "test@test.com")
             
             expect(results).to be_a User
-            expect(results.name).to eq("Bob Bobbycus")
-            expect(results.username).to eq("test@test.com")
         end 
     end
 end 
