@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get '/discover', to: "discover#index"
   end
   
-  resources :messages, only: [:show]
+  resources :messages, only: [:show, :new]
+  post 'messages/create', to: 'messages#create'
   
   namespace :api do
     namespace :v1 do

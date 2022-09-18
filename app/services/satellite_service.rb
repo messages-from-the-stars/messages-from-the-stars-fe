@@ -1,7 +1,7 @@
 class SatelliteService
 
     def self.get_user_satellites(user_id)
-        response = BaseService.connection.get("/api/v1/users/#{user_id}/satellites")
+        response = BaseService.connection.get("api/v1/satellites/find_by_user_id?user_id=#{user_id}")
         BaseService.get_json(response)
     end
 
@@ -26,7 +26,7 @@ class SatelliteService
     end
 
     def self.get_satellites_in_range(lat, long)
-        response = BaseService.n2yo_connection.get("/rest/v1/satellite/above/#{lat}/#{long}/0/15/0/")
+        response = BaseService.n2yo_connection.get("/rest/v1/satellite/above/#{lat}/#{long}/0/15/0/&apiKey=#{ENV['n2yo_Key']}")
         JSON.parse(response.body, symbolize_names: true)
     end
 

@@ -1,0 +1,10 @@
+<h1> Create a New Message </h1>
+
+<%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
+    <%=form.text_field :message %>
+    <%=form.label :message, "Message:"%>
+    <%=form.submit "Send Message"%>
+    <%= form.hidden_field :lat, :value => @lat %>
+    <%= form.hidden_field :long, :value => @long %>
+    <%= form.hidden_field :sat_id, :value => @sat_id %>
+<% end %>
