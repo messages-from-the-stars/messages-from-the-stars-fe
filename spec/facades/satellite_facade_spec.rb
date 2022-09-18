@@ -27,4 +27,19 @@ RSpec.describe SatelliteFacade do
         expect(satellites).to be_all(Satellite)
     end
   end
+
+  describe '#get_messages' do
+    it 'returns satellites with messages' do
+
+      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
+      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+
+      @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
+
+      results = SatelliteFacade.get_sat_message_id(13002)
+      expect(results).to be_a(Array)
+      expect(results[1]).to be_a(SatelliteMessage)
+    end
+  end
 end
