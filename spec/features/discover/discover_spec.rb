@@ -16,7 +16,8 @@ RSpec.describe 'Discover page' do
         "token" => "Token",
         },
     })
-
+    
+    @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
     @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
     @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
     @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
@@ -26,6 +27,7 @@ RSpec.describe 'Discover page' do
     allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
     allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
     allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
+    allow(UserService).to receive(:find_or_create_user).and_return(@user)
 
     visit '/auth/google_oauth2'
   end

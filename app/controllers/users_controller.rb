@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   def create
     user_info = request.env['omniauth.auth']
     if user_info['credentials']['token'].present?
-      # @user = UserFacade.find_or_create_user(user_info['name'], user_info['username'])
-      @user = User.find_or_create_by(uid: user_info['uid'])
-      update_user(user_info)
+      @user = UserFacade.find_or_create_user(user_info['name'], user_info['username'])
+      # @user = User.find_or_create_by(uid: user_info['uid'])
+      # update_user(user_info) 
       set_session(@user)
       redirect_to dashboard_users_path
     else
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show # commented out methods are there for testing purposes within rails server
-    @user = User.find(session[:user_id])
+    # @user = User.find(session[:user_id])
     @satellites = SatelliteFacade.get_user_satellites(session[:user_id])
     # satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
     # @satellites = satellites[:data]

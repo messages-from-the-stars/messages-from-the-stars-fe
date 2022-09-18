@@ -5,7 +5,7 @@ RSpec.describe 'message new page' do
         
     end
 
-    it 'has a form to create a new message' do
+    xit 'has a form to create a new message' do
         visit "/messages/new" 
 
         fill_in("message", with: "Hello there, this is a test")
