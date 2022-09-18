@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def create
     user_info = request.env['omniauth.auth']
     if user_info['credentials']['token'].present?
-      @user = UserFacade.find_or_create_user(user_info['name'], user_info['username'])
+      @user = UserFacade.find_or_create_user(user_info['info']['name'], user_info['info']['email'])
       # @user = User.find_or_create_by(uid: user_info['uid'])
       # update_user(user_info) 
       set_session(@user)
