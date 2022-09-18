@@ -20,4 +20,22 @@ RSpec.describe MessageFacade do
 
   end
 
+  describe "#create_message" do
+
+    it 'creates a message' do
+      response = {status: 200}
+      lat =  40.7143
+      long = -74.006
+      sat_id = 12345
+      message = "Hello there, this is a test"
+
+      allow(MessageService).to receive(:create_message).and_return(response)
+
+      message = MessageService.create_message(lat, long, message, sat_id)
+
+      expect(message[:status]).to eq(200)
+    end
+
+  end
+
 end

@@ -42,7 +42,7 @@ RSpec.describe MessageService do
 
   end
   describe '#create_message' do
-    it 'returns a 200 response when a message is created' do
+    it 'returns a response when a message is created' do
       response = {status: 200}
       lat =  40.7143
       long = -74.006
