@@ -1,0 +1,10 @@
+{
+    "data": {
+        "id": "2",
+        "type": "user",
+        "attributes": {
+            "name": "Bob Bobbycus",
+            "username": "test@test.com"
+        }
+    }
+}

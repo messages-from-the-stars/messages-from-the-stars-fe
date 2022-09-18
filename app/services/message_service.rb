@@ -18,7 +18,7 @@ class MessageService
       req.params['start_ng'] = long
       req.params['content'] = message
       # req.headers['Content-Type'] = 'application/json'
-      # req.params[:message] = JSON.generate(message_params)
+      req.params[:message] = message_params
     end 
     binding.pry 
     BaseService.get_json(response)
