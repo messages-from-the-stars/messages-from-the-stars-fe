@@ -1,3 +1,17 @@
 <h2><%= @satellite.name %>'s Show</h2>
 <p>NORAD ID: <%= @satellite.id %></p>
 <p>Satellite Name: <%= @satellite.name %></p>
+
+<p>Current Latitude / Longitude: <%= @position.sat_lat %>, <%= @position.sat_lng %></p>
+
+<h4>Visibility in the next 7 days</h4>
+<% @visibility.each_with_index do |v, idx| %>
+  <div id="visibility-<%= idx%>">
+  <p>Date: <%= v.starting_time %></p>
+  <% @weather_forecasts.each do |forecast| %>
+    <% if v.starting_time.include?(forecast.date)%>
+      <p>Weather Forecast: <%= forecast.status %> </p>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
