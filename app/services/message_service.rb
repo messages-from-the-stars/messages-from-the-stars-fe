@@ -13,11 +13,11 @@ class MessageService
       content: message
     })
     response = BaseService.connection.post("api/v1/messages/") do |req|
-      req.params['satellite_id'] = sat_id
-      req.params['start_lat'] = lat
-      req.params['start_ng'] = long
-      req.params['content'] = message
-      # req.headers['Content-Type'] = 'application/json'
+      # req.params['satellite_id'] = sat_id
+      # req.params['start_lat'] = lat
+      # req.params['start_ng'] = long
+      # req.params['content'] = message
+      req.headers['Content-Type'] = 'application/json'
       req.params[:message] = message_params
     end 
     binding.pry 
