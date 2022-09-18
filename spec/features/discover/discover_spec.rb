@@ -28,6 +28,8 @@ RSpec.describe 'Discover page' do
     allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
     allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
     allow(UserService).to receive(:find_or_create_user).and_return(@user)
+    @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+    allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
 
     visit '/auth/google_oauth2'
   end
