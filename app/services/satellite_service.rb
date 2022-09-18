@@ -21,7 +21,7 @@ class SatelliteService
     end
 
     def self.get_satellites_in_range(lat, long)
-        response = BaseService.n2yo_connection.get("/rest/v1/satellite/above/#{lat}/#{long}/0/15/0/")
+        response = BaseService.n2yo_connection.get("/rest/v1/satellite/above/#{lat}/#{long}/0/15/0/&apiKey=#{ENV['n2yo_Key']}")
         JSON.parse(response.body, symbolize_names: true)
     end
 
