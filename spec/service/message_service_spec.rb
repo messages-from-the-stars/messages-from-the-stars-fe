@@ -46,10 +46,10 @@ RSpec.describe MessageService do
       response = {status: 200}
       lat =  40.7143
       long = -74.006
-      sat_id = 12345
+      sat_id = 10
       message = "Hello there, this is a test"
 
-      allow(MessageService).to receive(:create_message).and_return(response)
+      # allow(MessageService).to receive(:create_message).and_return(response)
 
       message = MessageService.create_message(lat, long, message, sat_id)
 
