@@ -33,7 +33,7 @@
       "satalt": 1604.5891
     },
     {
-      "satid": 8174,
+      "satid": 13002,
       "satname": "THORAD DELTA 1 DEB",
       "intDesignator": "1974-089AQ",
       "launchDate": "1974-11-15",
@@ -42,7 +42,7 @@
       "satalt": 1413.6241
     },
     {
-      "satid": 10949,
+      "satid": 22654,
       "satname": "SL-6 R/B(2)",
       "intDesignator": "1978-055E",
       "launchDate": "1978-06-02",
@@ -51,7 +51,7 @@
       "satalt": 21304.6983
     },
     {
-      "satid": 14608,
+      "satid": 26609,
       "satname": "SL-12 R/B(AUX MOTOR)",
       "intDesignator": "1983-127H",
       "launchDate": "1983-12-29",
@@ -60,7 +60,7 @@
       "satalt": 12814.6263
     },
     {
-      "satid": 24911,
+      "satid": 43880,
       "satname": "DELTA 1 DEB",
       "intDesignator": "1981-070M",
       "launchDate": "1981-08-03",
