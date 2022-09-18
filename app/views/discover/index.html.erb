@@ -1,6 +1,14 @@
 <h1>Satellites Above You<h1><br>
 <% @satellites.each_with_index do |satellite, index| %>
 <div id="satellites<%= index %>">
+  <% msg_collector = [] %>
+  <% @message_count.each do |msg| %>
+    <% if msg.satellite_id == satellite.satid %>
+      <% msg_collector << msg %>
+    <% end %>
+    <%# <% if msg_collector.count > 0 %>
+  <% end %>
+    <p><%= msg_collector.count %> Messages<p>
 <p>Name: <%= satellite.satname %> ID: <%= satellite.satid %><p><br>
 <p>Launched on: <%= satellite.launch_date %><p><br>
 <p><%= link_to 'View Satellite Info', api_v1_satellite_path(satellite.satid) %><p><br>
