@@ -12,6 +12,10 @@ class SatelliteFacade
         SatelliteAPI.new(json)
     end
 
+    def self.create_user_satellite(sat_id, user_id)
+      json = SatelliteService.create_user_satellite(sat_id, user_id)
+    end
+
     def self.get_satellite_position(norad_id)
         json = SatelliteService.get_satellite_position(norad_id)
         SatellitePosition.new(json)
