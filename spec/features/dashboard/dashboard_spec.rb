@@ -18,6 +18,8 @@ RSpec.describe 'Dashboard page' do
                 },
             })
             
+            @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
+            @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
             @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
             @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
             @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
@@ -25,9 +27,7 @@ RSpec.describe 'Dashboard page' do
             allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
             allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
             allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
-
-            @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-
+            allow(UserService).to receive(:find_or_create_user).and_return(@user)
             allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
 
             visit '/auth/google_oauth2'

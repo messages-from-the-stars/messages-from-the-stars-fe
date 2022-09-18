@@ -41,5 +41,20 @@ RSpec.describe MessageService do
     end
 
   end
+  describe '#create_message' do
+    it 'returns a response when a message is created' do
+      response = {status: 200}
+      lat =  40.7143
+      long = -74.006
+      sat_id = 12345
+      message = "Hello there, this is a test"
+
+      allow(MessageService).to receive(:create_message).and_return(response)
+
+      message = MessageService.create_message(lat, long, message, sat_id)
+
+      expect(message[:status]).to be_a(Integer)
+    end 
+  end 
 
 end
