@@ -22,7 +22,7 @@ RSpec.describe 'Discover page' do
     @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
     @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
     @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-    @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+    @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
 
     allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
     allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
@@ -82,7 +82,6 @@ RSpec.describe 'Discover page' do
 
       expect(page).to have_content("Name: THORAD DELTA 1 DEB ID: 13002")
       expect(page).to have_content("Messages")
-
     end
   end
 end

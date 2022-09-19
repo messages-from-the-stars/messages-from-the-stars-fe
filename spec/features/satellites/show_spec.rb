@@ -36,7 +36,7 @@ RSpec.describe 'Satellite Show Page' do
       @sat_id = @sat_call[:info][:satid]
       allow(SatelliteService).to receive(:get_satellite).and_return(@sat_call)
 
-      @messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
 
       visit '/auth/google_oauth2'
@@ -82,20 +82,12 @@ RSpec.describe 'Satellite Show Page' do
       end
     end
 
-    xit 'can post a message' do
+    it 'can link to the send a message page' do
       visit "api/v1/satellites/#{@sat_id}"
 
       click_on "Add New Message to SPACE STATION"
 
-      expect(current_path).to eq("messages/new")
-    end
-
-    xit 'has a button to add satellite to users tracking' do
-      visit "api/v1/satellites/#{@sat_id}"
-
-      click_on "Add SPACE STATION to Tracking"
-
-      expect(page).to have_content("?")
+      expect(current_path).to eq("/messages/new")
     end
   end
 end

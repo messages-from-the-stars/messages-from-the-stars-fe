@@ -13,7 +13,7 @@ class SatelliteFacade
     end
 
     def self.create_user_satellite(sat_id, user_id)
-      json = SatelliteService.create_user_satellite(sat_id, user_id)
+      SatelliteService.create_user_satellite(sat_id, user_id)
     end
 
     def self.get_satellite_position(norad_id)

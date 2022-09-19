@@ -13,20 +13,14 @@ class MessagesController < ApplicationController
   end
 
   def new 
-    # @sat_id = params[:sat_id]
-    @sat_id = 12345
+    @sat_id = params[:sat_id]
   end 
 
   def create 
     if params[:message] != "" 
-      response = MessageFacade.create_message(@lat, @long, params[:message], params[:sat_id])
-      if response == 200 
-        redirect_to '/users/dashboard'
-        flash[:success] = "Message sent!"
-      else 
-        redirect_to '/messages/new'
-        flash[:error] = "Sorry, something went wrong. Try again"
-      end    
+      MessageFacade.create_message(@lat, @long, params[:message], params[:sat_id])
+      redirect_to '/users/dashboard'
+      flash[:success] = "Message sent!"    
     else 
       redirect_to '/messages/new'
       flash[:error] = "Your message can't be blank!"

@@ -12,9 +12,7 @@ class MessageService
       start_lng: long,
       content: message
     }
-
     response = BaseService.connection.post("api/v1/messages/", JSON.generate(message: message_params), "Content-Type" => "application/json")
-
     BaseService.get_json(response)
   end
 
