@@ -43,7 +43,7 @@ RSpec.describe 'Satellite Show Page' do
     end 
     
     it 'shows a satellites information' do
-      visit "api/v1/satellites/#{@sat_id}"
+      visit "/satellite"
 
       expect(page).to have_content("NORAD ID: 25544")
       expect(page).to have_content('Satellite Name: SPACE STATION')
@@ -69,7 +69,7 @@ RSpec.describe 'Satellite Show Page' do
     end
 
     it 'can show a satellites messages' do
-      visit "api/v1/satellites/#{@sat_id}"
+      visit "/satellite"
 
       expect(page).to have_content("13 Total Messages")
 
@@ -83,7 +83,7 @@ RSpec.describe 'Satellite Show Page' do
     end
 
     it 'can link to the send a message page' do
-      visit "api/v1/satellites/#{@sat_id}"
+     visit "/satellite"
 
       click_on "Add New Message to SPACE STATION"
 

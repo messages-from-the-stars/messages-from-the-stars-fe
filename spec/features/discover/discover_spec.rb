@@ -62,16 +62,16 @@ RSpec.describe 'Discover page' do
       satellite = DiscoverSatellite.new(satid: 2700, satname: 'DELTA 1 DEB', launch_date: '1965-11-06')
 
       visit discover_users_path
-
+     
       within '#satellites1' do
 
         expect(page).to have_content("Name: DELTA 1 DEB ID: 2700")
-        expect(page).to have_link("View Satellite Info")
+        expect(page).to have_button("View DELTA 1 DEB's Info")
 
-        click_link('View Satellite Info')
+        click_button("View DELTA 1 DEB's Info")
       end
 
-      expect(current_path).to eq(api_v1_satellite_path(satellite.satid))
+      expect(current_path).to eq('/satellite')
       expect(page).to have_content("DELTA 1 DEB's Show")
     end
   end

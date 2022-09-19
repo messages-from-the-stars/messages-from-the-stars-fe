@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Message do
 
   it 'exists' do
-    data = {:data=>
+    data = {:data=>[
             {:id=>"2",
             :type=>"message",
             :attributes=>
@@ -14,7 +14,7 @@ RSpec.describe Message do
               :created_at=>"2022-09-12T18:42:01.000Z",
               :updated_at=>"2022-04-05T22:43:05.000Z"
             }
-        }
+        }]
     }
 
     message = Message.new(data)

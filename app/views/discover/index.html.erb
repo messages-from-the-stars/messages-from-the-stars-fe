@@ -25,7 +25,8 @@
     <p><%= msg_collector.count %> Messages<p>
   <p>Name: <%= satellite.satname %> ID: <%= satellite.satid  %><p>
   <p>Launched on: <%= satellite.launch_date %><p>
-  <p><%= link_to 'View Satellite Info', api_v1_satellite_path(satellite.satid) %><p><br>
+  <%# <p><%= link_to 'View Satellite Info', api_v1_satellite_path(satellite.satid) %><p><br> %>
+  <p><%= button_to "View #{satellite.satname}'s Info", '/satellite', params: {:sat_id => satellite.satid}, method: :get, local: true %><p><br>
   </div>
   <% end %>
 </div>

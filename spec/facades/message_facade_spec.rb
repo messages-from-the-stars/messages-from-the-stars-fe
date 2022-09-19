@@ -6,11 +6,11 @@ RSpec.describe MessageFacade do
 
     it 'returns a message' do
 
-      @message_call = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      @message_call = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
 
       allow(MessageService).to receive(:get_message).and_return(@message_call)
 
-      message_id = @message_call[:data][:id]
+      message_id = @message_call[:data].first[:id]
 
       results = MessageFacade.get_message(message_id)
 

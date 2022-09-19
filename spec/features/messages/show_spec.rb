@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'message show page' do
   before :each do
-    @message_call = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+    @message_call = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
     @sat_db_call = JSON.parse(File.read('spec/fixtures/sat_db_response.json'), symbolize_names: true)
     @sat_position_call = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
 
