@@ -42,10 +42,16 @@
   </div>  
     <% @messages.each_with_index do |m, idx| %>
       <div id="messages<%= idx %>">
-  <div class="col-sm-4">
-        <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
-  </div> 
+        <div class="col-sm-4">
+              <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
+        </div> 
       </div>
     <% end %>
+  
+    <div class="map">
+      <p>Current Location of <%= @satellite.name %></p>
+      <%=image_tag(@map_url)%>
+    </div>
+
 </body>
 </html>
