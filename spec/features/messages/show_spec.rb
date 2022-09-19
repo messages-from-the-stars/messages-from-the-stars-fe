@@ -91,7 +91,5 @@ RSpec.describe 'message show page' do
     visit "/messages/#{@message_id}"
 
     expect(page).to have_content("This message has orbited around the world about 112 times, or around 2789024 miles!")
-
-    save_and_open_page
   end
 end
