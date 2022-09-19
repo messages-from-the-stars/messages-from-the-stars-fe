@@ -36,7 +36,7 @@ RSpec.describe SatelliteService do
   describe '#get_sat_message' do
     it 'returns satellites with messages' do
 
-      @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
 
       allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
       

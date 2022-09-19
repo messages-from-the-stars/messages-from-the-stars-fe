@@ -34,7 +34,7 @@ RSpec.describe SatelliteFacade do
       @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
 
-      @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
 
       results = SatelliteFacade.get_sat_message_id(13002)

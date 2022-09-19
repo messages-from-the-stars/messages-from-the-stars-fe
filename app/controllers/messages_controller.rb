@@ -10,8 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def new 
-    # @sat_id = params[:sat_id]
-    @sat_id = 12345
+    @sat_id = params[:sat_id]
   end 
 
   def create 
