@@ -38,6 +38,10 @@ RSpec.describe 'Satellite Show Page' do
 
       @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
+      @lat = 39.75
+      @long = -104.99
+      
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
       visit '/auth/google_oauth2'
     end 

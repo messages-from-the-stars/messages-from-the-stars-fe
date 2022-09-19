@@ -23,7 +23,10 @@ RSpec.describe 'message show page' do
 
     @sat_lat = @sat_position_call[:positions].first[:satlatitude]
     @sat_lng = @sat_position_call[:positions].first[:satlongitude]
+    @lat = 39.75
+    @long = -104.99
 
+    allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
     allow(MessageService).to receive(:get_message).and_return(@message_call)
     allow(SatelliteService).to receive(:get_norad_id).and_return(@sat_db_call)
     allow(SatelliteService).to receive(:get_satellite_position).and_return(@sat_position_call)

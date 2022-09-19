@@ -14,20 +14,12 @@
 </div> 
 <% @satellites.each_with_index do |satellite, index| %>
 <div id="satellites<%= index %>">
-  <% msg_collector = [] %>
-  <% @message_count.each do |msg| %>
-    <% if msg.satellite_id == satellite.satid %>
-      <% msg_collector << msg %>
-    <% end %>
-    <%# <% if msg_collector.count > 0 %>
-  <% end %>
 <div class="col-sm-4">
-    <p><%= msg_collector.count %> Messages<p>
   <p>Name: <%= satellite.satname %> ID: <%= satellite.satid  %><p>
   <p>Launched on: <%= satellite.launch_date %><p>
   <p><%= button_to "View #{satellite.satname}'s Info", '/satellite', params: {:sat_id => satellite.satid}, method: :get, local: true %><p><br>
   </div>
-  <% end %>
+<% end %>
 </div>
 </body>
 </html>

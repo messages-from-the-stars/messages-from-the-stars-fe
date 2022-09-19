@@ -38,11 +38,17 @@ RSpec.describe 'message new page' do
       @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
 
+      @message = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      allow(MessageService).to receive(:create_message).and_return(@message)
+
+      @lat = 39.75
+      @long = -104.99
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
+
       visit '/auth/google_oauth2'
     end 
 
     it 'has a form to create a new message' do
-
         satellite = DiscoverSatellite.new(satid: 2700, satname: 'DELTA 1 DEB', launch_date: '1965-11-06')
 
         visit discover_users_path
