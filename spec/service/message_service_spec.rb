@@ -3,15 +3,8 @@ require 'rails_helper'
 RSpec.describe MessageService do
 
   describe '#get_message' do
-
-    it 'returns a message response' do
-      @message_call = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
-
-      allow(MessageService).to receive(:get_message).and_return(@message_call)
-
-      message_id = @message_call[:data][:id]
-
-      message = MessageService.get_message(message_id)
+    it 'returns a message response', :vcr do
+      message = MessageService.get_message(1)
 
       expect(message).to be_a(Hash)
 
