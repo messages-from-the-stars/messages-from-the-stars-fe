@@ -1,8 +1,25 @@
-<center>
-<h1>Messages from the Stars<h1><br>
-<p>Catch a satellite</p>
-<p>Create a message</p>
-<p>Cast your message into the cosmic ocean</p>
-<p>Log in via Google to begin exploring the skies</p><br>
-<%= link_to 'Log In', '/auth/google_oauth2' %>
-<center>
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <title>Messages from the Stars</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="landing_container text-center">
+  <h1>Messages from the Stars<h1>
+</div>
+<div class="landing_container text-center">
+  <p><em>Catch a satellite</em></p>
+  </p><em>Create a message</em></p>
+  </p><em>Cast your message into the cosmic ocean</em></p>
+  </p><em>Log in to begin exploring the skies</em></p>
+</div>
+<div class="landing_container text-center">
+  <%= link_to 'Log In', '/auth/google_oauth2' %>
+</div>
+</body>
+</html>

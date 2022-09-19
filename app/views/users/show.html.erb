@@ -1,11 +1,28 @@
-<h1>User Dashboard<h1>
-<h3><%= link_to 'Discover Satellites', discover_users_path %></h3>
-<h3>Your Satellites</h3>
-
-<% if @satellites %>
-<div id="satellites">
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <title>Message from the Stars</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="text-center">
+    <h1>User Dashboard<h1>
+</div>  
+<div class="text-center">
+    <h3><%= link_to 'Discover Satellites', discover_users_path %></h3><br>
+</div>
+<div class="text-center">
+    <h3>Your Satellites</h3><br>
+</div>
+    <% if @satellites %>
+    <div id="satellites">
     <% @satellites.each do |s| %>
         <div class="satellite">
+    <div class="col-sm-4">
         <h3>Satellite Id: <%= s.id %> </h3>
         <h4>Norad Id: <%= s.norad_id %> </h4> 
         <h4>Visibility in the next 7 days</h4>
@@ -22,3 +39,7 @@
         </div>
     <% end %>
 <% end %>
+    </div>                 
+</div>
+</body>
+</html>

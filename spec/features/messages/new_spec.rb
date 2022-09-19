@@ -17,7 +17,7 @@ RSpec.describe 'message new page' do
 
     it 'will not let you send a blank message' do
         visit "/messages/new" 
-
+save_and_open_page
         click_button('Send Message')
 
         expect(page).to have_content("Your message can't be blank!")

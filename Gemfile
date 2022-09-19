@@ -5,7 +5,8 @@ ruby '2.7.4'
 
 gem 'faraday'
 gem 'figaro'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'

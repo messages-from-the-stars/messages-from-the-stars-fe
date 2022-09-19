@@ -27,17 +27,17 @@ RSpec.describe 'message show page' do
     allow(MessageService).to receive(:get_message).and_return(@message_call)
     allow(SatelliteService).to receive(:get_norad_id).and_return(@sat_db_call)
     allow(SatelliteService).to receive(:get_satellite_position).and_return(@sat_position_call)
+
   end
 
   it 'displays message content', :vcr do
     visit "/messages/#{@message_id}" 
-
     expect(page).to have_content("Message: #{@message_content}")
   end
-
+  
   it 'displays starting lat/lng for message', :vcr do
     visit "/messages/#{@message_id}"
-
+    
     expect(page).to have_content("Start Lat: #{@message_start_lat}")
 
     expect(page).to have_content("Start Lng: #{@message_start_lng}")
