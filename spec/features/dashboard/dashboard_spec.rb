@@ -23,12 +23,17 @@ RSpec.describe 'Dashboard page' do
             @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
             @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
             @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
+            @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
+            @lat = 39.75
+            @long = -104.99
             
             allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
             allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
             allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
             allow(UserService).to receive(:find_or_create_user).and_return(@user)
             allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+            allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
+            allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
             visit '/auth/google_oauth2'
         end

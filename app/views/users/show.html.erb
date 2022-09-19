@@ -25,8 +25,18 @@
     <div class="col-sm-4">
         <h3>Satellite Id: <%= s.id %> </h3>
         <h4>Norad Id: <%= s.norad_id %> </h4> 
+        <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.id}, method: :get, local: true %><p><br>
+        <% msg_collector = [] %>
+        <% if @message_count != nil %>
+            <% @message_count.each do |msg| %>
+                <% if msg.satellite_id == s.id.to_i %>
+                    <% msg_collector << msg %>
+                <% end %>
+            <% end %>
+        <% end %>
+        <p><%= msg_collector.count %> Messages<p>
         <h4>Visibility in the next 7 days</h4>
-        <% @visible_times.each do |vis_time| %>
+        <% @visible_times[0..9].each do |vis_time| %>
             <% if s.id == vis_time.sat_id %>
                 <p><%= vis_time.starting_time %></p>
                 <% @weather_forecasts.each do |forecast| %>

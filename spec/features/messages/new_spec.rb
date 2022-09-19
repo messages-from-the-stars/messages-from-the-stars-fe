@@ -38,12 +38,23 @@ RSpec.describe 'message new page' do
       @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
 
+      @message = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      allow(MessageService).to receive(:create_message).and_return(@message)
+
+      @lat = 39.75
+      @long = -104.99
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
+
       visit '/auth/google_oauth2'
     end 
 
     it 'has a form to create a new message' do
-        visit "api/v1/satellites/#{@sat_id}"
+        satellite = DiscoverSatellite.new(satid: 2700, satname: 'DELTA 1 DEB', launch_date: '1965-11-06')
 
+        visit discover_users_path
+
+        click_button("View DELTA 1 DEB's Info")
+        
         click_on "Add New Message to SPACE STATION"
 
         expect(current_path).to eq("/messages/new")
@@ -57,7 +68,7 @@ RSpec.describe 'message new page' do
 
     it 'will not let you send a blank message' do
         visit "/messages/new" 
-save_and_open_page
+
         click_button('Send Message')
 
         expect(page).to have_content("Your message can't be blank!")

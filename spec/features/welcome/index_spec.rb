@@ -10,7 +10,7 @@ RSpec.describe 'landing page' do
       expect(page).to have_content("Catch a satellite")
       expect(page).to have_content("Create a message")
       expect(page).to have_content("Cast your message into the cosmic ocean")
-      expect(page).to have_content("Log in via Google to begin exploring the skies")
+      expect(page).to have_content("Log In")
     end
   end
 
@@ -35,11 +35,14 @@ RSpec.describe 'landing page' do
       @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
       @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
       @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
+      @lat = 39.75
+      @long = -104.99
 
       allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
       allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
       allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
       allow(UserService).to receive(:find_or_create_user).and_return(@user)
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
       visit root_path
 
@@ -67,6 +70,10 @@ RSpec.describe 'landing page' do
             "token" => "",
           },
         })
+      @lat = 39.75
+      @long = -104.99
+      
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
       visit root_path
 
