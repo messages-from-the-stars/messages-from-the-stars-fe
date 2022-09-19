@@ -2,7 +2,7 @@
 <p>NORAD ID: <%= @satellite.norad_id %></p>
 <p>Satellite Name: <%= @satellite.name %></p>
 
-<%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @satellite.norad_id}, method: :get, local: true %>
+<%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
 
 <p>Current Latitude / Longitude: <%= @satellite.sat_lat %>, <%= @satellite.sat_lng %></p>
 

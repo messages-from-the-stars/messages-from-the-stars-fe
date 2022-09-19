@@ -2,11 +2,10 @@ require 'rails_helper'
 
 RSpec.describe SatelliteService do
   describe '#get_satellites_in_range' do
-    it 'returns a response' do
+    it 'returns a response', :vcr do
+      # @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
 
-      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-
-      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+      # allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
       
       ss = SatelliteService.get_satellites_in_range(39.6431, -104.8987)
       sr = ss[:above].first
@@ -34,13 +33,12 @@ RSpec.describe SatelliteService do
   end
 
   describe '#get_sat_message' do
-    it 'returns satellites with messages' do
-
+    it 'returns satellites with messages', :vcr do
       @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
 
       allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
       
-      ss = SatelliteService.get_sat_message(13002)
+      ss = SatelliteService.get_sat_message(2)
       sr = ss[:data].first
       expect(ss).to be_a(Hash)
       expect(ss[:data]).to be_a(Array)
