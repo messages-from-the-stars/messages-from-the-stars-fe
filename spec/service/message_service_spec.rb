@@ -36,15 +36,12 @@ RSpec.describe MessageService do
   end
   describe '#create_message' do
     it 'returns a response when a message is created', :vcr do
-      response = {status: 200}
       lat =  40.7143
       long = -74.006
-      sat_id = 10
-      message = "Hello there, this is a test"
+      sat_id = 125
+      words = "Hello there, this is a test"
 
-      # allow(MessageService).to receive(:create_message).and_return(response)
-
-      message = MessageService.create_message(lat, long, message, sat_id)
+      message = MessageService.create_message(lat, long, words, sat_id)
 
       expect(message[:data][:id]).to be_a(String)
 
