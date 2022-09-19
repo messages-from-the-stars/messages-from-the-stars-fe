@@ -99,5 +99,10 @@ RSpec.describe 'Satellite Show Page' do
         expect(current_path).to eq("/messages/1")
       end
     end
+
+    it 'has an image thats a map of its current location' do
+      visit "/satellite"
+      
+    end
   end
 end

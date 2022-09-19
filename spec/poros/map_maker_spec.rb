@@ -22,7 +22,7 @@ RSpec.describe MapMaker do
   end
 
   it 'returns full url' do
-    expect(@map_maker.result_url).to eq("http://maps.googleapis.com/maps/api/staticmap?&size=600x400&style=visibility:on&maptype=satellite&markers=size:medium|color:blue|label:S|38.9072,-77.0369&key=#{ENV['google_maps_key']}")
+    expect(@map_maker.result_url).to eq("http://maps.googleapis.com/maps/api/staticmap?&size=600x400&style=visibility:on&maptype=satellite&markers=size:medium|color:blue|label:U|39.7392,-104.9903&markers=size:medium|color:red|label:S|38.9072,-77.0369&markers=size:medium|color:green|label:M|51.507,0.127&key=#{ENV['google_maps_key']}")
   end
 
 end
