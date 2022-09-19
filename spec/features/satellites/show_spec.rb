@@ -102,7 +102,11 @@ RSpec.describe 'Satellite Show Page' do
 
     it 'has an image thats a map of its current location' do
       visit "/satellite"
-      
+
+      within ".map" do
+        expect(page).to have_content("Current Location of SPACE STATION")
+        expect(page).to have_css("img")
+      end 
     end
   end
 end
