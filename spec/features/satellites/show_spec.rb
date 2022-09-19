@@ -80,7 +80,6 @@ RSpec.describe 'Satellite Show Page' do
       within "#messages0" do
         expect(page).to have_content("What a piece of work is man! How noble in reason, how infinite in faculty!")
       end
-
       within "#messages4" do
         expect(page).to have_content("Neither a borrower nor a lender be; For loan oft loses both itself and friend")
       end
@@ -92,6 +91,8 @@ RSpec.describe 'Satellite Show Page' do
       click_on "Add New Message to SPACE STATION"
 
       expect(current_path).to eq("/messages/new")
+      expect(find('form')).to have_content("Message")
+      expect(page).to have_button("Send Message")
     end
   end
 end
