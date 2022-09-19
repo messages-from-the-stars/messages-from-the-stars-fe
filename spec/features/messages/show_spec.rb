@@ -2,20 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'message show page' do
   before :each do
-    @message_call = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
+    @message_call = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
     @sat_db_call = JSON.parse(File.read('spec/fixtures/sat_db_response.json'), symbolize_names: true)
     @sat_position_call = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
 
-    @message_id = @message_call[:data].first[:id]
+    @message_id = @message_call[:data][:id]
 
-    @message_sat_id = @message_call[:data].first[:attributes][:satellite_id]
+    @message_sat_id = @message_call[:data][:attributes][:satellite_id]
 
-    @message_start_lat = @message_call[:data].first[:attributes][:start_lat]
-    @message_start_lng = @message_call[:data].first[:attributes][:start_lng]
+    @message_start_lat = @message_call[:data][:attributes][:start_lat]
+    @message_start_lng = @message_call[:data][:attributes][:start_lng]
 
-    @message_content = @message_call[:data].first[:attributes][:content]
+    @message_content = @message_call[:data][:attributes][:content]
 
-    @message_created_at = @message_call[:data].first[:attributes][:created_at]
+    @message_created_at = @message_call[:data][:attributes][:created_at]
 
     @sat_name = @sat_position_call[:info][:satname]
 

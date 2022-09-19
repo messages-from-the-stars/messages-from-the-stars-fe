@@ -41,7 +41,7 @@
     <% @messages.each_with_index do |m, idx| %>
       <div id="messages<%= idx %>">
   <div class="col-sm-4">
-        <p>Content: <%= m.content %></p>
+        <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
   </div> 
       </div>
     <% end %>
