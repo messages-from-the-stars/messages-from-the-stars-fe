@@ -21,6 +21,7 @@ RSpec.describe 'message show page' do
 
     @norad_id = @sat_position_call[:info][:satid]
 
+
     @sat_lat = @sat_position_call[:positions].first[:satlatitude]
     @sat_lng = @sat_position_call[:positions].first[:satlongitude]
     @lat = 39.75
@@ -71,5 +72,26 @@ RSpec.describe 'message show page' do
     visit "/messages/#{@message_id}"
 
     # expect(page.html).to include("http://maps.googleapis.com/maps/api/staticmap?&size=600x400&style=visibility:on&maptype=satellite&markers=size:medium|color:blue|label:U|40.7143,-74.006&markers=size:medium|color:red|label:S|-6.24147627,91.26942017&markers=size:medium|color:green|label:M|40.57418114605389,32.18080704424722&key=#{ENV['google_maps_key']}")
+  end
+
+  it 'displays date the message was created' do
+    visit "/messages/#{@message_id}"
+
+    expect(page).to have_content("Message Launched: 12 September 2022, 6:42 PM")
+
+  end
+
+  it 'diplays how long the message has been traveling' do
+    visit "/messages/#{@message_id}"
+
+    expect(page).to have_content("Message has been traveling for #{(DateTime.now()-DateTime.parse(@message_created_at)).to_i} days.")
+  end
+
+  it 'displays how many times the message has traveled around the world since launch' do
+    visit "/messages/#{@message_id}"
+
+    expect(page).to have_content("This message has orbited around the world about 112 times, or around 2789024 miles!")
+
+    save_and_open_page
   end
 end

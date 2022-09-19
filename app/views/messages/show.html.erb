@@ -42,6 +42,18 @@
       Norad ID: <%=@satellite.norad_id%>
     </div>
     
+    <div id="message-launch-date">
+      Message Launched: <%=@message.formatted_creation_date%>
+    </div>
+
+    <div id="message-travel-time">
+      Message has been traveling for <%=@message.travel_time_days%> days.
+    </div>
+
+    <div id="message-orbits">
+      This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
+    </div>
+    
     <div id="map">
       <%=image_tag(@map_url)%>
     </div>
@@ -49,8 +61,3 @@
   </div> 
 </body>
 </html>
-
-
-
-
-
