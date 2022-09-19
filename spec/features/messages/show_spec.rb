@@ -83,4 +83,12 @@ RSpec.describe 'message show page' do
 
     expect(page).to have_content("Message has been traveling for #{(DateTime.now()-DateTime.parse(@message_created_at)).to_i} days.")
   end
+
+  it 'displays how many times the message has traveled around the world since launch' do
+    visit "/messages/#{@message_id}"
+
+    expect(page).to have_content("This message has orbited around the world about 112 times, or around 2789024 miles!")
+
+    save_and_open_page
+  end
 end

@@ -29,4 +29,12 @@ class Message
     (today - datetime).to_i
   end
 
+  def orbit_count
+    travel_time_days * 16
+  end
+
+  def miles_traveled
+    orbit_count * 24_902
+  end
+
 end

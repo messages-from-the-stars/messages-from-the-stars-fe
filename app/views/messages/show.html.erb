@@ -36,6 +36,10 @@
   Message has been traveling for <%=@message.travel_time_days%> days.
 </div>
 
+<div id="message-orbits">
+  This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
+</div>
+
 <div id="map">
   <%=image_tag(@map_url)%>
 </div>
