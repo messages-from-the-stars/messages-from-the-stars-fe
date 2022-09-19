@@ -20,8 +20,8 @@ RSpec.describe SatelliteFacade do
         expect(sat_visibility).to be_all(SatelliteVisibility)
     end
 
-    xit 'returns visible times when a satellite passes overhead', :vcr do
-        satellites =  SatelliteService.get_user_satellites(2)
+    it 'returns visible times when a satellite passes overhead', :vcr do
+        satellites =  SatelliteFacade.get_user_satellites(2)
          
         expect(satellites).to be_a(Array)
         expect(satellites).to be_all(Satellite)
