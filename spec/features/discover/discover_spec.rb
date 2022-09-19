@@ -82,7 +82,7 @@ RSpec.describe 'Discover page' do
 
       expect(page).to have_content("Name: THORAD DELTA 1 DEB ID: 13002")
       expect(page).to have_content("Messages")
-      save_and_open_page
+
     end
   end
 end
