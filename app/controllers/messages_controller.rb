@@ -7,6 +7,9 @@ class MessagesController < ApplicationController
     sat_norad_id = SatelliteFacade.get_norad_id(@message.satellite_id)[:data][:attributes][:norad_id]
 
     @satellite = SatelliteFacade.get_satellite_position(sat_norad_id)
+
+    @map_url = MapMaker.new(@lat,@long,@satellite.sat_lat,@satellite.sat_lng,@message.start_lat,@message.start_lng).result_url
+
   end
 
   def new 
