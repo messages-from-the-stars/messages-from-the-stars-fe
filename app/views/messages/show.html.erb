@@ -1,46 +1,63 @@
-<h1> message show </h1>
-
-<div id ="sat-name">
-  Satellite Name: <%=@satellite.name%>
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <title>Messages from the Stars</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="text-center">
+  <h1> Message show </h1>
 </div>
+  <div class="text-center">
+    
+    <div id ="sat-name">
+      Satellite Name: <%=@satellite.name%>
+    </div>
 
-<div id="message-content">
-  Message: <%=@message.content%>
-</div>
+    <div id="message-content">
+      Message: <%=@message.content%>
+    </div>
 
-<div id="start-lat">
-  Start Lat: <%=@message.start_lat%>
-</div>
+    <div id="start-lat">
+      Start Lat: <%=@message.start_lat%>
+    </div>
 
-<div id="start-lng">
-  Start Lng: <%=@message.start_lng%>
-</div>
+    <div id="start-lng">
+      Start Lng: <%=@message.start_lng%>
+    </div>
 
-<div id="current-lat">
-  Current Lat: <%=@satellite.sat_lat%>
-</div>
+    <div id="current-lat">
+      Current Lat: <%=@satellite.sat_lat%>
+    </div>
 
-<div id="current-lng">
-  Current Lng: <%=@satellite.sat_lng%>
-</div>
+    <div id="current-lng">
+      Current Lng: <%=@satellite.sat_lng%>
+    </div>
 
-<div id="norad_id">
-  Norad ID: <%=@satellite.norad_id%>
-</div>
+    <div id="norad_id">
+      Norad ID: <%=@satellite.norad_id%>
+    </div>
+    
+    <div id="message-launch-date">
+      Message Launched: <%=@message.formatted_creation_date%>
+    </div>
 
-<div id="message-launch-date">
-  Message Launched: <%=@message.formatted_creation_date%>
-</div>
+    <div id="message-travel-time">
+      Message has been traveling for <%=@message.travel_time_days%> days.
+    </div>
 
-<div id="message-travel-time">
-  Message has been traveling for <%=@message.travel_time_days%> days.
-</div>
-
-<div id="message-orbits">
-  This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
-</div>
-
-<div id="map">
-  <%=image_tag(@map_url)%>
-</div>
-
+    <div id="message-orbits">
+      This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
+    </div>
+    
+    <div id="map">
+      <%=image_tag(@map_url)%>
+    </div>
+    
+  </div> 
+</body>
+</html>

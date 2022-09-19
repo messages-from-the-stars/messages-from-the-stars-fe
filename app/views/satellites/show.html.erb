@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <title>Message from the Stars</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="text-center">
+    <h2><%= @satellite.name %>'s Show</h2>
+  </div>
+  <div class="text-center">
+    <p>NORAD ID: <%= @satellite.norad_id %></p>
+    <p>Satellite Name: <%= @satellite.name %></p>
+  </div>
+  <div class="text-center">
+  <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
+  </div>
+  <div class="text-center" >
+    <p>Current Latitude / Longitude: <%= @satellite.sat_lat %>, <%= @satellite.sat_lng %></p>
+  </div>
+  <div>
+    <h4>Visibility in the next 7 days</h4>
+    <% if @visibility != nil %>
+      <% @visibility.each_with_index do |v, idx| %>
+        <div id="visibility<%= idx%>">
+        <p>Date: <%= v.starting_time %></p>
+        <% @weather_forecasts.each do |forecast| %>
+          <% if v.starting_time.include?(forecast.date)%>
+            <p>Weather Forecast: <%= forecast.status %> </p>
+          <% end %>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="text-center">
+    <h4> <%= @messages.size %> Total Messages </h4>
+  </div>  
+    <% @messages.each_with_index do |m, idx| %>
+      <div id="messages<%= idx %>">
+        <div class="col-sm-4">
+              <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
+        </div> 
+      </div>
+    <% end %>
+  
+    <div class="map">
+      <p>Current Location of <%= @satellite.name %></p>
+      <%=image_tag(@map_url)%>
+    </div>
+
+</body>
+</html>

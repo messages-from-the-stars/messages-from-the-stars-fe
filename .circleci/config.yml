@@ -11,11 +11,11 @@ jobs:
           PGHOST: localhost
           PGUSER: messages-from-the-stars-fe
           RAILS_ENV: test
-      # - image: postgres:14.4
-      #   environment:
-      #     POSTGRES_USER: messages-from-the-stars-fe
-      #     POSTGRES_DB: messages-from-the-stars-fe_test
-      #     POSTGRES_PASSWORD:
+      - image: postgres:14.4
+        environment:
+          POSTGRES_USER: messages-from-the-stars-fe
+          POSTGRES_DB: messages-from-the-stars-fe_test
+          POSTGRES_PASSWORD:
     steps:
       - checkout
       - run:

@@ -18,33 +18,32 @@ RSpec.describe 'Satellite Show Page' do
           },
       })
       
+      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
       @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
       @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
       @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
       @position = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
+      @sat_call = JSON.parse(File.read('spec/fixtures/satellite.json'), symbolize_names: true)
+      @sat_id = @sat_call[:info][:satid]
+      @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
+      @lat = 39.75
+      @long = -104.99
       
+      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
       allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
       allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
       allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
-      
-      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-      
-      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
       allow(SatelliteService).to receive(:get_satellite_position).and_return(@position)
-
-      @sat_call = JSON.parse(File.read('spec/fixtures/satellite.json'), symbolize_names: true)
-      @sat_id = @sat_call[:info][:satid]
       allow(SatelliteService).to receive(:get_satellite).and_return(@sat_call)
-
-      @messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
       visit '/auth/google_oauth2'
     end 
     
     it 'shows a satellites information' do
-      visit "api/v1/satellites/#{@sat_id}"
-      
+      visit "/satellite"
+
       expect(page).to have_content("NORAD ID: 25544")
       expect(page).to have_content('Satellite Name: SPACE STATION')
       expect(page).to have_content("Current Latitude / Longitude: -6.24147627, 91.26942017")
@@ -69,33 +68,45 @@ RSpec.describe 'Satellite Show Page' do
     end
 
     it 'can show a satellites messages' do
-      visit "api/v1/satellites/#{@sat_id}"
+      visit "/satellite"
 
       expect(page).to have_content("13 Total Messages")
 
       within "#messages0" do
         expect(page).to have_content("What a piece of work is man! How noble in reason, how infinite in faculty!")
       end
-
       within "#messages4" do
         expect(page).to have_content("Neither a borrower nor a lender be; For loan oft loses both itself and friend")
       end
     end
 
-    xit 'can post a message' do
-      visit "api/v1/satellites/#{@sat_id}"
+    it 'can link to the send a message page' do
+     visit "/satellite"
 
       click_on "Add New Message to SPACE STATION"
 
-      expect(current_path).to eq("messages/new")
+      expect(current_path).to eq("/messages/new")
+      expect(page).to have_content("Create a New Message")
+      expect(find('form')).to have_content("Message")
+      expect(page).to have_button("Send Message")
     end
 
-    xit 'has a button to add satellite to users tracking' do
-      visit "api/v1/satellites/#{@sat_id}"
+    it 'can link to a specific message show page' do
+      visit "/satellite"
 
-      click_on "Add SPACE STATION to Tracking"
+      within "#messages0" do
+        click_on "What a piece of work is man!"
+        expect(current_path).to eq("/messages/1")
+      end
+    end
 
-      expect(page).to have_content("?")
+    it 'has an image thats a map of its current location' do
+      visit "/satellite"
+
+      within ".map" do
+        expect(page).to have_content("Current Location of SPACE STATION")
+        expect(page).to have_css("img")
+      end 
     end
   end
 end

@@ -20,8 +20,8 @@ RSpec.describe SatelliteFacade do
         expect(sat_visibility).to be_all(SatelliteVisibility)
     end
 
-    xit 'returns visible times when a satellite passes overhead', :vcr do
-        satellites =  SatelliteService.get_user_satellites(2)
+    it 'returns visible times when a satellite passes overhead', :vcr do
+        satellites =  SatelliteFacade.get_user_satellites(2)
          
         expect(satellites).to be_a(Array)
         expect(satellites).to be_all(Satellite)
@@ -34,7 +34,7 @@ RSpec.describe SatelliteFacade do
       @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
 
-      @found_messages = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
 
       results = SatelliteFacade.get_sat_message_id(13002)
