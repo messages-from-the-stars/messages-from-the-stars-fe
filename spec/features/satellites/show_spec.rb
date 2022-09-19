@@ -44,7 +44,7 @@ RSpec.describe 'Satellite Show Page' do
     
     it 'shows a satellites information' do
       visit "api/v1/satellites/#{@sat_id}"
-      
+
       expect(page).to have_content("NORAD ID: 25544")
       expect(page).to have_content('Satellite Name: SPACE STATION')
       expect(page).to have_content("Current Latitude / Longitude: -6.24147627, 91.26942017")

@@ -1,4 +1,17 @@
-<h1>Satellites Above You<h1><br>
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <title>Messages from the Stars</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="text-center">
+  <h1>Satellites Above You<h1><br>
+</div> 
 <% @satellites.each_with_index do |satellite, index| %>
 <div id="satellites<%= index %>">
   <% msg_collector = [] %>
@@ -8,9 +21,13 @@
     <% end %>
     <%# <% if msg_collector.count > 0 %>
   <% end %>
+<div class="col-sm-4">
     <p><%= msg_collector.count %> Messages<p>
-<p>Name: <%= satellite.satname %> ID: <%= satellite.satid %><p><br>
-<p>Launched on: <%= satellite.launch_date %><p><br>
-<p><%= link_to 'View Satellite Info', api_v1_satellite_path(satellite.satid) %><p><br>
+  <p>Name: <%= satellite.satname %> ID: <%= satellite.satid  %><p>
+  <p>Launched on: <%= satellite.launch_date %><p>
+  <p><%= link_to 'View Satellite Info', api_v1_satellite_path(satellite.satid) %><p><br>
+  </div>
+  <% end %>
 </div>
-<% end %>
+</body>
+</html>
