@@ -13,6 +13,7 @@
   <h1> Message show </h1>
 </div>
   <div class="text-center">
+    
     <div id ="sat-name">
       Satellite Name: <%=@satellite.name%>
     </div>
@@ -40,6 +41,16 @@
     <div id="norad_id">
       Norad ID: <%=@satellite.norad_id%>
     </div>
+    
+    <div id="map">
+      <%=image_tag(@map_url)%>
+    </div>
+    
   </div> 
 </body>
 </html>
+
+
+
+
+
