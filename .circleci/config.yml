@@ -6,7 +6,7 @@ jobs:
   build:
     working_directory: ~/messages-from-the-stars-fe
     docker:
-      - image: circleci/ruby:2.7.4
+      - image: cimg/ruby:2.7.4-node
         environment:
           PGHOST: localhost
           PGUSER: messages-from-the-stars-fe
@@ -25,7 +25,6 @@ jobs:
 
       - checkout
       - run: bundle install --path vendor/bundle
-      # - run: bundle exec rails db:migrate
       - run: bundle exec rspec
 
       - checkout
