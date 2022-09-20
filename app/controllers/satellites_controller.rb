@@ -2,7 +2,7 @@ class SatellitesController < ApplicationController
   before_action :remote_ip
 
   def show
-    SatelliteFacade.create_satellite(params[:sat_id])
+    @sat_id = SatelliteFacade.create_satellite(params[:sat_id])
 
     @satellite = SatelliteFacade.get_satellite_position(params[:sat_id])
     @visibility = SatelliteFacade.get_satellite_visibility(params[:sat_id], @lat, @long)
