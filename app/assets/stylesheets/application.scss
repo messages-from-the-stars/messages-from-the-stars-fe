@@ -31,8 +31,14 @@ body, html {
 .link_text {
   color: white;
           &:hover {
-            color: rgb(0, 201, 247);
+          color: rgb(0, 201, 247);
+          }
 }
+
+.new_message_container {
+  padding: 320px 100px;
+  text-align: center;
+  color: white;
 }
 
 @import "bootstrap";
