@@ -84,4 +84,12 @@ RSpec.describe SatelliteService do
       expect(results[:positions].first[:elevation]).to be_a(Float)
     end
   end
+
+  describe '#create_satellite' do
+    it 'can create a new satellite by norad id', :vcr do
+      response = SatelliteService.create_satellite(99999)
+
+      expect(response).to be_a Hash
+    end
+  end
 end
