@@ -25,7 +25,7 @@
     <div class="col-sm-4">
         <h3>Satellite Id: <%= s.id %> </h3>
         <h4>Norad Id: <%= s.norad_id %> </h4> 
-        <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.id}, method: :get, local: true %><p><br>
+        <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p><br>
         <% msg_collector = [] %>
         <% if @message_count != nil %>
             <% @message_count.each do |msg| %>
