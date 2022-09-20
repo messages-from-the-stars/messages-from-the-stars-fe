@@ -45,7 +45,7 @@ RSpec.describe 'landing page' do
       allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
       visit root_path
-
+save_and_open_page
       expect(page).to have_link('Log In')
 
       click_link('Log In')
