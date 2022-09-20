@@ -10,4 +10,8 @@ class MessageFacade
     json = MessageService.create_message(lat, long, message, sat_id)
   end
 
+  def self.get_message_count(sat_id)
+    MessageService.get_message_count(sat_id)
+  end 
+
 end

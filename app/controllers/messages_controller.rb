@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :remote_ip
+  before_action :remote_ip, :logged_in_user
 
   def show
     @message = MessageFacade.get_message(params[:id])

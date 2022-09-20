@@ -16,4 +16,9 @@ class MessageService
     BaseService.get_json(response)
   end
 
+  def self.get_message_count(sat_id)
+    response = BaseService.connection.get("api/v1/messages/find_by_norad_id?norad_id=#{sat_id}")
+    BaseService.get_json(response)
+  end
+
 end
