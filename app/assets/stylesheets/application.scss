@@ -1,5 +1,5 @@
 body, html {
-  height: 100%;
+    height: 100%;
 }
 
 .landing_container_header {
@@ -35,18 +35,44 @@ body, html {
           }
 }
 
-.new_message_container {
-  padding: 320px 100px;
-  text-align: center;
-  color: white;
+.bg_discover {
+    background-image: url("./dis_other.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.bg_new_message {
-  background-image: url("./create_message.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.discover_container_header {
+    padding: 30px 100px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
 }
+
+.col-md-6 {
+  color: rgb(255, 255, 255);
+  padding: 10px 100px;
+  text-align: center;
+  font-size: 18px
+}
+
+.discover-button {
+  color: black
+}
+
+// .new_message_container {
+//   padding: 320px 100px;
+//   text-align: center;
+//   color: white;
+// }
+
+// .bg_new_message {
+//   background-image: url("./create_message.jpg");
+//   height: 100%;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
 
 @import "bootstrap";
