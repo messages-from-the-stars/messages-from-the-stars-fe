@@ -5,8 +5,12 @@ ruby '2.7.4'
 
 gem 'faraday'
 gem 'figaro'
-gem 'bootstrap'
 
+gem 'bootstrap', '~> 4.0.0'
+
+gem 'jquery-rails', '~> 4.5'
+# gem 'popper_js', '~> 2.11', '>= 2.11.6'
+gem 'popper_js', '< 2', '>= 1.12.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 # Use sqlite3 as the database for Active Record
