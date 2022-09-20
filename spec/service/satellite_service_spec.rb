@@ -46,4 +46,42 @@ RSpec.describe SatelliteService do
       expect(sr[:attributes][:satellite_id]).to be_a(Integer)
     end
   end
+
+  describe '#get_satellite' do
+    it 'returns satellite data', :vcr do
+      @satellite = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
+      allow(SatelliteService).to receive(:get_satellite).and_return(@satellite)      
+      
+      results = SatelliteService.get_satellite(25544)
+      
+      expect(results).to be_a(Hash)
+      expect(results[:info]).to be_a(Hash)
+
+      expect(results[:info]).to have_key(:satname)
+      expect(results[:info][:satname]).to be_a(String)
+
+      expect(results[:info]).to have_key(:satid)
+      expect(results[:info][:satid]).to be_a(Integer)
+
+      expect(results[:info]).to have_key(:transactionscount)
+      expect(results[:info][:transactionscount]).to be_a(Integer)
+
+      expect(results[:positions]).to be_a(Array)
+
+      expect(results[:positions].first).to have_key(:satlatitude)
+      expect(results[:positions].first[:satlatitude]).to be_a(Float)
+
+      expect(results[:positions].first).to have_key(:satlongitude)
+      expect(results[:positions].first[:satlongitude]).to be_a(Float)
+
+      expect(results[:positions].first).to have_key(:satlatitude)
+      expect(results[:positions].first[:satlatitude]).to be_a(Float)
+
+      expect(results[:positions].first).to have_key(:azimuth)
+      expect(results[:positions].first[:azimuth]).to be_a(Float)
+
+      expect(results[:positions].first).to have_key(:elevation)
+      expect(results[:positions].first[:elevation]).to be_a(Float)
+    end
+  end
 end
