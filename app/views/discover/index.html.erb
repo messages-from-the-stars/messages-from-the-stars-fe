@@ -18,6 +18,13 @@
   <p>Name: <%= satellite.satname %> ID: <%= satellite.satid  %><p>
   <p>Launched on: <%= satellite.launch_date %><p>
   <p><%= button_to "View #{satellite.satname}'s Info", '/satellite', params: {:sat_id => satellite.satid}, method: :get, local: true %><p><br>
+  <% x = 0 %> 
+  <% @message_count_arrays.each do |array| %>
+    <% if array[0] == satellite.satid %>
+      <% x = array[1] %> 
+    <% end %>
+  <% end %>
+  <p><%= x %> Messages<p>
   </div>
 <% end %>
 </div>

@@ -23,6 +23,7 @@ RSpec.describe 'Discover page' do
     @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
     @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
     @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
+    @message_array = JSON.parse(File.read('spec/fixtures/message_array.json'), symbolize_names: true)
     @lat = 39.75
     @long = -104.99
 
@@ -32,6 +33,7 @@ RSpec.describe 'Discover page' do
     allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
     allow(UserService).to receive(:find_or_create_user).and_return(@user)
     allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
+    allow(MessageService).to receive(:get_message_count).and_return(@message_array)
     allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
     visit '/auth/google_oauth2'
@@ -47,15 +49,17 @@ RSpec.describe 'Discover page' do
 
     it 'should display max ten satellites in range of user' do
       visit discover_users_path
-
+      
       within '#satellites0' do
         expect(page).to have_content("Name: ESSA 3 (TOS-A) ID: 2435")
         expect(page).to have_content("Launched on: 1966-10-02")
+        expect(page).to have_content("3 Messages")
       end
 
       within '#satellites1' do
         expect(page).to have_content("Name: DELTA 1 DEB ID: 2700")
         expect(page).to have_content("Launched on: 1965-11-06")
+        expect(page).to have_content("0 Messages")
       end
     end
   end
