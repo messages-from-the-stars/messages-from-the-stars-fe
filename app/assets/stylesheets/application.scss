@@ -1,5 +1,38 @@
-.landing_container {
-  padding: 80px 120px;
+body, html {
+  height: 100%;
+}
+
+.landing_container_header {
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.landing_container_body {
+  padding: 320px 100px;
+  text-align: center;
+  color: white;
+}
+
+.landing_container_login {
+  padding: 0px 100px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  }
+
+.bg_landing {
+  background-image: url("./landing_page.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.link_text {
+  color: white;
+          &:hover {
+            color: rgb(0, 201, 247);
+}
 }
 
 @import "bootstrap";
