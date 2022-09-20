@@ -87,8 +87,8 @@ RSpec.describe 'Satellite Show Page' do
 
       expect(current_path).to eq("/messages/new")
       expect(page).to have_content("Create a New Message")
-      expect(find('form')).to have_content("Message")
       expect(page).to have_button("Send Message")
+      expect(find('form')).to have_content("Message")
     end
 
     it 'can link to a specific message show page' do

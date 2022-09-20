@@ -58,6 +58,7 @@ RSpec.describe 'message show page' do
 
   it 'displays message content', :vcr do
     visit "/messages/#{@message_id}" 
+
     expect(page).to have_content("Message: #{@message_content}")
   end
   

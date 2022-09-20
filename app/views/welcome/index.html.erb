@@ -9,17 +9,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="landing_container text-center">
-  <h1>Messages from the Stars<h1>
-</div>
-<div class="landing_container text-center">
-  <p><em>Catch a satellite</em></p>
-  </p><em>Create a message</em></p>
-  </p><em>Cast your message into the cosmic ocean</em></p>
-  </p><em>Log in to begin exploring the skies</em></p>
-</div>
-<div class="landing_container text-center">
-  <%= link_to 'Log In', '/auth/google_oauth2' %>
+<div class="bg_landing">
+  <p class="py-5 text-center"></p>
+    <div class="landing_container_body">
+      <p class="h2"><em>Catch a satellite</em></p>
+      <p class="h2"><em>Create a message</em></p>
+      <p class="h2"><em>Cast your message into the cosmic ocean</em></p>
+      <p class="h2"><em>Log in to begin exploring the skies</em></p>
+    </div>
+    <div class="landing_container_login">
+      <h1><%= link_to 'Log In', '/auth/google_oauth2', class: 'link_text' %></h1>
+    </div>
 </div>
 </body>
 </html>
