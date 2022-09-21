@@ -9,7 +9,7 @@ class SatMapMaker
   end
 
   def image_style
-    "&size=600x400&style=visibility:on&maptype=satellite"
+    "&zoom=3&size=600x400&style=visibility:on&maptype=hybrid"
   end
 
   def sat_marker_params
