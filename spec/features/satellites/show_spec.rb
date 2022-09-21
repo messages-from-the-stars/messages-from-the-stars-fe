@@ -36,25 +36,26 @@ RSpec.describe 'Satellite Show Page' do
     it 'shows a satellites information' do
       visit "/satellite"
 
-      expect(page).to have_content("NORAD ID: 25544")
+      expect(page).to have_content("NORAD ID 25544")
       expect(page).to have_content('SPACE STATION')
-      expect(page).to have_content("Current Latitude / Longitude: -6.24147627, 91.26942017")
+      expect(page).to have_content("Latitude: -6.24147627")
+      expect(page).to have_content("Longitude: 91.26942017")
       expect(page).to have_content("Visibility in the next 10 days")
 
       within "#visibility0" do
-        expect(page).to have_content("Date: Sep 16, at 5:41 PM")
+        expect(page).to have_content("Sep 16, at 5:41 PM")
         expect(page).to have_content("Weather Forecast: Clear")
       end
       within "#visibility1" do
-        expect(page).to have_content("Date: Sep 16, at 7:23 PM")
+        expect(page).to have_content("Sep 16, at 7:23 PM")
         expect(page).to have_content("Weather Forecast: Clear")
       end
       within "#visibility2" do
-        expect(page).to have_content("Date: Sep 17, at 6:47 PM")
+        expect(page).to have_content("Sep 17, at 6:47 PM")
         expect(page).to have_content("Weather Forecast: Clouds")
       end
       within "#visibility3" do
-        expect(page).to have_content("Date: Sep 17, at 8:30 PM")
+        expect(page).to have_content("Sep 17, at 8:30 PM")
         expect(page).to have_content("Weather Forecast: Clouds")
       end
     end
@@ -96,7 +97,7 @@ RSpec.describe 'Satellite Show Page' do
       visit "/satellite"
 
       within "#map" do
-        expect(page).to have_content("Current Location of SPACE STATION")
+        expect(page).to have_content("Current Location")
         expect(page).to have_css("img")
       end 
     end

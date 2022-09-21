@@ -44,7 +44,7 @@ RSpec.describe 'Dashboard page' do
                 expect(page.all('.satellite')[1]).to have_content("123456")
             end 
         end 
-
+        
         it 'show when my satellites will be visible in the next 10 days' do
             visit '/users/dashboard'
 
