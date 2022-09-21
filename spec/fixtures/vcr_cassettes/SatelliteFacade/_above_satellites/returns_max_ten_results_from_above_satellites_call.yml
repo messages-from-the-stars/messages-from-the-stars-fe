@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/above/39.6431/-104.8987/0/15/0/&apiKey=<n2yo_Key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - "<n2yo_Key>"
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Sep 2022 19:54:09 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '3542'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"category\":\"ANY\",\"transactionscount\":24,\"satcount\":23},\"above\":[{\"satid\":837,\"satname\":\"OPS
+        3674 (VELA 4)\",\"intDesignator\":\"1964-040B\",\"launchDate\":\"1964-07-17\",\"satlat\":41.1195,\"satlng\":-94.8688,\"satalt\":115790.5949},{\"satid\":9595,\"satname\":\"COSMOS
+        878\",\"intDesignator\":\"1976-118H\",\"launchDate\":\"1976-12-07\",\"satlat\":40.6009,\"satlng\":-106.4883,\"satalt\":1475.8438},{\"satid\":9921,\"satname\":\"SL-6
+        R\\/B(2)\",\"intDesignator\":\"1977-027D\",\"launchDate\":\"1977-04-11\",\"satlat\":36.3555,\"satlng\":-91.1425,\"satalt\":30506.3779},{\"satid\":10925,\"satname\":\"MOLNIYA
+        1-40\",\"intDesignator\":\"1978-055A\",\"launchDate\":\"1978-06-02\",\"satlat\":34.4468,\"satlng\":-104.8924,\"satalt\":21893.9688},{\"satid\":12151,\"satname\":\"SL-8
+        DEB\",\"intDesignator\":\"1981-006C\",\"launchDate\":\"1981-01-21\",\"satlat\":38.1488,\"satlng\":-106.6651,\"satalt\":984.835},{\"satid\":14900,\"satname\":\"CZ-3
+        R\\/B\",\"intDesignator\":\"1984-035B\",\"launchDate\":\"1984-04-08\",\"satlat\":30.5659,\"satlng\":-110.2978,\"satalt\":14783.6793},{\"satid\":21429,\"satname\":\"SL-6
+        R\\/B(2)\",\"intDesignator\":\"1991-043D\",\"launchDate\":\"1991-06-18\",\"satlat\":44.9764,\"satlng\":-99.8264,\"satalt\":23968.7601},{\"satid\":22231,\"satname\":\"NAVSTAR
+        28 (USA 85)\",\"intDesignator\":\"1992-079A\",\"launchDate\":\"1992-11-22\",\"satlat\":32.2232,\"satlng\":-112.5538,\"satalt\":21214.4951},{\"satid\":26842,\"satname\":\"DELTA
+        1 DEB\",\"intDesignator\":\"1975-052KW\",\"launchDate\":\"1975-06-12\",\"satlat\":38.2518,\"satlng\":-103.5339,\"satalt\":1024.0811},{\"satid\":28116,\"satname\":\"BREEZE-M
+        DEB (TANK)\",\"intDesignator\":\"2003-056E\",\"launchDate\":\"2003-12-10\",\"satlat\":33.6396,\"satlng\":-109.7727,\"satalt\":18340.0055},{\"satid\":29735,\"satname\":\"FENGYUN
+        1C DEB\",\"intDesignator\":\"1999-025Z\",\"launchDate\":\"1999-05-10\",\"satlat\":38.7882,\"satlng\":-105.2749,\"satalt\":1549.2425},{\"satid\":32032,\"satname\":\"BREEZE-M
+        DEB\",\"intDesignator\":\"2006-006K\",\"launchDate\":\"2006-02-28\",\"satlat\":42.6646,\"satlng\":-108.2756,\"satalt\":10223.9855},{\"satid\":32040,\"satname\":\"BREEZE-M
+        DEB\",\"intDesignator\":\"2006-006T\",\"launchDate\":\"2006-02-28\",\"satlat\":32.4604,\"satlng\":-100.2381,\"satalt\":13170.8597},{\"satid\":33775,\"satname\":\"IRIDIUM
+        33 DEB\",\"intDesignator\":\"1997-051N\",\"launchDate\":\"1997-09-14\",\"satlat\":40.5426,\"satlng\":-106.5754,\"satalt\":768.6071},{\"satid\":36395,\"satname\":\"SDO\",\"intDesignator\":\"2010-005A\",\"launchDate\":\"2010-02-11\",\"satlat\":31.8544,\"satlng\":-101.916,\"satalt\":35789.7131},{\"satid\":38612,\"satname\":\"BREEZE-M
+        DEB\",\"intDesignator\":\"2008-011BK\",\"launchDate\":\"2008-03-14\",\"satlat\":36.4658,\"satlng\":-100.5953,\"satalt\":24233.9757},{\"satid\":41033,\"satname\":\"FREGAT
+        R\\/B\",\"intDesignator\":\"2015-066B\",\"launchDate\":\"2015-11-17\",\"satlat\":49.0525,\"satlng\":-109.8769,\"satalt\":31334.6173},{\"satid\":41328,\"satname\":\"NAVSTAR
+        76 (USA 266)\",\"intDesignator\":\"2016-007A\",\"launchDate\":\"2016-02-05\",\"satlat\":43.7043,\"satlng\":-113.5101,\"satalt\":20352.0177},{\"satid\":41862,\"satname\":\"GALILEO
+        18 (26E)\",\"intDesignator\":\"2016-069D\",\"launchDate\":\"2016-11-17\",\"satlat\":48.8611,\"satlng\":-106.6991,\"satalt\":23232.1368},{\"satid\":45292,\"satname\":\"SL-14
+        DEB\",\"intDesignator\":\"1991-056AE\",\"launchDate\":\"1991-08-15\",\"satlat\":38.092,\"satlng\":-105.6123,\"satalt\":1074.8057},{\"satid\":46015,\"satname\":\"FREGAT
+        DEB\",\"intDesignator\":\"2011-037HS\",\"launchDate\":\"2011-07-18\",\"satlat\":40.2246,\"satlng\":-104.8796,\"satalt\":1665.8847},{\"satid\":48845,\"satname\":\"PEGASUS
+        R\\/B\",\"intDesignator\":\"2021-051B\",\"launchDate\":\"2021-06-13\",\"satlat\":40.1026,\"satlng\":-105.7299,\"satalt\":391.2698},{\"satid\":52580,\"satname\":\"STARLINK-3919\",\"intDesignator\":\"2022-051AW\",\"launchDate\":\"2022-05-13\",\"satlat\":39.356,\"satlng\":-104.4731,\"satalt\":542.8937}]}"
+  recorded_at: Wed, 21 Sep 2022 19:54:09 GMT
+recorded_with: VCR 6.1.0

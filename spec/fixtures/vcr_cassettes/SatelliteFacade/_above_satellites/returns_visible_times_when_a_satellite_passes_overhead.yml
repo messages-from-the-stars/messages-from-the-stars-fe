@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/satellites/find_by_user_id?user_id=45
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 20:18:28 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"16ac4fde1f7604e778e688dacf382f14"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f6920896-b197-43cb-8809-f5a393d983a8
+      X-Runtime:
+      - '0.005367'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"178","type":"satellite","attributes":{"norad_id":177}},{"id":"189","type":"satellite","attributes":{"norad_id":22195}},{"id":"194","type":"satellite","attributes":{"norad_id":9921}}]}'
+  recorded_at: Wed, 21 Sep 2022 20:18:28 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/messages/find_by_sat_id?sat_id=189
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 20:20:10 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"310126243f4b0adfb5ae9be390940b45"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ebd3ca70-7419-4d8e-b340-311bcd670ab2
+      X-Runtime:
+      - '0.006429'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"96","type":"message","attributes":{"satellite_id":189,"start_lat":40.7143,"start_lng":-74.006,"content":"test","created_at":"2022-09-21T16:40:09.487Z","updated_at":"2022-09-21T16:40:09.487Z"}}]}'
+  recorded_at: Wed, 21 Sep 2022 20:20:10 GMT
+recorded_with: VCR 6.1.0
