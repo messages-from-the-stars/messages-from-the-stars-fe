@@ -127,16 +127,20 @@ body, html {
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
-.col-md-6 {
+.col-md-4 {
     color: rgb(255, 255, 255);
     padding: 10px 100px;
     padding-left: 50px;
     text-align: center;
     font-size: 18px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .col-sm-4{
   text-align: center;
+  font-family: "Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .link_disc {
