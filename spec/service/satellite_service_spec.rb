@@ -104,4 +104,29 @@ RSpec.describe SatelliteService do
       expect(results).to be_a(Integer)
     end
   end
+
+   describe '#get_satellite_position' do
+    it 'can find a satellites current position', :vcr do
+      results = SatelliteService.get_satellite_position(22195)
+      
+      expect(results).to be_a(Hash)
+      expect(results).to have_key(:info)
+      expect(results[:info]).to be_a(Hash)
+
+      expect(results[:info]).to have_key(:satname)
+      expect(results[:info][:satname]).to be_a(String)
+
+      expect(results[:info]).to have_key(:satid)
+      expect(results[:info][:satid]).to be_a(Integer)
+      
+      expect(results).to have_key(:positions)
+      expect(results[:positions]).to be_a(Array)
+
+      expect(results[:positions].first).to have_key(:satlatitude)
+      expect(results[:positions].first[:satlatitude]).to be_a(Float)
+
+      expect(results[:positions].first).to have_key(:satlongitude)
+      expect(results[:positions].first[:satlongitude]).to be_a(Float)
+    end
+  end
 end
