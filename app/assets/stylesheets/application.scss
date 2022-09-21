@@ -2,14 +2,17 @@ body, html {
     height: 100%;
 }
 
+
 .landing_container_body {
-  padding: 180px 100px;
+  padding: 200px 100px;
+  padding-bottom: 25px;
   text-align: center;
   color: rgb(243, 234, 234);
   font-size: 40px;
   font-style: italic;
   font-family: "Arial Black";
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+  
 }
 
 .landing_container_login {
@@ -17,12 +20,12 @@ body, html {
   text-align: center;
   text-decoration: none;
   color: rgb(243, 234, 234);
-  font-family:"Impact", Times, serif;
+  font-family:"Arial Black", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   }
 
 .bg_landing {
-  background-image: url("./landing_page.jpg");
+  background-image: url("./landing_final.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
