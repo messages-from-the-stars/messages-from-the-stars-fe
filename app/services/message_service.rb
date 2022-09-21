@@ -2,7 +2,11 @@ class MessageService
   
   def self.get_message(message_id)
     response = BaseService.connection.get("api/v1/messages/#{message_id}")
-    BaseService.get_json(response)
+    if response.status != 404 
+      BaseService.get_json(response)
+    else 
+      response.status 
+    end 
   end
 
   def self.create_message(lat, long, message, sat_id)
