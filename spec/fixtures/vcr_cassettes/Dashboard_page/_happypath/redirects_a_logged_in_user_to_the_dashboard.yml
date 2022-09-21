@@ -1,0 +1,283 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/users/find_or_create_user?name=John%20Smith&username=john@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 17:28:16 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f5982a6801c656a0e4f9e174506f19d3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 17ac30df-a225-40e8-b1b9-3428ed0e9073
+      X-Runtime:
+      - '0.004856'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"42","type":"user","attributes":{"name":"John Smith","username":"john@example.com"}}}'
+  recorded_at: Wed, 21 Sep 2022 17:28:17 GMT
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/satellites/find_by_user_id?user_id=42
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 17:28:18 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"76fcf9d110d67906d2e3b17f6f0c7cfe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 72ae7c47-ce1c-46b5-b806-cefef96bc480
+      X-Runtime:
+      - '0.005487'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"127","type":"satellite","attributes":{"norad_id":2700}},{"id":"129","type":"satellite","attributes":{"norad_id":127}}]}'
+  recorded_at: Wed, 21 Sep 2022 17:28:18 GMT
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/visualpasses//127///0/7/300/&apiKey=<n2yo_Key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - "<n2yo_Key>"
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Sep 2022 17:28:19 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '44'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"error\":\"Incorrect number of parameters\"}"
+  recorded_at: Wed, 21 Sep 2022 17:28:19 GMT
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/visualpasses//129///0/7/300/&apiKey=<n2yo_Key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - "<n2yo_Key>"
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Sep 2022 17:28:20 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '44'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"error\":\"Incorrect number of parameters\"}"
+  recorded_at: Wed, 21 Sep 2022 17:28:20 GMT
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/messages/find_by_sat_id?sat_id=127
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 17:28:20 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f43f8c12-3c22-4cbd-96fc-677c91f1e20c
+      X-Runtime:
+      - '0.003916'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Wed, 21 Sep 2022 17:28:20 GMT
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/messages/find_by_sat_id?sat_id=129
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 17:28:21 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c8185aca-e963-471a-9a55-dc50542690c5
+      X-Runtime:
+      - '0.003482'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Wed, 21 Sep 2022 17:28:21 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<open_key>&exclude=minutely,hourly&lat=&lon=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 21 Sep 2022 17:28:22 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '44'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=&lon="
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"400","message":"Nothing to geocode"}'
+  recorded_at: Wed, 21 Sep 2022 17:28:22 GMT
+recorded_with: VCR 6.1.0

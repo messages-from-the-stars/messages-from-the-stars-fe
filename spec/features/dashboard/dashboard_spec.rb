@@ -3,20 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Dashboard page' do
     context '#happypath' do
         before(:each) do
-            OmniAuth.config.test_mode = true
-            OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
-            {"provider" => "google_oauth2",
-                "uid" => "10000000000000000",
-                "info" => {
-                "name" => "John Smith",
-                "email" => "john@example.com",
-                "first_name" => "John",
-                "last_name" => "Smith",
-                },
-                "credentials" => {
-                "token" => "Token",
-                },
-            })
+             Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
             
             @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
             @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
@@ -38,35 +25,24 @@ RSpec.describe 'Dashboard page' do
             visit '/auth/google_oauth2'
         end
 
-        it 'redirects a logged in user to the dashboard' do
-            visit '/auth/google_oauth2'
+        it 'allows a logged in user to acess the dashboard' do
+            visit '/'
             
-            expect(page).to have_content("User Dashboard")
+            click_on ("Log In")
+
             expect(current_path).to eq("/users/dashboard")
         end 
 
         it 'shows all satellites associated with a user' do
             visit '/users/dashboard'
-            
-            expect(page).to have_content("User Dashboard")
-            expect(current_path).to eq("/users/dashboard")
 
+            expect(current_path).to eq("/users/dashboard")
             expect(page).to have_content("Your Satellites")
 
             within ("#satellites") do 
                 expect(page.all('.satellite')[0]).to have_content("128366")
                 expect(page.all('.satellite')[1]).to have_content("123456")
             end 
-        end 
-
-        it 'has a link to discover satellites' do
-            visit '/users/dashboard'
-            
-            expect(page).to have_content("Discover Satellites")
-
-            click_on("Discover Satellites")
-
-            expect(current_path).to eq("/users/discover")
         end 
 
         it 'show when my satellites will be visible in the next 10 days' do
