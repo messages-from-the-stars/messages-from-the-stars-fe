@@ -15,7 +15,6 @@ RSpec.describe 'Discover page' do
       @message_array = JSON.parse(File.read('spec/fixtures/message_array.json'), symbolize_names: true)
       @sat_call = JSON.parse(File.read('spec/fixtures/satellite.json'), symbolize_names: true)
       @sat_id = @sat_call[:info][:satid]
-      # @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       @lat = 39.75
       @long = -104.99
       
