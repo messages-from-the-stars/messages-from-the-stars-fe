@@ -32,7 +32,21 @@ body, html {
   color: white;
           &:hover {
             color: rgb(0, 201, 247);
+  }
 }
+
+.bg_satshow {
+  background-image: url("./satellite_show_page.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.satshow_container {
+  padding: 80px 100px;
+  display: inline-grid;
+  align-items: baseline;
 }
 
 @import "bootstrap";

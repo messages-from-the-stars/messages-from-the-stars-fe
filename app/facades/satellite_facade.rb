@@ -22,7 +22,6 @@ class SatelliteFacade
 
     def self.get_satellite_position(norad_id)
         json = SatelliteService.get_satellite_position(norad_id)
-        binding.pry
         SatellitePosition.new(json)
     end
   
