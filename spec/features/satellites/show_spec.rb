@@ -3,21 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Satellite Show Page' do
   context '#happypath' do
     before(:each) do
-      OmniAuth.config.test_mode = true
-      OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
-      {"provider" => "google_oauth2",
-          "uid" => "10000000000000000",
-          "info" => {
-          "name" => "John Smith",
-          "email" => "john@example.com",
-          "first_name" => "John",
-          "last_name" => "Smith",
-          },
-          "credentials" => {
-          "token" => "Token",
-          },
-      })
-      
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
+
+      @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
       @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
       @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
       @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
@@ -36,6 +24,7 @@ RSpec.describe 'Satellite Show Page' do
       allow(SatelliteService).to receive(:get_satellite_position).and_return(@position)
       allow(SatelliteService).to receive(:get_satellite).and_return(@sat_call)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
+      allow(UserService).to receive(:find_or_create_user).and_return(@user)
       allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
 
       visit '/auth/google_oauth2'
