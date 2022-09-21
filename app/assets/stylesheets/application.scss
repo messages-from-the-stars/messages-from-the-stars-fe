@@ -2,26 +2,29 @@ body, html {
     height: 100%;
 }
 
-.landing_container_header {
-  padding: 80px 100px;
-  text-align: center;
-}
 
 .landing_container_body {
-  padding: 320px 100px;
+  padding: 200px 100px;
+  padding-bottom: 25px;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Arial Black";
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+  
 }
 
 .landing_container_login {
   padding: 0px 100px;
   text-align: center;
   text-decoration: none;
-  color: white;
+  font-family:"Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   }
 
 .bg_landing {
-  background-image: url("./landing_page.jpg");
+  background-image: url("./landing_final.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,28 +57,38 @@ body, html {
  height: auto;
  opacity: .5;
           color: rgb(0, 201, 247);
-          }
+
+}
+
+
 
 .bg_dashboard {
-    background-image: url("./dashboard_page.jpg");
+    background-image: url("./control_center.jpg");
     height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 
-.dashboard_container_header {
-  padding: 60px 100px;
-  text-align: center;
-  color: white;
-  font-size: 40px;
+.dashboard_container_subheader {
+    padding: 50px 100px;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .dashboard_container_body {
-    padding: 45px 100px;
+    padding: 200px 100px;
+    padding-bottom: 10px;
+    font-size: 24px;
     text-align: center;
+    text-decoration: none;
     color: white;
-    font-size: 26px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .link_disc {
