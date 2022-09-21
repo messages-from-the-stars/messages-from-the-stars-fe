@@ -96,4 +96,12 @@ RSpec.describe SatelliteService do
       expect(results[:data][:attributes][:norad_id]).to be_a(Integer)
     end
   end
+
+  describe '#create_user_sat' do
+    it 'can create a user satellite', :vcr do
+      results = SatelliteService.create_user_satellite(189, 45)
+      
+      expect(results).to be_a(Integer)
+    end
+  end
 end
