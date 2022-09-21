@@ -13,6 +13,8 @@ RSpec.describe 'Satellite Show Page' do
       @position = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
       @sat_call = JSON.parse(File.read('spec/fixtures/satellite.json'), symbolize_names: true)
       @sat_id = @sat_call[:info][:satid]
+      @sat_db_call = JSON.parse(File.read('spec/fixtures/sat_db_response.json'), symbolize_names: true)
+      @message = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
       @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
       @lat = 39.75
       @long = -104.99
@@ -26,6 +28,10 @@ RSpec.describe 'Satellite Show Page' do
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
       allow(UserService).to receive(:find_or_create_user).and_return(@user)
       allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
+      allow(SatelliteService).to receive(:create_satellite).and_return(200)
+      allow(MessageService).to receive(:get_message).and_return(@message)
+      allow(SatelliteService).to receive(:get_norad_id).and_return(@sat_db_call)
+
 
       visit '/auth/google_oauth2'
     end 
