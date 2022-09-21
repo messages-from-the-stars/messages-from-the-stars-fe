@@ -9,12 +9,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <%= render partial: "shared/nav-hamburger" %>
 </head>
+
 <body>
 <div class="bg_new_message">
     <p class="py-5 text-center"></p>
-  <div class="new_message_container text-center">
-      <h1>Create a New Message</h1><br>
+
+  <div class="new_message_container">
+      <p>Create a New Message<p><br>
   </div>
+
     <div class="new_message_form">
       <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
           <%=form.text_field :message %>
@@ -26,5 +29,6 @@
       <% end %>
     </div>
 </div>
+
 </body>
 </html>
