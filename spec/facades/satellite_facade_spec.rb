@@ -43,4 +43,11 @@ RSpec.describe SatelliteFacade do
       
       expect(results).to be_a(SatellitePosition)
     end
+
+    it 'creates a satellite object', :vcr do
+      norad_id = 12345
+      results = SatelliteService.create_satellite(norad_id)
+       
+      expect(results).to be_a(Integer)
+    end
 end
