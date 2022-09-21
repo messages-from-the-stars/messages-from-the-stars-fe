@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 21 Sep 2022 20:32:11 GMT
+      - Wed, 21 Sep 2022 20:42:44 GMT
       Server:
       - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
       X-Powered-By:
@@ -27,11 +27,11 @@ http_interactions:
       Access-Control-Allow-Methods:
       - "*"
       Content-Length:
-      - '274'
+      - '273'
       Content-Type:
       - application/json
     body:
       encoding: UTF-8
-      string: "\r\n{\"info\":{\"satname\":\"LAGEOS 2\",\"satid\":22195,\"transactionscount\":25},\"positions\":[{\"satlatitude\":37.88482747,\"satlongitude\":-116.14083051,\"sataltitude\":5955.25,\"azimuth\":31.35,\"elevation\":-30.25,\"ra\":205.82733371,\"dec\":14.32383896,\"timestamp\":1663792331,\"eclipsed\":false}]}"
-  recorded_at: Wed, 21 Sep 2022 20:32:11 GMT
+      string: "\r\n{\"info\":{\"satname\":\"LAGEOS 2\",\"satid\":22195,\"transactionscount\":66},\"positions\":[{\"satlatitude\":26.32028263,\"satlongitude\":-104.61853429,\"sataltitude\":5947.01,\"azimuth\":27.81,\"elevation\":-41.28,\"ra\":215.47297383,\"dec\":5.24494911,\"timestamp\":1663792964,\"eclipsed\":false}]}"
+  recorded_at: Wed, 21 Sep 2022 20:42:44 GMT
 recorded_with: VCR 6.1.0

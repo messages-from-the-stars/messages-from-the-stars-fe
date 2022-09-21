@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/above/39.6431/-104.8987/0/15/0/&apiKey=<n2yo_Key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - "<n2yo_Key>"
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Sep 2022 20:42:40 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '2496'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"category\":\"ANY\",\"transactionscount\":64,\"satcount\":16},\"above\":[{\"satid\":837,\"satname\":\"OPS
+        3674 (VELA 4)\",\"intDesignator\":\"1964-040B\",\"launchDate\":\"1964-07-17\",\"satlat\":41.9591,\"satlng\":-104.328,\"satalt\":117204.812},{\"satid\":7174,\"satname\":\"DELTA
+        1 DEB\",\"intDesignator\":\"1973-086EL\",\"launchDate\":\"1973-11-06\",\"satlat\":38.0408,\"satlng\":-102.4594,\"satalt\":1760.9024},{\"satid\":9656,\"satname\":\"COSMOS
+        886 DEB\",\"intDesignator\":\"1976-126N\",\"launchDate\":\"1976-12-27\",\"satlat\":39.5534,\"satlng\":-107.9931,\"satalt\":1443.6734},{\"satid\":9921,\"satname\":\"SL-6
+        R\\/B(2)\",\"intDesignator\":\"1977-027D\",\"launchDate\":\"1977-04-11\",\"satlat\":46.988,\"satlng\":-97.0153,\"satalt\":26362.4406},{\"satid\":12679,\"satname\":\"DELTA
+        1 R\\/B(2)\",\"intDesignator\":\"1981-070E\",\"launchDate\":\"1981-08-03\",\"satlat\":37.6008,\"satlng\":-92.3324,\"satalt\":22331.0877},{\"satid\":14608,\"satname\":\"SL-12
+        R\\/B(AUX MOTOR)\",\"intDesignator\":\"1983-127H\",\"launchDate\":\"1983-12-29\",\"satlat\":37.7705,\"satlng\":-110.351,\"satalt\":10292.7756},{\"satid\":14900,\"satname\":\"CZ-3
+        R\\/B\",\"intDesignator\":\"1984-035B\",\"launchDate\":\"1984-04-08\",\"satlat\":28.2776,\"satlng\":-101.8631,\"satalt\":22791.6746},{\"satid\":20361,\"satname\":\"NAVSTAR
+        17 (USA 49)\",\"intDesignator\":\"1989-097A\",\"launchDate\":\"1989-12-11\",\"satlat\":44.6802,\"satlng\":-115.7115,\"satalt\":21303.8885},{\"satid\":21429,\"satname\":\"SL-6
+        R\\/B(2)\",\"intDesignator\":\"1991-043D\",\"launchDate\":\"1991-06-18\",\"satlat\":30.1117,\"satlng\":-99.518,\"satalt\":15949.5754},{\"satid\":22231,\"satname\":\"NAVSTAR
+        28 (USA 85)\",\"intDesignator\":\"1992-079A\",\"launchDate\":\"1992-11-22\",\"satlat\":47.3112,\"satlng\":-101.9193,\"satalt\":21247.8887},{\"satid\":28116,\"satname\":\"BREEZE-M
+        DEB (TANK)\",\"intDesignator\":\"2003-056E\",\"launchDate\":\"2003-12-10\",\"satlat\":45.167,\"satlng\":-102.767,\"satalt\":16597.0382},{\"satid\":32034,\"satname\":\"BREEZE-M
+        DEB\",\"intDesignator\":\"2006-006M\",\"launchDate\":\"2006-02-28\",\"satlat\":38.6129,\"satlng\":-95.8239,\"satalt\":7452.5498},{\"satid\":36395,\"satname\":\"SDO\",\"intDesignator\":\"2010-005A\",\"launchDate\":\"2010-02-11\",\"satlat\":31.1057,\"satlng\":-99.8363,\"satalt\":35788.686},{\"satid\":38612,\"satname\":\"BREEZE-M
+        DEB\",\"intDesignator\":\"2008-011BK\",\"launchDate\":\"2008-03-14\",\"satlat\":43.2892,\"satlng\":-96.4921,\"satalt\":19782.9993},{\"satid\":39825,\"satname\":\"COSMOS
+        1823 DEB\",\"intDesignator\":\"1987-020EZ\",\"launchDate\":\"1987-02-20\",\"satlat\":40.7971,\"satlng\":-104.2594,\"satalt\":1514.6037},{\"satid\":53105,\"satname\":\"LARES-2\",\"intDesignator\":\"2022-080A\",\"launchDate\":\"2022-07-13\",\"satlat\":43.3994,\"satlng\":-98.0202,\"satalt\":5899.8489}]}"
+  recorded_at: Wed, 21 Sep 2022 20:42:40 GMT
+recorded_with: VCR 6.1.0

@@ -16,7 +16,7 @@ RSpec.describe SatelliteFacade do
         expect(sat_visibility).to be_all(SatelliteVisibility)
     end
 
-    it 'returns visible times when a satellite passes overhead', :vcr do
+    it 'returns satellites assigned to a user', :vcr do
         satellites =  SatelliteFacade.get_user_satellites(45)
          
         expect(satellites).to be_a(Array)
@@ -47,6 +47,14 @@ RSpec.describe SatelliteFacade do
     it 'creates a satellite object', :vcr do
       norad_id = 12345
       results = SatelliteService.create_satellite(norad_id)
+       
+      expect(results).to be_a(Integer)
+    end
+
+    it 'creates a user-satellite object', :vcr do
+      sat_id = 198
+      user_id = 45
+      results = SatelliteService.create_user_satellite(sat_id, user_id)
        
       expect(results).to be_a(Integer)
     end
