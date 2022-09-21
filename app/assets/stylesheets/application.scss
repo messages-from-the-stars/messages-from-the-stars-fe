@@ -7,9 +7,9 @@ body, html {
   padding: 200px 100px;
   padding-bottom: 25px;
   text-align: center;
-  color: rgb(243, 234, 234);
+  color: rgb(255, 255, 255);
   font-size: 40px;
-  font-style: italic;
+  font-style: bold,italic;
   font-family: "Arial Black";
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   
@@ -19,7 +19,6 @@ body, html {
   padding: 0px 100px;
   text-align: center;
   text-decoration: none;
-  color: rgb(243, 234, 234);
   font-family:"Arial Black", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   }
@@ -33,7 +32,7 @@ body, html {
 }
 
 .link_text {
-  color: rgb(243, 234, 234);
+  color: white;
           &:hover {
             color: rgb(0, 201, 247);
   }
