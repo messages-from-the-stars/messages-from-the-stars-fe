@@ -130,25 +130,17 @@ body, html {
 .col-md-4 {
     color: rgb(255, 255, 255);
     padding: 10px 100px;
-    padding-left: 50px;
     text-align: center;
     font-size: 18px;
     font-family: "Arial Black", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
-.col-sm-4{
+.col-sm-4 {
   text-align: center;
   font-family: "Arial Black", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
-}
-
-.link_disc {
-  color: rgb(212, 206, 18);
-    &:hover {
-      color: rgb(0, 201, 247);
-    }
-    font-size: 32px;
+  font-size: 16px;
 }
 
 .bg_discover {
@@ -163,7 +155,18 @@ body, html {
     padding: 30px 100px;
     text-align: center;
     color: white;
-    font-size: 32px;
+    font-size: 40px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.discover_container_subheader {
+  padding: 30px 100px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-family: "Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .col-md-6 {
