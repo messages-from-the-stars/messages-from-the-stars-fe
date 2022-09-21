@@ -15,13 +15,12 @@
     <p class="py-5 text-center"></p>
 
   <div class="new_message_container">
-      <p>Create a New Message<p><br>
+      <p>Cast a New Message<p><br>
   </div>
 
     <div class="new_message_form">
       <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
-          <%=form.text_field :message %>
-          <%=form.label :message, "Message:"%>
+          <%=form.text_field :message %><br><br>
           <%=form.submit "Send Message"%>
           <%= form.hidden_field :lat, :value => @lat %>
           <%= form.hidden_field :long, :value => @long %>
