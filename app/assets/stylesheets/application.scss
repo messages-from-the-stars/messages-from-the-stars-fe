@@ -205,7 +205,58 @@ body, html {
   background-size: cover;
 }
 
+.bg_view_message {
+  background-image: url("./message_view.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.view_message_header {
+  padding: 40px 100px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 52px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+
+.view_message_body {
+  padding: 0px 100px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-family: "Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.content {
+  padding: 20px 50px;
+}
+
+.lat_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.start {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+.current {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: right;
+}
+
+.message_map {
+  padding: 100px 100px;
+}
 
 /* Popup container */
 .popup {
