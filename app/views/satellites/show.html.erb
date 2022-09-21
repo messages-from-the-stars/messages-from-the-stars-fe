@@ -23,9 +23,13 @@
     </div>
     <div class="vis_container">
       <div class="text-center">
-        <h4>NORAD ID: <%= @satellite.norad_id %></h4>
-        <div class="popup" onclick="myFunction()">What's a NORAD ID?
-          <span class="popuptext" id="myPopup">NORAD ID is....</span>
+        <div class="satpop_container">
+          <h4>NORAD ID: <%= @satellite.norad_id %></h4>
+        </div>
+        <div class="satpop_container">
+          <div class="popup" onclick="myFunction()">What's a NORAD ID?
+            <span class="popuptext" id="myPopup">NORAD ID is....</span>
+          </div> 
         </div> 
       </div>
       <div class="text-center">
