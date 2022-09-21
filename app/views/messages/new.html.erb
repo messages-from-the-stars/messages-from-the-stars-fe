@@ -11,9 +11,9 @@
 <body>
 <%# <div class="bg_new_message">
     <p class="py-5 text-center"></p> %>
-  <div class="new_message_container text-center">
+  <%# <div class="new_message_container text-center"> %>
       <h1>Create a New Message</h1><br>
-  </div>
+  <%# </div> %>
     <div class="text-center">
       <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
           <%=form.text_field :message %>

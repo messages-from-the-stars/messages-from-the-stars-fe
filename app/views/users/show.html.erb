@@ -9,47 +9,56 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="text-center">
-    <h1>User Dashboard<h1>
-</div>  
-<div class="text-center">
-    <h3><%= link_to 'Discover Satellites', discover_users_path %></h3><br>
-</div>
-<div class="text-center">
-    <h3>Your Satellites</h3><br>
-</div>
-    <% if @satellites %>
-    <div id="satellites">
-    <% @satellites.each do |s| %>
-        <div class="satellite">
-    <div class="col-sm-4">
-        <h3>Satellite Id: <%= s.id %> </h3>
-        <h4>Norad Id: <%= s.norad_id %> </h4> 
-        <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p><br>
-        <% msg_collector = [] %>
-        <% if @message_count != nil %>
-            <% @message_count.each do |msg| %>
-                <% if msg.satellite_id == s.id.to_i %>
-                    <% msg_collector << msg %>
-                <% end %>
-            <% end %>
-        <% end %>
-        <p><%= msg_collector.count %> Messages<p>
-        <h4>Visibility in the next 7 days</h4>
-        <% @visible_times[0..9].each do |vis_time| %>
-            <% if s.id == vis_time.sat_id %>
-                <p><%= vis_time.starting_time %></p>
-                <% @weather_forecasts.each do |forecast| %>
-                    <% if vis_time.starting_time.include?(forecast.date) %>
-                        <p>Weather: <%= forecast.status %> </p>
+<div class="bg_dashboard">
+    <p class="py-5 text-center"></p>
+
+    <div class="dashboard_container_header">
+        <p>User Dashboard</p>
+        <p>Click Discover Satellites to See Satellites Above You</p>
+    </div>  
+
+    <div class="text-center">
+        <p><%= link_to 'Discover Satellites', discover_users_path, class: 'link_disc' %></p><br>
+    </div>
+
+    <div class="dashboard_container_body">
+        <p>Your Satellites<p><br>
+    </div>
+
+        <% if @satellites %>
+        <div id="satellites">
+        <% @satellites.each do |s| %>
+            <div class="satellite">
+            
+        <div class="col-sm-4">
+            <h3>Satellite Id: <%= s.id %> </h3>
+            <h4>Norad Id: <%= s.norad_id %> </h4> 
+            <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p><br>
+            <% msg_collector = [] %>
+            <% if @message_count != nil %>
+                <% @message_count.each do |msg| %>
+                    <% if msg.satellite_id == s.id.to_i %>
+                        <% msg_collector << msg %>
                     <% end %>
                 <% end %>
             <% end %>
+            <p><%= msg_collector.count %> Messages<p>
+            <h4>Visibility in the next 7 days</h4>
+            <% @visible_times[0..9].each do |vis_time| %>
+                <% if s.id == vis_time.sat_id %>
+                    <p><%= vis_time.starting_time %></p>
+                    <% @weather_forecasts.each do |forecast| %>
+                        <% if vis_time.starting_time.include?(forecast.date) %>
+                            <p>Weather: <%= forecast.status %> </p>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            <% end %>
+            </div>
         <% end %>
-        </div>
     <% end %>
-<% end %>
-    </div>                 
+        </div>                 
+    </div>
 </div>
 </body>
 </html>
