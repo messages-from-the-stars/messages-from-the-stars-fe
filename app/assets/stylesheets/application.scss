@@ -173,9 +173,9 @@ body, html {
 /* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
+  width: 250px;
+  background-color: rgb(18, 22, 40);
+  color: rgb(176, 193, 255);
   text-align: center;
   border-radius: 6px;
   padding: 8px 0;
@@ -213,7 +213,7 @@ body, html {
 
 @keyframes fadeIn {
   from {opacity: 0;}
-  to {opacity:1 ;}
+  to {opacity: 1;}
 }
 
 @import "bootstrap";

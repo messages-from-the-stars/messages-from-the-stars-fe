@@ -28,12 +28,12 @@
         </div>
         <div class="satpop_container">
           <div class="popup" onclick="myFunction()">What's a NORAD ID?
-            <span class="popuptext" id="myPopup">NORAD ID is....</span>
+            <span class="popuptext" id="myPopup">NORAD is the North American Aeropsace Defense Command, an organization that provides aerospace warning, air sovereignty & protection to Canada & the U.S. The NORAD ID refers to the catalog number (known as the Satellite Catalog Number -SATCAT-) that is assigned by a differnet organization, the U.S. Space Command.</span>
           </div> 
         </div> 
       </div>
       <div class="text-center">
-      <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
+        <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
       </div>
     </div>
 
