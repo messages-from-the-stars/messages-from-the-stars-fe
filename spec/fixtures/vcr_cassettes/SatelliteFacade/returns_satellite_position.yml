@@ -2,11 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.n2yo.com/rest/v1/satellite/positions/22195/39.739/104.990/0/1?apiKey=<n2yo_Key>
+    uri: https://api.n2yo.com/rest/v1/satellite/positions/22195/39.739/104.990/0/1/&apiKey=<n2yo_Key>
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Apikey:
+      - "<n2yo_Key>"
       User-Agent:
       - Faraday v2.5.2
       Accept-Encoding:
@@ -19,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 21 Sep 2022 20:42:44 GMT
+      - Wed, 21 Sep 2022 22:03:50 GMT
       Server:
       - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
       X-Powered-By:
@@ -27,11 +29,11 @@ http_interactions:
       Access-Control-Allow-Methods:
       - "*"
       Content-Length:
-      - '273'
+      - '274'
       Content-Type:
       - application/json
     body:
       encoding: UTF-8
-      string: "\r\n{\"info\":{\"satname\":\"LAGEOS 2\",\"satid\":22195,\"transactionscount\":66},\"positions\":[{\"satlatitude\":26.32028263,\"satlongitude\":-104.61853429,\"sataltitude\":5947.01,\"azimuth\":27.81,\"elevation\":-41.28,\"ra\":215.47297383,\"dec\":5.24494911,\"timestamp\":1663792964,\"eclipsed\":false}]}"
-  recorded_at: Wed, 21 Sep 2022 20:42:44 GMT
+      string: "\r\n{\"info\":{\"satname\":\"LAGEOS 2\",\"satid\":22195,\"transactionscount\":40},\"positions\":[{\"satlatitude\":-52.21160398,\"satlongitude\":-1.5093081,\"sataltitude\":5662.14,\"azimuth\":230.03,\"elevation\":-56.67,\"ra\":301.53799607,\"dec\":-53.72966428,\"timestamp\":1663797830,\"eclipsed\":false}]}"
+  recorded_at: Wed, 21 Sep 2022 22:03:50 GMT
 recorded_with: VCR 6.1.0

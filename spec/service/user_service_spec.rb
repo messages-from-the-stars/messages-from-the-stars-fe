@@ -3,13 +3,8 @@ require 'rails_helper'
 RSpec.describe UserService do
 
     describe '#find_or_create_user' do
-
-        it 'returns a user' do
-            @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
-
-            allow(UserService).to receive(:find_or_create_user).and_return(@user)
-
-            user_return = UserService.find_or_create_user("Bobby Bobicus", "test@test.com")
+        it 'returns a user', :vcr do
+            user_return = UserService.find_or_create_user("Jonathan Pope", "jonathanmpope@gmail.com")
                
             expect(user_return).to be_a(Hash)
 

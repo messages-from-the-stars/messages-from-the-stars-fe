@@ -11,8 +11,7 @@ RSpec.describe 'Satellite Show Page' do
       @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
       @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
       @position = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
-      @sat_call = JSON.parse(File.read('spec/fixtures/satellite.json'), symbolize_names: true)
-      @sat_id = @sat_call[:info][:satid]
+      @sat_id = 25544
       @sat_db_call = JSON.parse(File.read('spec/fixtures/sat_db_response.json'), symbolize_names: true)
       @message = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
       @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
@@ -24,7 +23,6 @@ RSpec.describe 'Satellite Show Page' do
       allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
       allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
       allow(SatelliteService).to receive(:get_satellite_position).and_return(@position)
-      allow(SatelliteService).to receive(:get_satellite).and_return(@sat_call)
       allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
       allow(UserService).to receive(:find_or_create_user).and_return(@user)
       allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
