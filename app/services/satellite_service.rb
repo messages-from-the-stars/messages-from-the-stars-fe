@@ -15,11 +15,6 @@ class SatelliteService
         BaseService.get_json(response)
     end
 
-    def self.get_satellite(sat_id)
-        response = BaseService.n2yo_conn.get("tle/#{sat_id}")
-        BaseService.get_json(response)
-    end
-
     def self.create_satellite(norad_id)
         response = BaseService.connection.post("/api/v1/satellites?sat_id=#{norad_id}")
         response.body.to_i
@@ -27,11 +22,11 @@ class SatelliteService
 
     def self.create_user_satellite(sat_id, user_id)
         response = BaseService.connection.post("/api/v1/user_satellite/create_user_satellite?user_id=#{user_id}&sat_id=#{sat_id}")
-        response.body 
+        response.status
     end
 
     def self.get_satellite_position(norad_id)
-        response = BaseService.n2yo_conn.get("positions/#{norad_id}/39.739/104.990/0/1")
+        response = BaseService.n2yo_connection.get("/rest/v1/satellite/positions/#{norad_id}/39.739/104.990/0/1/&apiKey=#{ENV['n2yo_Key']}")
         BaseService.get_json(response)
     end
 

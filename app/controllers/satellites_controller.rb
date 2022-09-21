@@ -1,5 +1,5 @@
 class SatellitesController < ApplicationController
-  before_action :remote_ip, :logged_in_user
+  before_action :logged_in_user, :remote_ip, 
 
   def show
     @sat_id = SatelliteFacade.create_satellite(params[:sat_id])

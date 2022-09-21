@@ -10,7 +10,18 @@
   <%= render partial: "shared/nav-hamburger" %>
 </head>
 <body>
+
 <div class="bg_view_message">
+
+<div class="text-center">
+  <h1> Message show </h1>
+</div>
+  <div class="text-center">
+    <% if @message != 404 %>
+    <div id ="sat-name">
+      Satellite Name: <%=@satellite.name%>
+    </div>
+
 
   <div class="view_message_header">
     <p>Intercepted Message</p>
@@ -72,8 +83,18 @@
         <%=image_tag(@map_url)%>
       </div>
     </div>
-
   </div>
 </div> 
+    <div id="message-orbits">
+      This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
+    </div>
+    
+    <div id="map">
+      <%=image_tag(@map_url)%>
+    </div>
+    <% else %>
+      <p> You broke the space-time continuum and your message disappeared into the void </p>
+    <% end %>
+  </div> 
 </body>
 </html>

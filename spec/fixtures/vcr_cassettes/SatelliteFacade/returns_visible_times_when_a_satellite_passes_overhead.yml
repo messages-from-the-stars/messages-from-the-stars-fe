@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/visualpasses//39847/39.6431/-104.8987/0/7/300/&apiKey=<n2yo_Key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - "<n2yo_Key>"
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Sep 2022 20:42:41 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '3637'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"satid\":39847,\"satname\":\"SL-16 DEB\",\"transactionscount\":65,\"passescount\":13},\"passes\":[{\"startAz\":344.98,\"startAzCompass\":\"NNW\",\"startEl\":0.24,\"startUTC\":1663811425,\"maxAz\":59.96,\"maxAzCompass\":\"NE\",\"maxEl\":34.96,\"maxUTC\":1663811860,\"endAz\":134.48,\"endAzCompass\":\"SE\",\"endEl\":16.03,\"endUTC\":1663812300,\"mag\":100000,\"duration\":655,\"startVisibility\":1663811425},{\"startAz\":324.86,\"startAzCompass\":\"NW\",\"startEl\":0.16,\"startUTC\":1663817585,\"maxAz\":256.66,\"maxAzCompass\":\"W\",\"maxEl\":28.47,\"maxUTC\":1663818005,\"endAz\":187.99,\"endAzCompass\":\"S\",\"endEl\":23.97,\"endUTC\":1663818430,\"mag\":100000,\"duration\":520,\"startVisibility\":1663817585},{\"startAz\":348.87,\"startAzCompass\":\"N\",\"startEl\":0.26,\"startUTC\":1663895725,\"maxAz\":56.41,\"maxAzCompass\":\"NE\",\"maxEl\":23.27,\"maxUTC\":1663896140,\"endAz\":122.31,\"endAzCompass\":\"SE\",\"endEl\":5.71,\"endUTC\":1663896555,\"mag\":100000,\"duration\":735,\"startVisibility\":1663895725},{\"startAz\":330.13,\"startAzCompass\":\"NNW\",\"startEl\":0.05,\"startUTC\":1663901860,\"maxAz\":252.58,\"maxAzCompass\":\"WSW\",\"maxEl\":45.76,\"maxUTC\":1663902305,\"endAz\":175.78,\"endAzCompass\":\"S\",\"endEl\":22.73,\"endUTC\":1663902750,\"mag\":100000,\"duration\":625,\"startVisibility\":1663901860},{\"startAz\":352.56,\"startAzCompass\":\"N\",\"startEl\":0.08,\"startUTC\":1663980025,\"maxAz\":50.28,\"maxAzCompass\":\"NE\",\"maxEl\":15.63,\"maxUTC\":1663980405,\"endAz\":109.58,\"endAzCompass\":\"ESE\",\"endEl\":22.73,\"endUTC\":1663980795,\"mag\":100000,\"duration\":770,\"startVisibility\":1663980025},{\"startAz\":334.69,\"startAzCompass\":\"NNW\",\"startEl\":0.13,\"startUTC\":1663986145,\"maxAz\":246.67,\"maxAzCompass\":\"WSW\",\"maxEl\":74.51,\"maxUTC\":1663986600,\"endAz\":163.97,\"endAzCompass\":\"SSE\",\"endEl\":13.62,\"endUTC\":1663987055,\"mag\":100000,\"duration\":735,\"startVisibility\":1663986145},{\"startAz\":338.91,\"startAzCompass\":\"NNW\",\"startEl\":0.21,\"startUTC\":1664070435,\"maxAz\":68.33,\"maxAzCompass\":\"ENE\",\"maxEl\":69.94,\"maxUTC\":1664070890,\"endAz\":152.33,\"endAzCompass\":\"SSE\",\"endEl\":4.33,\"endUTC\":1664071345,\"mag\":100000,\"duration\":850,\"startVisibility\":1664070435},{\"startAz\":315.21,\"startAzCompass\":\"NW\",\"startEl\":0.06,\"startUTC\":1664076640,\"maxAz\":262.5,\"maxAzCompass\":\"W\",\"maxEl\":13.68,\"maxUTC\":1664077000,\"endAz\":208.21,\"endAzCompass\":\"SSW\",\"endEl\":3.13,\"endUTC\":1664077370,\"mag\":100000,\"duration\":670,\"startVisibility\":1664076640},{\"startAz\":342.78,\"startAzCompass\":\"NNW\",\"startEl\":0.04,\"startUTC\":1664154725,\"maxAz\":62.97,\"maxAzCompass\":\"ENE\",\"maxEl\":44.04,\"maxUTC\":1664155175,\"endAz\":140.75,\"endAzCompass\":\"SE\",\"endEl\":3.13,\"endUTC\":1664155625,\"mag\":100000,\"duration\":900,\"startVisibility\":1664154725},{\"startAz\":322.02,\"startAzCompass\":\"NW\",\"startEl\":0.04,\"startUTC\":1664160900,\"maxAz\":257.84,\"maxAzCompass\":\"W\",\"maxEl\":22.48,\"maxUTC\":1664161310,\"endAz\":194.47,\"endAzCompass\":\"S\",\"endEl\":3.13,\"endUTC\":1664161720,\"mag\":100000,\"duration\":820,\"startVisibility\":1664160900},{\"startAz\":346.75,\"startAzCompass\":\"N\",\"startEl\":0.23,\"startUTC\":1664239025,\"maxAz\":56.95,\"maxAzCompass\":\"NE\",\"maxEl\":28.82,\"maxUTC\":1664239450,\"endAz\":128.76,\"endAzCompass\":\"SE\",\"endEl\":3.13,\"endUTC\":1664239885,\"mag\":100000,\"duration\":860,\"startVisibility\":1664239025},{\"startAz\":327.48,\"startAzCompass\":\"NW\",\"startEl\":0.22,\"startUTC\":1664245175,\"maxAz\":254.23,\"maxAzCompass\":\"WSW\",\"maxEl\":35.83,\"maxUTC\":1664245610,\"endAz\":181.88,\"endAzCompass\":\"S\",\"endEl\":3.13,\"endUTC\":1664246050,\"mag\":100000,\"duration\":875,\"startVisibility\":1664245175},{\"startAz\":332.36,\"startAzCompass\":\"NNW\",\"startEl\":0.25,\"startUTC\":1664329455,\"maxAz\":250.7,\"maxAzCompass\":\"WSW\",\"maxEl\":58.12,\"maxUTC\":1664329905,\"endAz\":170.02,\"endAzCompass\":\"S\",\"endEl\":3.13,\"endUTC\":1664330360,\"mag\":100000,\"duration\":905,\"startVisibility\":1664329455}]}"
+  recorded_at: Wed, 21 Sep 2022 20:42:41 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.n2yo.com/rest/v1/satellite/above/39.6431/-104.8987/0/15/0/&apiKey=<n2yo_Key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - "<n2yo_Key>"
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Sep 2022 21:28:02 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+      X-Powered-By:
+      - PHP/7.3.33
+      Access-Control-Allow-Methods:
+      - "*"
+      Content-Length:
+      - '2634'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"info\":{\"category\":\"ANY\",\"transactionscount\":46,\"satcount\":17},\"above\":[{\"satid\":737,\"satname\":\"RELAY
+        2\",\"intDesignator\":\"1964-003A\",\"launchDate\":\"1964-01-21\",\"satlat\":33.4719,\"satlng\":-100.2374,\"satalt\":7385.0546},{\"satid\":738,\"satname\":\"DELTA
+        1 R\\/B\",\"intDesignator\":\"1964-003B\",\"launchDate\":\"1964-01-21\",\"satlat\":41.622,\"satlng\":-110.6007,\"satalt\":7584.7933},{\"satid\":837,\"satname\":\"OPS
+        3674 (VELA 4)\",\"intDesignator\":\"1964-040B\",\"launchDate\":\"1964-07-17\",\"satlat\":42.6704,\"satlng\":-113.1669,\"satalt\":118486.994},{\"satid\":3695,\"satname\":\"COSMOS
+        249 DEB\",\"intDesignator\":\"1968-091AL\",\"launchDate\":\"1968-10-20\",\"satlat\":40.573,\"satlng\":-104.933,\"satalt\":1738.0849},{\"satid\":11142,\"satname\":\"ATLAS
+        F R\\/B\",\"intDesignator\":\"1978-112B\",\"launchDate\":\"1978-12-11\",\"satlat\":38.9967,\"satlng\":-105.7131,\"satalt\":12599.1363},{\"satid\":14620,\"satname\":\"DELTA
+        1 DEB\",\"intDesignator\":\"1981-070J\",\"launchDate\":\"1981-08-03\",\"satlat\":50.1925,\"satlng\":-111.3163,\"satalt\":21062.1172},{\"satid\":20088,\"satname\":\"DELTA
+        1 DEB\",\"intDesignator\":\"1976-077FP\",\"launchDate\":\"1976-07-29\",\"satlat\":38.4807,\"satlng\":-103.2135,\"satalt\":1615.1271},{\"satid\":20361,\"satname\":\"NAVSTAR
+        17 (USA 49)\",\"intDesignator\":\"1989-097A\",\"launchDate\":\"1989-12-11\",\"satlat\":29.8675,\"satlng\":-107.5427,\"satalt\":21294.4791},{\"satid\":22132,\"satname\":\"SL-8
+        DEB\",\"intDesignator\":\"1991-009CR\",\"launchDate\":\"1991-02-12\",\"satlat\":40.5843,\"satlng\":-102.5292,\"satalt\":1650.8229},{\"satid\":27540,\"satname\":\"INTEGRAL\",\"intDesignator\":\"2002-048A\",\"launchDate\":\"2002-10-17\",\"satlat\":52.833,\"satlng\":-105.7803,\"satalt\":135255.8563},{\"satid\":31672,\"satname\":\"FENGYUN
+        1C DEB\",\"intDesignator\":\"1999-025CCE\",\"launchDate\":\"1999-05-10\",\"satlat\":39.8665,\"satlng\":-104.5463,\"satalt\":773.1183},{\"satid\":32280,\"satname\":\"SL-12
+        R\\/B(AUX MOTOR)\",\"intDesignator\":\"2007-052F\",\"launchDate\":\"2007-10-26\",\"satlat\":43.4202,\"satlng\":-103.9223,\"satalt\":17215.9054},{\"satid\":32781,\"satname\":\"GIOVE-B\",\"intDesignator\":\"2008-020A\",\"launchDate\":\"2008-04-27\",\"satlat\":45.3679,\"satlng\":-110.1338,\"satalt\":23830.1768},{\"satid\":36395,\"satname\":\"SDO\",\"intDesignator\":\"2010-005A\",\"launchDate\":\"2010-02-11\",\"satlat\":29.0251,\"satlng\":-98.2829,\"satalt\":35787.3891},{\"satid\":45504,\"satname\":\"COSMOS
+        627 DEB\",\"intDesignator\":\"1973-109C\",\"launchDate\":\"1973-12-29\",\"satlat\":39.8307,\"satlng\":-103.0192,\"satalt\":970.8593},{\"satid\":46919,\"satname\":\"ATLAS
+        5 CENTAUR R\\/B\",\"intDesignator\":\"2020-083B\",\"launchDate\":\"2020-11-13\",\"satlat\":42.8248,\"satlng\":-105.4518,\"satalt\":10814.7586},{\"satid\":47828,\"satname\":\"STARLINK-2415\",\"intDesignator\":\"2021-018AT\",\"launchDate\":\"2021-03-11\",\"satlat\":40.3476,\"satlng\":-103.7895,\"satalt\":549.9709}]}"
+  recorded_at: Wed, 21 Sep 2022 21:28:02 GMT
+recorded_with: VCR 6.1.0

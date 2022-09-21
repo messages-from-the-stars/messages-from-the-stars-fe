@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/messages/find_by_norad_id?norad_id=22195
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 21:25:29 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"cb96e9ba2d197b9bcd9ae370764b4d1c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3d7640bf-cfd8-4e4f-a858-3d1bf0393321
+      X-Runtime:
+      - '0.004808'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '["22195",1]'
+  recorded_at: Wed, 21 Sep 2022 21:25:29 GMT
+recorded_with: VCR 6.1.0

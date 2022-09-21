@@ -7,11 +7,6 @@ class SatelliteFacade
         end 
     end 
 
-    def self.get_satellite(sat_id)
-        json = SatelliteService.get_satellite(sat_id)[:info]
-        SatelliteAPI.new(json)
-    end
-
     def self.create_satellite(norad_id)
         SatelliteService.create_satellite(norad_id)
     end

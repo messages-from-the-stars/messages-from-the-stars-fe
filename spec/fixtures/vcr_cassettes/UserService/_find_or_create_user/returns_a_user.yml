@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/users/find_or_create_user?name=Jonathan%20Pope&username=jonathanmpope@gmail.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 22:05:49 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d5a30cd5d106e184a1801f0e4f1b3777"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fe33529a-0db4-4a4a-9e78-fee887cff489
+      X-Runtime:
+      - '0.005064'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"45","type":"user","attributes":{"name":"Jonathan Pope","username":"jonathanmpope@gmail.com"}}}'
+  recorded_at: Wed, 21 Sep 2022 22:05:49 GMT
+recorded_with: VCR 6.1.0
