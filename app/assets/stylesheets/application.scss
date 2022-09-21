@@ -1,5 +1,5 @@
 body, html {
-  height: 100%;
+    height: 100%;
 }
 
 .landing_container_header {
@@ -31,8 +31,84 @@ body, html {
 .link_text {
   color: white;
           &:hover {
-            color: rgb(0, 201, 247);
+          color: rgb(0, 201, 247);
+          }
 }
+
+.bg_dashboard {
+    background-image: url("./dashboard_page.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.dashboard_container_header {
+  padding: 60px 100px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.dashboard_container_body {
+    padding: 45px 100px;
+    text-align: center;
+    color: white;
+    font-size: 26px;
+}
+
+.link_disc {
+  color: rgb(212, 206, 18);
+    &:hover {
+      color: rgb(0, 201, 247);
+    }
+    font-size: 32px;
+}
+
+.bg_discover {
+    background-image: url("./dis_other.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.discover_container_header {
+    padding: 30px 100px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+
+.col-md-6 {
+  color: rgb(255, 255, 255);
+  padding: 10px 100px;
+  text-align: center;
+  font-size: 18px
+}
+
+.discover-button {
+  color: black
+}
+
+.new_message_container {
+  padding: 50px 100px;
+  text-align: center;
+  color: white;
+}
+
+.new_message_form {
+  padding: 165px 100px;
+  text-align: center;
+}
+
+.bg_new_message {
+  background-image: url("./create_message.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 @import "bootstrap";
