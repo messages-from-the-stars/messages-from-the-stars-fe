@@ -32,8 +32,8 @@ RSpec.describe MessageService do
       expect(message[:data][:attributes]).to have_key(:created_at)
       expect(message[:data][:attributes][:created_at]).to be_a(String)
     end
-
   end
+
   describe '#create_message' do
     it 'returns a response when a message is created', :vcr do
       lat =  40.7143
@@ -64,4 +64,16 @@ RSpec.describe MessageService do
       expect(message[:data][:attributes][:created_at]).to be_a(String)
     end 
   end 
+
+  describe '#get_message_count' do
+    it 'returns a message count', :vcr do
+      message = MessageService.get_message_count(22195)
+      
+      expect(message).to be_a(Array)
+      
+      expect(message.count).to eq(2)
+      expect(message[0]).to be_a(String)
+      expect(message[1]).to be_a(Integer)
+    end
+  end
 end

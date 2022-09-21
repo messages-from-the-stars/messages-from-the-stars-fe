@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/messages/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 21:25:28 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e9706acaebdf5e6d8a328363ae6fe2d8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e14fb8c9-0027-4316-aaa4-092aba231745
+      X-Runtime:
+      - '0.004339'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"message","attributes":{"satellite_id":7,"start_lat":-6.700576759545427,"start_lng":178.10153887995511,"content":"A
+        little more than kin, and less than kind.","created_at":"2022-04-18T20:32:53.000Z","updated_at":"2022-01-31T16:42:06.000Z"}}}'
+  recorded_at: Wed, 21 Sep 2022 21:25:28 GMT
+recorded_with: VCR 6.1.0
