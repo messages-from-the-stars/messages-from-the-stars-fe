@@ -18,7 +18,7 @@ RSpec.describe SatMapMaker do
   end
 
   it 'returns full url' do
-    expect(@sat_map_maker.result_url).to eq("http://maps.googleapis.com/maps/api/staticmap?&size=600x400&style=visibility:on&maptype=satellite&markers=size:medium|color:red|label:S|38.9072,-77.0369&key=#{ENV['google_maps_key']}")
+    expect(@sat_map_maker.result_url).to eq("http://maps.googleapis.com/maps/api/staticmap?&zoom=3&size=600x400&style=visibility:on&maptype=hybrid&markers=size:medium|color:red|label:S|38.9072,-77.0369&key=#{ENV['google_maps_key']}")
   end
 
 end
