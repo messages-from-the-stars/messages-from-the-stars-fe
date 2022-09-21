@@ -43,43 +43,6 @@ RSpec.describe SatelliteService do
     end
   end
 
-  describe '#get_satellite' do
-    it 'returns satellite data', :vcr do
-      # @satellite = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
-      # allow(SatelliteService).to receive(:get_satellite).and_return(@satellite)      
-      results = SatelliteService.get_satellite(25544)
-      
-      expect(results).to be_a(Hash)
-      expect(results[:info]).to be_a(Hash)
-
-      expect(results[:info]).to have_key(:satname)
-      expect(results[:info][:satname]).to be_a(String)
-
-      expect(results[:info]).to have_key(:satid)
-      expect(results[:info][:satid]).to be_a(Integer)
-
-      expect(results[:info]).to have_key(:transactionscount)
-      expect(results[:info][:transactionscount]).to be_a(Integer)
-
-      expect(results[:positions]).to be_a(Array)
-
-      expect(results[:positions].first).to have_key(:satlatitude)
-      expect(results[:positions].first[:satlatitude]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:satlongitude)
-      expect(results[:positions].first[:satlongitude]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:satlatitude)
-      expect(results[:positions].first[:satlatitude]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:azimuth)
-      expect(results[:positions].first[:azimuth]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:elevation)
-      expect(results[:positions].first[:elevation]).to be_a(Float)
-    end
-  end
-
   describe '#create_satellite' do
     it 'can create a new satellite by norad id', :vcr do
       response = SatelliteService.create_satellite(99999)
@@ -108,6 +71,29 @@ RSpec.describe SatelliteService do
 
       expect(results[:data].first[:attributes]).to have_key(:norad_id)
       expect(results[:data].first[:attributes][:norad_id]).to be_a(Integer)
+    end
+  end
+
+  describe '#get_norad_id' do
+    it 'can find a satellites norad id', :vcr do
+      results = SatelliteService.get_norad_id(189)
+      
+      expect(results).to be_a(Hash)
+      expect(results).to have_key(:data)
+      expect(results[:data]).to be_a(Hash)
+
+      expect(results[:data]).to have_key(:id)
+      expect(results[:data][:id]).to be_a(String)
+
+      expect(results[:data]).to have_key(:type)
+      expect(results[:data][:type]).to be_a(String)
+      expect(results[:data][:type]).to eq("satellite")
+
+      expect(results[:data]).to have_key(:attributes)
+      expect(results[:data][:attributes]).to be_a(Hash)
+
+      expect(results[:data][:attributes]).to have_key(:norad_id)
+      expect(results[:data][:attributes][:norad_id]).to be_a(Integer)
     end
   end
 end
