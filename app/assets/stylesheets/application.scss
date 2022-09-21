@@ -60,8 +60,6 @@ body, html {
           color: rgb(255, 255, 255);
 }
 
-
-
 .sat_dropdown {
   display: inline-block;
   text-align: center;
@@ -129,12 +127,20 @@ body, html {
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
-.link_disc {
-  color: rgb(212, 206, 18);
-    &:hover {
-      color: rgb(0, 201, 247);
-    }
-    font-size: 32px;
+.col-md-4 {
+    color: rgb(255, 255, 255);
+    padding: 10px 100px;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.col-sm-4 {
+  text-align: center;
+  font-family: "Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+  font-size: 16px;
 }
 
 .bg_discover {
@@ -149,14 +155,25 @@ body, html {
     padding: 30px 100px;
     text-align: center;
     color: white;
-    font-size: 32px;
+    font-size: 40px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.discover_container_subheader {
+  padding: 30px 100px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-family: "Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .col-md-6 {
   color: rgb(255, 255, 255);
   padding: 10px 100px;
   text-align: center;
-  font-size: 18px
+  font-size: 18px;
 }
 
 .discover-button {
@@ -166,12 +183,18 @@ body, html {
 .new_message_container {
   padding: 50px 100px;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 52px;
+      font-family: "Arial Black", Times, serif;
+        text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .new_message_form {
-  padding: 165px 100px;
+  padding: 250px 100px;
   text-align: center;
+  color: white;
+  font-size: 20px;
+        font-family: "Arial Black", Times, serif;
 }
 
 .bg_new_message {
@@ -182,7 +205,58 @@ body, html {
   background-size: cover;
 }
 
+.bg_view_message {
+  background-image: url("./message_view.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.view_message_header {
+  padding: 40px 100px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 52px;
+    font-family: "Arial Black", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+
+.view_message_body {
+  padding: 0px 100px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-family: "Arial Black", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.content {
+  padding: 20px 50px;
+}
+
+.lat_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.start {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+.current {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: right;
+}
+
+.message_map {
+  padding: 100px 100px;
+}
 
 /* Popup container */
 .popup {

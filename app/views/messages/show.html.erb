@@ -10,6 +10,9 @@
   <%= render partial: "shared/nav-hamburger" %>
 </head>
 <body>
+
+<div class="bg_view_message">
+
 <div class="text-center">
   <h1> Message show </h1>
 </div>
@@ -19,38 +22,69 @@
       Satellite Name: <%=@satellite.name%>
     </div>
 
-    <div id="message-content">
-      Message: <%=@message.content%>
+
+  <div class="view_message_header">
+    <p>Intercepted Message</p>
+  </div>
+
+  <div class="view_message_body">
+      
+      <div class ="content">
+      <div id="message-content">
+        Message: <%=@message.content%>
+      </div>
+      </div>
+
+      <div id ="sat-name">
+        Satellite Name: <%=@satellite.name%>
+      </div>
+
+      <div id="norad_id">
+        Norad ID: <%=@satellite.norad_id%>
+      </div>
+      
+      <div id="message-launch-date">
+        Message Launched: <%=@message.formatted_creation_date%>
+      </div>
+
+      <div id="message-travel-time">
+        Message has been traveling for <%=@message.travel_time_days%> days.
+      </div>
+
+      <div id="message-orbits">
+        <p>This message has orbited around the world about <%=@message.orbit_count%> times,</p>
+        <p>or around <%=@message.miles_traveled%> miles!</p>
+      </div>
+
+    <div class="lat_wrap"> 
+    <div class="start">
+      <div id="start-lat">
+        Start Lat: <%=@message.start_lat%>
+      </div>
+
+      <div id="start-lng">
+        Start Lng: <%=@message.start_lng%>
+      </div>
     </div>
 
-    <div id="start-lat">
-      Start Lat: <%=@message.start_lat%>
+    <div class="current">
+      <div id="current-lat">
+        Current Lat: <%=@satellite.sat_lat%>
+      </div>
+
+      <div id="current-lng">
+        Current Lng: <%=@satellite.sat_lng%>
+      </div>
+    </div>
     </div>
 
-    <div id="start-lng">
-      Start Lng: <%=@message.start_lng%>
+    <div class="message_map">
+      <div id="map">
+        <%=image_tag(@map_url)%>
+      </div>
     </div>
-
-    <div id="current-lat">
-      Current Lat: <%=@satellite.sat_lat%>
-    </div>
-
-    <div id="current-lng">
-      Current Lng: <%=@satellite.sat_lng%>
-    </div>
-
-    <div id="norad_id">
-      Norad ID: <%=@satellite.norad_id%>
-    </div>
-    
-    <div id="message-launch-date">
-      Message Launched: <%=@message.formatted_creation_date%>
-    </div>
-
-    <div id="message-travel-time">
-      Message has been traveling for <%=@message.travel_time_days%> days.
-    </div>
-
+  </div>
+</div> 
     <div id="message-orbits">
       This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
     </div>
