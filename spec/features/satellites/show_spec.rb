@@ -47,7 +47,7 @@ RSpec.describe 'Satellite Show Page' do
       expect(page).to have_content("NORAD ID: 25544")
       expect(page).to have_content('SPACE STATION')
       expect(page).to have_content("Current Latitude / Longitude: -6.24147627, 91.26942017")
-      expect(page).to have_content("Visibility in the next 7 days")
+      expect(page).to have_content("Visibility in the next 10 days")
 
       within "#visibility0" do
         expect(page).to have_content("Date: Sep 16, at 5:41 PM")

@@ -44,9 +44,15 @@ body, html {
 }
 
 .satshow_container {
-  padding: 80px 100px;
+  padding: 80px 80px;
   display: inline-grid;
   align-items: baseline;
+}
+
+.vis_container {
+ width: auto;
+ height: auto;
+ opacity: .5;
 }
 
 @import "bootstrap";
