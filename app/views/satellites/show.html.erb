@@ -30,12 +30,18 @@
         <% if @visibility != nil %>
           <% @visibility[0..9].each_with_index do |v, idx| %>
             <div id="visibility<%= idx%>">
-            <p class="text-center">Date: <%= v.starting_time %></p>
-            <% @weather_forecasts.each do |forecast| %>
-              <% if v.starting_time.include?(forecast.date)%>
-                <p class="text-center">Weather Forecast: <%= forecast.status %> </p>
-              <% end %>
-            <% end %>
+              <div class="text-center">
+                <div class="sat_dropdown">
+                  <p><%= v.starting_time %></p>
+                  <% @weather_forecasts.each do |forecast| %>
+                    <% if v.starting_time.include?(forecast.date)%>
+                    <div class="satdropdown-content">
+                      <p>Weather Forecast: <%= forecast.status %> </p>
+                    </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
             </div>
           <% end %>
         <% end %>
