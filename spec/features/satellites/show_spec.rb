@@ -32,7 +32,6 @@ RSpec.describe 'Satellite Show Page' do
       allow(MessageService).to receive(:get_message).and_return(@message)
       allow(SatelliteService).to receive(:get_norad_id).and_return(@sat_db_call)
 
-
       visit '/auth/google_oauth2'
     end 
     
