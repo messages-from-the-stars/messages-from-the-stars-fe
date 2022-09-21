@@ -32,5 +32,4 @@ RSpec.describe MessageFacade do
       expect(results).to be_a Array 
     end
   end
-
 end

@@ -17,8 +17,6 @@ class ApplicationController < ActionController::Base
     @long = lat_long[1]
   end 
 
-    
-
     def logged_in_user
         unless session[:user_id]
             flash[:alert] = 'Please log in to view this page'
