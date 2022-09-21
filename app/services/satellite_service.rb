@@ -26,7 +26,7 @@ class SatelliteService
     end
 
     def self.create_user_satellite(sat_id, user_id)
-        response = BaseService.connection.post("/api/v1/user_satellite/create_user_satellite?user_id=#{user_id}&norad_id=#{sat_id}")
+        response = BaseService.connection.post("/api/v1/user_satellite/create_user_satellite?user_id=#{user_id}&sat_id=#{sat_id}")
         response.body 
     end
 
