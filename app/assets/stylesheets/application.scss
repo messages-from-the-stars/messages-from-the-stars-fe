@@ -2,22 +2,23 @@ body, html {
     height: 100%;
 }
 
-.landing_container_header {
-  padding: 80px 100px;
-  text-align: center;
-}
-
 .landing_container_body {
-  padding: 320px 100px;
+  padding: 180px 100px;
   text-align: center;
-  color: white;
+  color: rgb(243, 234, 234);
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Arial Black";
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .landing_container_login {
   padding: 0px 100px;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: rgb(243, 234, 234);
+  font-family:"Impact", Times, serif;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   }
 
 .bg_landing {
@@ -29,7 +30,7 @@ body, html {
 }
 
 .link_text {
-  color: white;
+  color: rgb(243, 234, 234);
           &:hover {
             color: rgb(0, 201, 247);
   }
@@ -54,8 +55,8 @@ body, html {
  height: auto;
  opacity: .5;
           color: rgb(0, 201, 247);
-          }
 }
+
 
 .bg_dashboard {
     background-image: url("./dashboard_page.jpg");
