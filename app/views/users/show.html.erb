@@ -13,21 +13,19 @@
 <div class="bg_dashboard">
     <p class="py-5 text-center"></p>
 
-    <div class="dashboard_container_header">
-        <p>Control Center</p>
-    </div>  
+    <div class="dashboard_container_body">
+        <p>Click on a satellite to view details<p>
+        <p>Click 'Scan the Skies' to interact with satellites above you<p>
+    </div>
 
     <div class="dashboard_container_subheader">
-        <p>Click 'Discover Satellites' to See Satellites Above You</p>
-    </div>
-    
-    <div class="text-center">
-        <p><%= link_to 'Discover Satellites', discover_users_path, class: 'link_disc' %></p><br>
+        <p>Tracked Satellites</p>
     </div>
 
-    <div class="dashboard_container_body">
-        <p>Your Satellites<p><br>
-    </div>
+    <%# <div class="text-center"> %>
+        <%# <p><%= link_to 'Discover Satellites', discover_users_path, class: 'link_disc'</p><br> %>
+    <%# </div> %>
+
 
         <% if @satellites %>
         <div id="satellites">
