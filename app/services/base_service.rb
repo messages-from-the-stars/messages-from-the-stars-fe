@@ -6,7 +6,7 @@ class BaseService
 
     def self.n2yo_conn
       Faraday.new(url: 'https://api.n2yo.com/rest/v1/satellite/') do |f|
-        f.params['apiKey'] = ENV['space_key']
+        f.params['apiKey'] = ENV['n2yo_Key']
       end
     end
 
