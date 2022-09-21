@@ -73,3 +73,27 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<n2yo_Key>') { ENV['n2yo_Key'] }
+  config.filter_sensitive_data('<open_key>') { ENV['open_key'] }
+  config.filter_sensitive_data('<space_key>') { ENV['space_key'] }
+  config.configure_rspec_metadata!
+end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.silence_get_warning = true
+OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({"provider" => "google_oauth2",
+        "uid" => "10000000000000000",
+        "info" => {
+        "name" => "John Smith",
+        "email" => "john@example.com",
+        "first_name" => "John",
+        "last_name" => "Smith",
+        },
+        "credentials" => {
+        "token" => "Token",
+        },
+    })
+

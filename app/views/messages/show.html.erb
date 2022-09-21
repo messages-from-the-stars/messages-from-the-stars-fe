@@ -14,7 +14,7 @@
   <h1> Message show </h1>
 </div>
   <div class="text-center">
-    
+    <% if @message != 404 %>
     <div id ="sat-name">
       Satellite Name: <%=@satellite.name%>
     </div>
@@ -58,7 +58,9 @@
     <div id="map">
       <%=image_tag(@map_url)%>
     </div>
-    
+    <% else %>
+      <p> You broke the space-time continuum and your message disappeared into the void </p>
+    <% end %>
   </div> 
 </body>
 </html>

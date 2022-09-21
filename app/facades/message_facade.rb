@@ -1,8 +1,12 @@
 class MessageFacade
 
   def self.get_message(message_id)
-    json = MessageService.get_message(message_id)
-    Message.new(json)
+    json = MessageService.get_message(message_id) 
+    if json != 404
+      Message.new(json)
+    else 
+      json 
+    end 
   end
 
   def self.create_message(lat, long, message, sat_id)

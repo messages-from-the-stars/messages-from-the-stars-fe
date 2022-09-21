@@ -3,10 +3,6 @@ require 'rails_helper'
 RSpec.describe SatelliteService do
   describe '#get_satellites_in_range' do
     it 'returns a response', :vcr do
-      # @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-
-      # allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
-      
       ss = SatelliteService.get_satellites_in_range(39.6431, -104.8987)
       sr = ss[:above].first
 
@@ -27,34 +23,94 @@ RSpec.describe SatelliteService do
 
       expect(response).to be_a Hash
       expect(response[:passes]).to be_an Array
-      expect(response[:passes].first[:startUTC])
-      .to be_a Integer 
+      expect(response[:passes].first[:startUTC]).to be_a Integer 
     end
   end
 
   describe '#get_sat_message' do
     it 'returns satellites with messages', :vcr do
-      @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
-
-      allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
+      sat_id = 189
+      ss = SatelliteService.get_sat_message(sat_id)
       
-      ss = SatelliteService.get_sat_message(2)
       sr = ss[:data].first
       expect(ss).to be_a(Hash)
+
       expect(ss[:data]).to be_a(Array)
+
       expect(sr[:attributes]).to have_key(:satellite_id)
       expect(sr[:attributes][:satellite_id]).to be_a(Integer)
+      expect(sr[:attributes][:satellite_id]).to eq(sat_id)
     end
   end
 
-  describe '#get_satellite' do
-    it 'returns satellite data', :vcr do
-      @satellite = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
-      allow(SatelliteService).to receive(:get_satellite).and_return(@satellite)      
-      
-      results = SatelliteService.get_satellite(25544)
+  describe '#create_satellite' do
+    it 'can create a new satellite by norad id', :vcr do
+      response = SatelliteService.create_satellite(99999)
+       
+      expect(response).to be_a(Integer)
+    end
+  end
+
+  describe '#get_user_satellites' do
+    it 'can find all satellites from a user', :vcr do
+      results = SatelliteService.get_user_satellites(45)
+       
+      expect(results).to be_a(Hash)
+      expect(results).to have_key(:data)
+      expect(results[:data]).to be_a(Array)
+
+      expect(results[:data].first).to have_key(:id)
+      expect(results[:data].first[:id]).to be_a(String)
+
+      expect(results[:data].first).to have_key(:type)
+      expect(results[:data].first[:type]).to be_a(String)
+      expect(results[:data].first[:type]).to eq("satellite")
+
+      expect(results[:data].first).to have_key(:attributes)
+      expect(results[:data].first[:attributes]).to be_a(Hash)
+
+      expect(results[:data].first[:attributes]).to have_key(:norad_id)
+      expect(results[:data].first[:attributes][:norad_id]).to be_a(Integer)
+    end
+  end
+
+  describe '#get_norad_id' do
+    it 'can find a satellites norad id', :vcr do
+      results = SatelliteService.get_norad_id(189)
       
       expect(results).to be_a(Hash)
+      expect(results).to have_key(:data)
+      expect(results[:data]).to be_a(Hash)
+
+      expect(results[:data]).to have_key(:id)
+      expect(results[:data][:id]).to be_a(String)
+
+      expect(results[:data]).to have_key(:type)
+      expect(results[:data][:type]).to be_a(String)
+      expect(results[:data][:type]).to eq("satellite")
+
+      expect(results[:data]).to have_key(:attributes)
+      expect(results[:data][:attributes]).to be_a(Hash)
+
+      expect(results[:data][:attributes]).to have_key(:norad_id)
+      expect(results[:data][:attributes][:norad_id]).to be_a(Integer)
+    end
+  end
+
+  describe '#create_user_sat' do
+    it 'can create a user satellite', :vcr do
+      results = SatelliteService.create_user_satellite(189, 45)
+      
+      expect(results).to be_a(Integer)
+    end
+  end
+
+   describe '#get_satellite_position' do
+    it 'can find a satellites current position', :vcr do
+      results = SatelliteService.get_satellite_position(22195)
+      
+      expect(results).to be_a(Hash)
+      expect(results).to have_key(:info)
       expect(results[:info]).to be_a(Hash)
 
       expect(results[:info]).to have_key(:satname)
@@ -62,10 +118,8 @@ RSpec.describe SatelliteService do
 
       expect(results[:info]).to have_key(:satid)
       expect(results[:info][:satid]).to be_a(Integer)
-
-      expect(results[:info]).to have_key(:transactionscount)
-      expect(results[:info][:transactionscount]).to be_a(Integer)
-
+      
+      expect(results).to have_key(:positions)
       expect(results[:positions]).to be_a(Array)
 
       expect(results[:positions].first).to have_key(:satlatitude)
@@ -73,23 +127,6 @@ RSpec.describe SatelliteService do
 
       expect(results[:positions].first).to have_key(:satlongitude)
       expect(results[:positions].first[:satlongitude]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:satlatitude)
-      expect(results[:positions].first[:satlatitude]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:azimuth)
-      expect(results[:positions].first[:azimuth]).to be_a(Float)
-
-      expect(results[:positions].first).to have_key(:elevation)
-      expect(results[:positions].first[:elevation]).to be_a(Float)
-    end
-  end
-
-  describe '#create_satellite' do
-    it 'can create a new satellite by norad id', :vcr do
-      response = SatelliteService.create_satellite(99999)
-
-      expect(response).to be_a Hash
     end
   end
 end

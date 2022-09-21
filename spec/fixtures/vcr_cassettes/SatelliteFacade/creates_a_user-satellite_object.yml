@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/user_satellite/create_user_satellite?sat_id=198&user_id=45
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 20:42:45 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"36a9e7f1c95b82ffb99743e0c5c4ce95"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4cfa927e-dddc-4c44-b486-cc09de03a41e
+      X-Runtime:
+      - '0.003939'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: " "
+  recorded_at: Wed, 21 Sep 2022 20:42:45 GMT
+recorded_with: VCR 6.1.0

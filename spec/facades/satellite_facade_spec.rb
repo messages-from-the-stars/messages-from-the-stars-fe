@@ -1,56 +1,61 @@
 require 'rails_helper'
 
 RSpec.describe SatelliteFacade do
-  describe '#above_satellites' do
-    it 'returns max ten results from above satellites call' do
-
-      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-
-      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
-
+    it 'returns max ten results from above satellites call', :vcr do
       results = SatelliteFacade.above_satellites(39.6431, -104.8987)
       
       expect(results.count).to eq(10)
+      expect(results).to be_a(Array)
+      expect(results).to be_all(DiscoverSatellite)
     end
 
     it 'returns visible times when a satellite passes overhead', :vcr do
-        sat_visibility =  SatelliteFacade.get_satellite_visibility(39847, 39.6431, -104.8987)
+        sat_visibility = SatelliteFacade.get_satellite_visibility(39847, 39.6431, -104.8987)
 
         expect(sat_visibility).to be_a(Array)
         expect(sat_visibility).to be_all(SatelliteVisibility)
     end
 
-    it 'returns visible times when a satellite passes overhead', :vcr do
-        satellites =  SatelliteFacade.get_user_satellites(2)
+    it 'returns satellites assigned to a user', :vcr do
+        satellites =  SatelliteFacade.get_user_satellites(45)
          
         expect(satellites).to be_a(Array)
         expect(satellites).to be_all(Satellite)
     end
-  end
 
-  describe '#get_messages' do
-    it 'returns satellites with messages' do
+    it 'returns satellites with messages', :vcr do
+      results = SatelliteFacade.get_sat_message_id(189)
 
-      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
-      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
-
-      @found_messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
-      allow(SatelliteService).to receive(:get_sat_message).and_return(@found_messages)
-
-      results = SatelliteFacade.get_sat_message_id(13002)
       expect(results).to be_a(Array)
-      expect(results[1]).to be_a(SatelliteMessage)
+      expect(results).to be_all(SatelliteMessage)
     end
-  end
 
-  describe '#get_satellite' do
-    it 'returns satellites info' do
-      @satellite = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
-      allow(SatelliteService).to receive(:get_satellite).and_return(@satellite)
+    it 'returns norad_id', :vcr do
+      results = SatelliteFacade.get_norad_id(189)
+       
+      expect(results).to be_a(Hash)
+      expect(results[:data]).to be_a(Hash)
+      expect(results[:data][:attributes]).to be_a(Hash)
+    end
 
-      results = SatelliteFacade.get_satellite(13002)
+    it 'returns satellite position', :vcr do
+      results = SatelliteFacade.get_satellite_position(22195)
       
-      expect(results).to be_a(SatelliteAPI)
+      expect(results).to be_a(SatellitePosition)
     end
-  end
+
+    it 'creates a satellite object', :vcr do
+      norad_id = 12345
+      results = SatelliteService.create_satellite(norad_id)
+       
+      expect(results).to be_a(Integer)
+    end
+
+    it 'creates a user-satellite object', :vcr do
+      sat_id = 198
+      user_id = 45
+      results = SatelliteService.create_user_satellite(sat_id, user_id)
+       
+      expect(results).to be_a(Integer)
+    end
 end
