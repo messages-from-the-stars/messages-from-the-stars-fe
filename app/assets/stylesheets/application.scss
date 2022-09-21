@@ -86,6 +86,15 @@ body, html {
   align-items: baseline;
 }
 
+.sat_headers {
+  background: rgb(38, 48, 104);
+  background-size:  contain;
+  border-radius: 5px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .bg_dashboard {
     background-image: url("./dashboard_page.jpg");
     height: 100%;
@@ -174,7 +183,7 @@ body, html {
 .popup .popuptext {
   visibility: hidden;
   width: 250px;
-  background-color: rgb(18, 22, 40);
+  background-color: rgb(14, 22, 56);
   color: rgb(176, 193, 255);
   text-align: center;
   border-radius: 6px;

@@ -24,7 +24,7 @@
     <div class="vis_container">
       <div class="text-center">
         <div class="satpop_container">
-          <h4>NORAD ID: <%= @satellite.norad_id %></h4>
+          <h4>NORAD ID <%= @satellite.norad_id %></h4>
         </div>
         <div class="satpop_container">
           <div class="popup" onclick="myFunction()">What's a NORAD ID?
@@ -38,7 +38,9 @@
     </div>
 
     <div class="satshow_container">
-      <h3>Visibility in the next 10 days</h3>
+      <div class="sat_headers">
+        <h3>Visibility in the next 10 days</h3>
+      </div>
         <p class="text-center"> (Hover over date to view forecast)</p>
         <% if @visibility != nil %>
           <% @visibility[0..9].each_with_index do |v, idx| %>
@@ -62,13 +64,15 @@
 
     <div class="satshow_container">
       <div id="map">
-        <h4 class="text-center">Current Location</h4>
+        <div class="sat_headers">
+          <h4 class="text-center">Current Location</h4>
+        </div>
         <p class="text-center">Latitude: <%= @satellite.sat_lat %>, Longitude: <%= @satellite.sat_lng %></p>
         <%=image_tag(@map_url)%>
       </div>
     </div>
 
-    <div class="text-center">
+    <div class="text-center sat_headers">
       <h4> <%= @messages.size %> Total Messages </h4>
     </div>  
       <% @messages.each_with_index do |m, idx| %>
