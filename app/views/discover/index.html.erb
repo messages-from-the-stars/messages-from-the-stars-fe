@@ -9,24 +9,32 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="text-center">
-  <h1>Satellites Above You<h1><br>
-</div> 
-<% @satellites.each_with_index do |satellite, index| %>
-<div id="satellites<%= index %>">
-<div class="col-sm-4">
-  <p>Name: <%= satellite.satname %> ID: <%= satellite.satid  %><p>
-  <p>Launched on: <%= satellite.launch_date %><p>
-  <p><%= button_to "View #{satellite.satname}'s Info", '/satellite', params: {:sat_id => satellite.satid}, method: :get, local: true %><p><br>
-  <% x = 0 %> 
-  <% @message_count_arrays.each do |array| %>
-    <% if array[0] == satellite.satid %>
-      <% x = array[1] %> 
-    <% end %>
+<div class="bg_discover">
+    <p class="py-5 text-center"></p>
+
+  <div class="discover_container_header">
+    <p>Satellites Above You</p>
+    <p>Click on Info to Create or View a Message</p>
+  </div> 
+
+    <% @satellites.each_with_index do |satellite, index| %>
+  <div id="satellites<%= index %>">
+
+    <div class="col-md-6" >
+      <p>Name: <%= satellite.satname %> ID: <%= satellite.satid  %><p>
+      <p>Launched on: <%= satellite.launch_date %><p>
+      <p><%= button_to "View #{satellite.satname}'s Info", '/satellite', params: {:sat_id => satellite.satid}, method: :get, local: true, class: 'discover-button' %><p>
+      <% x = 0 %> 
+      <% @message_count_arrays.each do |array| %>
+        <% if array[0] == satellite.satid %>
+          <% x = array[1] %> 
+        <% end %>
+      <% end %>
+      <p><%= x %> Messages<p>
+    </div>
+
   <% end %>
-  <p><%= x %> Messages<p>
   </div>
-<% end %>
 </div>
 </body>
 </html>

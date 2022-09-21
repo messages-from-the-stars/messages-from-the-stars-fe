@@ -9,19 +9,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="text-center">
-    <h1> Create a New Message </h1><br>
-</div>
-<div class="text-center">
-    <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
-        <%=form.text_field :message %>
-        <%=form.label :message, "Message:"%>
-        <%=form.submit "Send Message"%>
-        <%= form.hidden_field :lat, :value => @lat %>
-        <%= form.hidden_field :long, :value => @long %>
-        <%= form.hidden_field :sat_id, :value => @sat_id %>
-    <% end %>
+<div class="bg_new_message">
+    <p class="py-5 text-center"></p>
+  <div class="new_message_container text-center">
+      <h1>Create a New Message</h1><br>
+  </div>
+    <div class="new_message_form">
+      <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
+          <%=form.text_field :message %>
+          <%=form.label :message, "Message:"%>
+          <%=form.submit "Send Message"%>
+          <%= form.hidden_field :lat, :value => @lat %>
+          <%= form.hidden_field :long, :value => @long %>
+          <%= form.hidden_field :sat_id, :value => @sat_id %>
+      <% end %>
+    </div>
 </div>
 </body>
 </html>
