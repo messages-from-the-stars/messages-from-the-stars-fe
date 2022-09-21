@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+  </script>
   <%= render partial: "shared/nav-hamburger" %>
 </head>
 <body>
@@ -15,18 +21,21 @@
     <div class="text-center">
       <h2>Satellite <%= @satellite.name %></h2>
     </div>
-    <div class="text-center">
-      <p>NORAD ID: <%= @satellite.norad_id %></p>
-    </div>
-    <div class="text-center">
-    <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
-    </div>
-    <div class="text-center" >
-      <p>Current Latitude / Longitude: <%= @satellite.sat_lat %>, <%= @satellite.sat_lng %></p>
+    <div class="vis_container">
+      <div class="text-center">
+        <h4>NORAD ID: <%= @satellite.norad_id %></h4>
+        <div class="popup" onclick="myFunction()">What's a NORAD ID?
+          <span class="popuptext" id="myPopup">NORAD ID is....</span>
+        </div> 
+      </div>
+      <div class="text-center">
+      <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
+      </div>
     </div>
 
     <div class="satshow_container">
       <h3>Visibility in the next 10 days</h3>
+        <p class="text-center"> (Hover over date to view forecast)</p>
         <% if @visibility != nil %>
           <% @visibility[0..9].each_with_index do |v, idx| %>
             <div id="visibility<%= idx%>">
@@ -49,7 +58,8 @@
 
     <div class="satshow_container">
       <div id="map">
-        <p class="text-center">Current Location of <%= @satellite.name %></p>
+        <h4 class="text-center">Current Location</h4>
+        <p class="text-center">Latitude: <%= @satellite.sat_lat %>, Longitude: <%= @satellite.sat_lng %></p>
         <%=image_tag(@map_url)%>
       </div>
     </div>
@@ -60,7 +70,8 @@
       <% @messages.each_with_index do |m, idx| %>
         <div id="messages<%= idx %>">
           <div class="col-sm-4">
-                <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
+            <p class="text-center">Message <%= m.id %></p>
+            <p class="text-center"> <%= link_to m.content, "/messages/#{m.id}" %> </p>
           </div> 
         </div>
       <% end %>
