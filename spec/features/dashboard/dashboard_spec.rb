@@ -59,15 +59,15 @@ RSpec.describe 'Dashboard page' do
             end 
         end 
 
-        it 'has a link to discover satellites' do
-            visit '/users/dashboard'
+        # it 'has a link to discover satellites' do
+        #     visit '/users/dashboard'
             
-            expect(page).to have_content("Discover Satellites")
+        #     expect(page).to have_content("Discover Satellites")
 
-            click_on("Discover Satellites")
+        #     click_on("Discover Satellites")
 
-            expect(current_path).to eq("/users/discover")
-        end 
+        #     expect(current_path).to eq("/users/discover")
+        # end 
 
         it 'show when my satellites will be visible in the next 10 days' do
             visit '/users/dashboard'
