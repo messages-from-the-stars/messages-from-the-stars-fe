@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/messages/
+    body:
+      encoding: UTF-8
+      string: '{"message":{"satellite_id":12345,"start_lat":40.7143,"start_lng":-74.006,"content":"Hello
+        there, this is a test"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2022 18:58:34 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/plain; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 5bcce956-c8f1-4de0-b636-77a5497c0cd2
+      X-Runtime:
+      - '0.006105'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: " "
+  recorded_at: Wed, 21 Sep 2022 18:58:34 GMT
+recorded_with: VCR 6.1.0
