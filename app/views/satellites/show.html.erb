@@ -10,49 +10,56 @@
   <%= render partial: "shared/nav-hamburger" %>
 </head>
 <body>
-  <div class="text-center">
-    <h2><%= @satellite.name %>'s Show</h2>
-  </div>
-  <div class="text-center">
-    <p>NORAD ID: <%= @satellite.norad_id %></p>
-    <p>Satellite Name: <%= @satellite.name %></p>
-  </div>
-  <div class="text-center">
-  <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
-  </div>
-  <div class="text-center" >
-    <p>Current Latitude / Longitude: <%= @satellite.sat_lat %>, <%= @satellite.sat_lng %></p>
-  </div>
-  <div>
-    <h4>Visibility in the next 7 days</h4>
-    <% if @visibility != nil %>
-      <% @visibility[0..9].each_with_index do |v, idx| %>
-        <div id="visibility<%= idx%>">
-        <p>Date: <%= v.starting_time %></p>
-        <% @weather_forecasts.each do |forecast| %>
-          <% if v.starting_time.include?(forecast.date)%>
-            <p>Weather Forecast: <%= forecast.status %> </p>
+
+  <div class="bg_satshow">
+    <div class="text-center">
+      <h2>Satellite <%= @satellite.name %></h2>
+    </div>
+    <div class="text-center">
+      <p>NORAD ID: <%= @satellite.norad_id %></p>
+    </div>
+    <div class="text-center">
+    <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
+    </div>
+    <div class="text-center" >
+      <p>Current Latitude / Longitude: <%= @satellite.sat_lat %>, <%= @satellite.sat_lng %></p>
+    </div>
+
+    <div class="satshow_container">
+      <h3>Visibility in the next 10 days</h3>
+        <% if @visibility != nil %>
+          <% @visibility[0..9].each_with_index do |v, idx| %>
+            <div id="visibility<%= idx%>">
+            <p class="text-center">Date: <%= v.starting_time %></p>
+            <% @weather_forecasts.each do |forecast| %>
+              <% if v.starting_time.include?(forecast.date)%>
+                <p class="text-center">Weather Forecast: <%= forecast.status %> </p>
+              <% end %>
+            <% end %>
+            </div>
           <% end %>
         <% end %>
+    </div>
+
+    <div class="satshow_container">
+      <div id="map">
+        <p class="text-center">Current Location of <%= @satellite.name %></p>
+        <%=image_tag(@map_url)%>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <h4> <%= @messages.size %> Total Messages </h4>
+    </div>  
+      <% @messages.each_with_index do |m, idx| %>
+        <div id="messages<%= idx %>">
+          <div class="col-sm-4">
+                <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
+          </div> 
         </div>
       <% end %>
-    <% end %>
+    
   </div>
-  <div class="text-center">
-    <h4> <%= @messages.size %> Total Messages </h4>
-  </div>  
-    <% @messages.each_with_index do |m, idx| %>
-      <div id="messages<%= idx %>">
-        <div class="col-sm-4">
-              <p>Content: <%= link_to m.content, "/messages/#{m.id}" %></p>
-        </div> 
-      </div>
-    <% end %>
-  
-    <div class="map">
-      <p>Current Location of <%= @satellite.name %></p>
-      <%=image_tag(@map_url)%>
-    </div>
 
 </body>
 </html>
