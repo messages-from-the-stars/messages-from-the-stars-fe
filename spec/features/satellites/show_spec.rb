@@ -101,4 +101,12 @@ RSpec.describe 'Satellite Show Page' do
       end 
     end
   end
+
+  context '#sadpath' do
+    it 'redirects a non-logged in user to the landing page' do
+      visit "/satellite"
+        
+      expect(current_path).to eq("/")
+    end
+  end 
 end
