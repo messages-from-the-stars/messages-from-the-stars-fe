@@ -3,25 +3,28 @@
 <head>
   <title>Messages from the Stars</title>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <%= render partial: "shared/nav-hamburger" %>
 </head>
 <body>
-
-<div class="text-center">
-    <h1> Create a New Message </h1><br>
-</div>
-<div class="text-center">
-    <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
-        <%=form.text_field :message %>
-        <%=form.label :message, "Message:"%>
-        <%=form.submit "Send Message"%>
-        <%= form.hidden_field :lat, :value => @lat %>
-        <%= form.hidden_field :long, :value => @long %>
-        <%= form.hidden_field :sat_id, :value => @sat_id %>
-    <% end %>
+<div class="bg_new_message">
+    <p class="py-5 text-center"></p>
+  <div class="new_message_container text-center">
+      <h1>Create a New Message</h1><br>
+  </div>
+    <div class="new_message_form">
+      <%= form_with url: '/messages/create', method: :post, local: :true do |form| %>
+          <%=form.text_field :message %>
+          <%=form.label :message, "Message:"%>
+          <%=form.submit "Send Message"%>
+          <%= form.hidden_field :lat, :value => @lat %>
+          <%= form.hidden_field :long, :value => @long %>
+          <%= form.hidden_field :sat_id, :value => @sat_id %>
+      <% end %>
+    </div>
 </div>
 </body>
 </html>
