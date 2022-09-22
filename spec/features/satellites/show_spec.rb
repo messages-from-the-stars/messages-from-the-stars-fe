@@ -76,7 +76,7 @@ RSpec.describe 'Satellite Show Page' do
     it 'can link to the send a message page' do
      visit "/satellite"
 
-      click_on "Add New Message to SPACE STATION"
+      click_on "Add New Message"
 
       expect(current_path).to eq("/messages/new")
       expect(page).to have_content("Create a New Message")

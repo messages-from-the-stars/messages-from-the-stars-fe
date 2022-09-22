@@ -71,7 +71,7 @@ RSpec.describe 'Discover page' do
         end
        
         expect(current_path).to eq('/satellite')
-        expect(page).to have_content("NORAD ID: 25544")
+        expect(page).to have_content("NORAD ID 25544")
       end
     end
 
