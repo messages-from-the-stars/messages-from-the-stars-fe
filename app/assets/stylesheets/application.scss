@@ -86,12 +86,17 @@ body, html {
 }
 
 .satshow_container {
-  padding: 40px 40px;
+  padding: 30px 30px;
+  justify-content: center;
   display: inline-grid;
   align-items: baseline;
   font-family: "Iceland";
   text-align: center;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.satshow_center {
+  margin-left: 220px;
 }
 
 .vis_container {
@@ -355,7 +360,7 @@ body, html {
 /* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
-  width: 250px;
+  width: 550px;
   background-color: rgb(14, 22, 56);
   color: rgb(176, 193, 255);
   text-align: center;
@@ -388,6 +393,7 @@ body, html {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
+  opacity 1;
 }
 
 /* Add animation (fade in the popup) */
