@@ -17,7 +17,6 @@ class MessagesController < ApplicationController
   def create 
     if params[:message] != ""
       SatelliteFacade.create_user_satellite(params[:sat_id], session[:user_id])
-
       MessageFacade.create_message(@lat, @long, params[:message], params[:sat_id])
       redirect_to '/users/dashboard'
       flash[:success] = "Message sent!"    

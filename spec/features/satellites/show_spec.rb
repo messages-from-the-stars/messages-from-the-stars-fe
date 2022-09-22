@@ -109,5 +109,45 @@ RSpec.describe 'Satellite Show Page' do
         
       expect(current_path).to eq("/")
     end
+  end
+  
+  context '#sadpath' do
+    before(:each) do
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
+
+      @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
+      @found_satellites = JSON.parse(File.read('spec/fixtures/above_satellites.json'), symbolize_names: true)
+      @satellites = JSON.parse(File.read('spec/fixtures/satellites.json'), symbolize_names: true)
+      @visible_sat_times = JSON.parse(File.read('spec/fixtures/satellite_visibility.json'), symbolize_names: true)
+      @weather_data = JSON.parse(File.read('spec/fixtures/weather_data.json'), symbolize_names: true)
+      @position = JSON.parse(File.read('spec/fixtures/sat_position_response.json'), symbolize_names: true)
+      @position_bad = JSON.parse(File.read('spec/fixtures/sat_position_response_bad.json'), symbolize_names: true)
+      @sat_id = 999999999
+      @sat_db_call = JSON.parse(File.read('spec/fixtures/sat_db_response.json'), symbolize_names: true)
+      @message = JSON.parse(File.read('spec/fixtures/message.json'), symbolize_names: true)
+      @messages = JSON.parse(File.read('spec/fixtures/messages.json'), symbolize_names: true)
+      @lat = 39.75
+      @long = -104.99
+      
+      allow(SatelliteService).to receive(:get_satellites_in_range).and_return(@found_satellites)
+      allow(SatelliteService).to receive(:get_user_satellites).and_return(@satellites)
+      allow(SatelliteService).to receive(:get_satellite_visibility).and_return(@visible_sat_times)
+      allow(WeatherService).to receive(:get_weather_forecast).and_return(@weather_data)
+      allow(SatelliteService).to receive(:get_satellite_position).and_return(@position_bad)
+      allow(SatelliteService).to receive(:get_sat_message).and_return(@messages)
+      allow(UserService).to receive(:find_or_create_user).and_return(@user)
+      allow_any_instance_of(ApplicationController).to receive(:remote_ip).and_return(@lat, @long)
+      allow(SatelliteService).to receive(:create_satellite).and_return(@position)
+      allow(MessageService).to receive(:get_message).and_return(@message)
+      allow(SatelliteService).to receive(:get_norad_id).and_return(@sat_db_call)
+
+      visit '/auth/google_oauth2'
+    end 
+    
+    it 'shows an error if your satellite has no info' do
+      visit "/satellite"
+
+      expect(page).to have_content("Oh no! Your satellite is lost is space. Try to find a different one.")
+    end
   end 
 end
