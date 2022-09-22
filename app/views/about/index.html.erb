@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <title>Message from the Stars</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+  </script>
+  <%= render partial: "shared/nav-hamburger" %>
+</head>
+<body>
+
+  <div class="guide">
+    <h2>
+      Getting Started
+    </h2>
+
+    <p>
+      If this is your first time here, your "Tracked Satellites" on the dashboard is going to be empty - let's fix that! 
+    </p>
+
+    <p>
+      To get started, let's click on "Scan the Skies" on the navigation bar at the top of your screen, and you should see a page that looks something like this:
+    </p>
+
+    <%= image_tag "scan_page_shot.jpg"%>
+    
+    <p>
+      This 'scan' page uses your current location, and determines what satellites are above you at this exact moment in time (more specifically, within a 15 degree angle above you).
+    </p>
+
+    <p>
+      Let's see some more information about this satellite zipping by above you. Click on "View Satellite's Info" button. 
+    </p>
+
+    <%= image_tag "scan_circled_link.jpg"%>
+
+    <p>
+      After clicking on a "more info" button, we are taken to a page showing us a couple of interesting pieces of information:
+    </p>
+
+    <ol id="info-list">
+      <li>
+        A map with this satellite's current location.
+      </li>
+
+      <li>
+        A 10 day 'visibility' forecast
+      </li>
+
+      <li>
+        An option to "Cast a New Message"
+      </li>
+
+      <li>
+        Links to all of the messages attached to this satellite (if any have been attached).
+      </li>
+    </ol>
+
+    <%= image_tag "circled_sat_show.jpg"%>
+    
+    <p>
+      Let's say you scan the skies and you see an interesting satellite, like the International Space Station, or a piece of rocket debris from the 1960s, and you want to send out a message for anyone else lucky enough to see it when they scan their skies.  
+    </p>
+
+    <p>
+      Click on the "Cast a New Message" button, and you'll be taken to a page to write your message.
+    </p>
+
+    <%= image_tag "circled_cast_message.jpg"%>
+  
+    <p>
+      Let's type a nice note, and click "Send Message". Our message is now latched on to the International Space Station!
+    </p>
+
+    <%= image_tag "circled_new_message.jpg"%>
+
+    <p>
+      Now, let's say it is a few days later and you remember that you've attached a message to something zipping around the earth every 90 minutes, and you'd like to know where it is, or if anyone else has added a message. So, let's go back to our Control Center by clicking the link on the navigation bar. 
+    </p>
+
+    <%= image_tag "control_center_link.jpg"%>
+
+    <p>
+      Now, the satellite that you've attached your message to will be part of your "Tracked Satellites", so you can click to view information, no matter if it is above you or not! Let's click that link to view more information, and we're back on the page for that satellite, and we can see that your message is there, along with any other messages other users have attached to this satellite!
+    </p>
+
+    <%= image_tag "circled_control_center.jpg"%>
+
+    <p>
+      Let's click on one of these other messages and learn more. 
+    </p>
+
+    <%= image_tag "circled_message_link.jpg"%>
+
+    <p>
+      On this page, we can see:
+    </p>
+
+    <ol id="message-show-items">
+      <li>
+        The message contents - the actual note that was attached. 
+      </li>
+
+      <li>
+        A map marking your location, the location this message was sent from, and where this message is right now.
+      </li>
+
+      <li>
+        Information about when this message was sent, how many times it has traveled around the world, and how far it has traveled since it was launched. 
+      </li>
+    </ol>
+
+    <%= image_tag "circled_message_show.jpg" %>
+
+    <p>
+      As you send more messages, the number of satellites that you are tracking will grow, and the chances of seeing messages in response or alongside yours on the same satellite will grow!
+    </p>
+
+    <div id="faqs">
+      <h2> 
+        FAQs
+      </h2>
+
+      <h3>
+        How do we determine 'visibility'?
+      </h3>
+
+      <p>
+        Similar to 'scanning the skies', these visible passes are based on your location while using the app. A 'visible pass' of a satellite occurs when a satellite enters a viewer's local horizon (the portion of the sky you can see from your location), during a time when the satellite is not in Earth's shadow (so it can reflect sunlight), and during a time when the sky in your area *might* be dark enough to see the light reflected off of the satellite against a dark background.
+      <p>
+
+      <p>
+        A 'visual pass' calculation does not, however, account for your local weather. So for your convenience, you can hover over any visual pass times on this page to see a simplified weather report for your location at the time of this pass will occur. 
+      <p>
+      
+      <p>
+        If you find a 'clear' report for an upcoming visual pass and are in an area with low light pollution, get outside and look up! You might be able to see this satellite zipping overhead at 17,500 MPH!
+      </p>
+
+      <h3>
+        Why do I see lots of visual passes coming up?
+      </h3>
+
+      <p>
+        Satellites in LEO (low earth orbit), like the International Space Station, travel around the world in about 90 minutes at around 17,500 miles per hour! So, the exact collection of satellites you see on this page will be different every time you load it and start a new scan, as some of these LEO satellites will orbit out of your area and others will orbit into your area very quickly! If you are in New York City and see a LEO satellite above you, it could be as far away as London within 15 minutes, and then back over you again a little over an hour after that.
+      </p>
+
+      <h3>
+        Why are some satellites *always* on this page?
+      </h3>
+
+      <p>
+        Satellites in *geosynchronous* orbit, like many weather satellites, orbit at the exact same speed as the Earth, meaning they will remain above the same location at all times. If you are in the area of one of these satellites, it will not orbit in and out of your area, but will always show up when you scan the skies in the same location!
+      <p>
+
+      <p>
+        For more information on these orbits and others, check out the European Space Agency's great page explaining different types of orbits <%= link_to "at this link", "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits#orbits"%>.
+      </p>
+
+    </div>
+  </div>
+
+  <div id="project-info">
+    <h2>
+      Project Information
+    </h2>
+
+    <div id="repo-links">
+      <h3>
+        Repository Links
+      </h3>
+      <div class="fe-repo-link"> 
+        <%= link_to "Front-End Repository", "https://github.com/messages-from-the-stars/messages-from-the-stars-fe"%>
+      <div>
+      <div class="be-repo-link">
+        <%= link_to "Back-End Repository", "https://github.com/messages-from-the-stars/messages-from-the-stars-be"%>
+      </div>
+    </div>
+
+    <div id="contributors">
+      <h3>
+        Contributors (in reverse alphabetical order):
+      </h3>
+
+      <div class="contributor-1">
+        <%= link_to "@tig-o", "https://github.com/tig-o"%>
+      </div>
+
+      <div class="contributor-2">
+        <%= link_to "@philmarcu", "https://github.com/philmarcu"%>
+      </div>
+
+      <div class="contributor-3">
+        <%= link_to "@mikekoul", "https://github.com/mikekoul"%>
+      </div>
+
+      <div class="contributor-4">
+        <%= link_to "@jonathanmpope", "https://github.com/jonathanmpope"%>
+      </div>
+
+      <div class="contributor-5">
+        <%= link_to "@alepbloyd", "https://github.com/alepbloyd"%>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

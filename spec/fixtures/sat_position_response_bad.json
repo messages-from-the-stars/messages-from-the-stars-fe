@@ -1,0 +1,20 @@
+{
+    "info": {
+        "satname": "",
+        "satid": 99999,
+        "transactionscount": 18
+    },
+    "positions": [
+        {
+            "satlatitude": 0,
+            "satlongitude": 0,
+            "sataltitude": 0,
+            "azimuth": 0,
+            "elevation": 0,
+            "ra": 0,
+            "dec": 0,
+            "timestamp": 1663452952,
+            "eclipsed": false 
+        }
+    ]
+}

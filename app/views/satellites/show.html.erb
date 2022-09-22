@@ -16,7 +16,6 @@
   <%= render partial: "shared/nav-hamburger" %>
 </head>
 <body>
-
 <div class="bg_satshow">
 
   <div class="satshow_header">
@@ -34,13 +33,12 @@
         <span class="popuptext" id="myPopup">NORAD is the North American Aeropsace Defense Command, an organization that provides aerospace warning, air sovereignty & protection to Canada & the U.S. The NORAD ID refers to the catalog number (known as the Satellite Catalog Number -SATCAT-) that is assigned by a differnet organization, the U.S. Space Command.</span>
       </div> 
     </div> 
-
+   <% if @satellite != 404 %>
       <div class="satshow_button">
         <%= button_to "Cast a New Message", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
       </div>
-  </div>
 
-    <div class="satshow_container">
+    <div class="satshow_container satshow_center">
 
         <div class="sat_headers">
           <p>Visibility in the next 10 days</p>
@@ -85,10 +83,11 @@
             </div> 
         <% end %>
           </div>
-    </div>
-
-  </div>  
-</div>
-
+      </div>
+    </div>  
+  </div>    
+  <% else %>
+    <h3> Oh no! Your satellite is lost is space. Try to find a different one.</h3>
+  <% end %>
 </body>
 </html>

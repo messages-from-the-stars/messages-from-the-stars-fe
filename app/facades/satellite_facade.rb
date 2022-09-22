@@ -16,8 +16,12 @@ class SatelliteFacade
     end
 
     def self.get_satellite_position(norad_id)
-        json = SatelliteService.get_satellite_position(norad_id)
-        SatellitePosition.new(json)
+        json = SatelliteService.get_satellite_position(norad_id) 
+        if json[:positions].first[:satlatitude] != 0 
+            SatellitePosition.new(json)
+        else  
+            404 
+        end 
     end
   
     def self.above_satellites(lat, long)

@@ -103,7 +103,7 @@ RSpec.describe 'message show page' do
     end
   end 
 
-  context "#happypath" do 
+  context "#sadpath" do 
     before :each do
         Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
 

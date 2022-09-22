@@ -1,0 +1,250 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ipinfo.io/161.185.160.93/geo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 22 Sep 2022 20:26:39 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '4'
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 google
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "ip": "161.185.160.93",
+          "city": "New York City",
+          "region": "New York",
+          "country": "US",
+          "loc": "40.7143,-74.0060",
+          "org": "AS22252 The City of New York",
+          "postal": "10004",
+          "timezone": "America/New_York",
+          "readme": "https://ipinfo.io/missingauth"
+        }
+  recorded_at: Thu, 22 Sep 2022 20:26:39 GMT
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/users/find_or_create_user?name=John%20Smith&username=john@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 22 Sep 2022 20:26:39 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0b09e4230e05d2ea369742aedb503708"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 90edf416-46c1-404c-adfe-418218cbfa29
+      X-Runtime:
+      - '0.005027'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"44","type":"user","attributes":{"name":"John Smith","username":"john@example.com"}}}'
+  recorded_at: Thu, 22 Sep 2022 20:26:39 GMT
+- request:
+    method: get
+    uri: http://ipinfo.io/161.185.160.93/geo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 22 Sep 2022 20:26:40 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '6'
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 google
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "ip": "161.185.160.93",
+          "city": "New York City",
+          "region": "New York",
+          "country": "US",
+          "loc": "40.7143,-74.0060",
+          "org": "AS22252 The City of New York",
+          "postal": "10004",
+          "timezone": "America/New_York",
+          "readme": "https://ipinfo.io/missingauth"
+        }
+  recorded_at: Thu, 22 Sep 2022 20:26:40 GMT
+- request:
+    method: get
+    uri: https://messages-from-the-stars-be.herokuapp.com/api/v1/satellites/find_by_user_id?user_id=44
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 22 Sep 2022 20:26:39 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7b95ba9a-c2e2-43f4-a242-7a0e37564fc1
+      X-Runtime:
+      - '0.003678'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Thu, 22 Sep 2022 20:26:40 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<open_key>&exclude=minutely,hourly&lat=40.7143&lon=-74.006
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 22 Sep 2022 20:26:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '4354'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=40.71&lon=-74.01"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":40.7143,"lon":-74.006,"timezone":"America/New_York","timezone_offset":-14400,"current":{"dt":1663878394,"sunrise":1663843410,"sunset":1663887242,"temp":292.48,"feels_like":292.32,"pressure":1002,"humidity":71,"dew_point":287.09,"uvi":1.47,"clouds":0,"visibility":10000,"wind_speed":6.71,"wind_deg":312,"wind_gust":9.39,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}]},"daily":[{"dt":1663862400,"sunrise":1663843410,"sunset":1663887242,"moonrise":1663830180,"moonset":1663883340,"moon_phase":0.89,"temp":{"day":294.51,"min":287.94,"max":298.83,"night":287.94,"eve":293.26,"morn":293.85},"feels_like":{"day":294.74,"night":286.96,"eve":292.92,"morn":294.12},"pressure":1002,"humidity":78,"dew_point":290.52,"wind_speed":9.19,"wind_deg":306,"wind_gust":14.08,"weather":[{"id":502,"main":"Rain","description":"heavy
+        intensity rain","icon":"10d"}],"clouds":73,"pop":1,"rain":16.82,"uvi":2.45},{"dt":1663948800,"sunrise":1663929868,"sunset":1663973540,"moonrise":1663920420,"moonset":1663971240,"moon_phase":0.93,"temp":{"day":287.82,"min":283.25,"max":290.62,"night":285.55,"eve":289.23,"morn":283.67},"feels_like":{"day":286.31,"night":284.05,"eve":287.76,"morn":282.29},"pressure":1014,"humidity":37,"dew_point":273.05,"wind_speed":9.14,"wind_deg":328,"wind_gust":13.42,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":5,"pop":0,"uvi":4.8},{"dt":1664035200,"sunrise":1664016327,"sunset":1664059838,"moonrise":1664010720,"moonset":1664059080,"moon_phase":0.96,"temp":{"day":291.25,"min":284.57,"max":295.01,"night":290.61,"eve":294.46,"morn":284.65},"feels_like":{"day":290.06,"night":289.66,"eve":293.51,"morn":283.19},"pressure":1017,"humidity":36,"dew_point":275.78,"wind_speed":6.09,"wind_deg":308,"wind_gust":11.13,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":78,"pop":0,"uvi":4.43},{"dt":1664121600,"sunrise":1664102786,"sunset":1664146136,"moonrise":1664100960,"moonset":1664146800,"moon_phase":0,"temp":{"day":294.35,"min":289.93,"max":297.79,"night":292.81,"eve":296.79,"morn":290.38},"feels_like":{"day":293.7,"night":292.89,"eve":296.54,"morn":289.41},"pressure":1009,"humidity":45,"dew_point":281.84,"wind_speed":7.71,"wind_deg":214,"wind_gust":14.65,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":94,"pop":0.99,"rain":2.47,"uvi":4.4},{"dt":1664208000,"sunrise":1664189245,"sunset":1664232434,"moonrise":1664191320,"moonset":1664234580,"moon_phase":0.02,"temp":{"day":292.62,"min":290.33,"max":296.38,"night":291.77,"eve":296.38,"morn":291.33},"feels_like":{"day":292.14,"night":290.78,"eve":295.59,"morn":291.42},"pressure":1004,"humidity":58,"dew_point":284.16,"wind_speed":8.01,"wind_deg":256,"wind_gust":14.66,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":7,"pop":1,"rain":0.78,"uvi":4.76},{"dt":1664294400,"sunrise":1664275704,"sunset":1664318732,"moonrise":1664281800,"moonset":1664322420,"moon_phase":0.06,"temp":{"day":291.05,"min":288.02,"max":293.42,"night":288.6,"eve":292.35,"morn":288.7},"feels_like":{"day":290.12,"night":287.38,"eve":291.24,"morn":287.72},"pressure":1010,"humidity":47,"dew_point":279.52,"wind_speed":9.32,"wind_deg":258,"wind_gust":14.58,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":1,"pop":0,"uvi":0.21},{"dt":1664380800,"sunrise":1664362163,"sunset":1664405031,"moonrise":1664372400,"moonset":1664410380,"moon_phase":0.09,"temp":{"day":290.4,"min":286.22,"max":293.12,"night":286.81,"eve":292.23,"morn":286.28},"feels_like":{"day":289.49,"night":285.93,"eve":291.42,"morn":285.24},"pressure":1018,"humidity":50,"dew_point":279.99,"wind_speed":5.91,"wind_deg":290,"wind_gust":10.2,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":6,"pop":0.28,"uvi":1},{"dt":1664467200,"sunrise":1664448623,"sunset":1664491330,"moonrise":1664463120,"moonset":1664498700,"moon_phase":0.13,"temp":{"day":287.57,"min":284.62,"max":289.94,"night":284.96,"eve":289.94,"morn":284.62},"feels_like":{"day":286.14,"night":283.48,"eve":288.56,"morn":283.49},"pressure":1022,"humidity":41,"dew_point":274.51,"wind_speed":6.91,"wind_deg":329,"wind_gust":9.95,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":5,"pop":0,"uvi":1}]}'
+  recorded_at: Thu, 22 Sep 2022 20:26:40 GMT
+recorded_with: VCR 6.1.0
