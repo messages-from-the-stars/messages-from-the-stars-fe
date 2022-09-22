@@ -7,8 +7,10 @@
 2. [Location, Location](#location,-location)
 3. [Message in a Space Bottle](#message-in-a-space-bottle)
 4. [Design & Architexture](#design-&-architexture)
-5. [Notes](#notes)
-6. [Mock Drafts](#mock-drafts)
+5. [Mock Drafts](#mock-drafts)
+6. [Notes](#notes)
+7. [Resources](#resources)
+
 
 ## Overview
 
@@ -35,6 +37,8 @@ The Google Maps API is used to visually see on a map where the user, the satelli
 
 The OpenWeather API is used in tandem with your user location to let you know what days & specific times will be best to view the satellites passing near you.
 
+We also utilize a geocoder gem that helps us collect a users location thru their IP address. [Further info here](https://github.com/alexreisner/geocoder#readme)
+
 ## Message in a Space Bottle
 
 So where does this tie in to our original application idea? Well this is where our backend comes into play. As a logged in user you can visit our website, click on the "Scan the Skies" button and find satellites within your location. This button is linked to an API call that gets all satellites that meet that criteria and displays them on your current page. After that you can choose a specific satellite that you want to add a message to by clicking on it's hyperlink name. You type in a message ( keep it PG! ) and from there we attach that message to the satellite's current location. That becomes the message's starting position which is tracked by us and is used to tell you how far a message has traveled since you first made it. From there you can repeat the process and keep finding new satellites with messages, track old satellites you had created messages for and see what else has been added since then.
@@ -42,10 +46,9 @@ So where does this tie in to our original application idea? Well this is where o
 ## Design & Architexture 
 
 This side of our application is primarily responsible for the API consumption from the previously mentioned APIs (Google Maps, OpenWeather, N2YO). We initially started with building fixtures ( a way to organize data ) with real data from an actual API call to understand how we are retreiving the data. 
-Here's an example of data that you would get from a API call to the satellite positions endpoint that was shown earlier:
+Here's an example of data that you would get from a API call to the N2YO satellite positions endpoint that was shown earlier:
 
-  `# https://api.n2yo.com/rest/v1/satellite/positions/(add coordinates) 
-   
+  `
        "info": {
         "satname": "LAGEOS 2",
         "satid": 22195,
@@ -65,4 +68,41 @@ Here's an example of data that you would get from a API call to the satellite po
         }
     ]
 }`
+
+
+We take that information and send it through a Service / Facade / Poros pattern. This process returns API json objects from an API call function and turns it into an object more manageable for our application to manipulate. 
+
+Here's an example of what the above call will look like after going through the Service/Facade/Poros pattern:
+
+  `#<SatellitePosition:0x0000000124af21a0 @name="LAGEOS 2", @norad_id=22195, @sat_lat=-19.59326214, @sat_lng=-76.10313081>`
+
+We call upon the attributes in the above saved object inside of html pages that will display the necessary data to our users about their profile, their satellites' and their messages' current location.
+
+
+## Mock Drafts
+
+Here are the refined mocks we used for our websites design & layout, courtesy of Mike K.
+
+<img src="/app/assets/images/discover_satellites.png"
+<img src="/app/assets/images/home_user_dash.png"
+<img src="/app/assets/images/message_show.png"
+<img src="/app/assets/images/satellite_show.png"
+<img src="/app/assets/images/new_message_page.png"
+
+## Notes
+
+Here are some images of earlier notes Alex B. has made about consuming APIs from N2YO and OpenWeather.
+
+<img src="/app/assets/images/api_notes_1.png">
+<img src="/app/assets/images/api_notes_2.png">
+
+## Resources 
+
+For further resources about any tools / APIs that we utilized, here are some links for the following: 
+
+[Google Map API](https://developers.google.com/maps/get-started "Google Map API Getting Started")
+[N2YO API](https://www.n2yo.com/api/ "N2YO API")
+[Open Weather Map API](https://openweathermap.org/api "OpenWeatherMap API")
+[Geocoder](https://github.com/alexreisner/geocoder#readme "Geocoder Ruby Gem")
+
 
