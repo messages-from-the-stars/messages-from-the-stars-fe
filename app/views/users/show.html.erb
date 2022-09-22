@@ -35,7 +35,7 @@
         <% @satellites.each do |s| %>
             <div class="satellite">
 
-        <div class="col-md-4 text-center">
+        <div class="col-md-4">
             <h4>Norad Id: <%= s.norad_id %> </h4> 
             <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p>
             <% msg_collector = [] %>
