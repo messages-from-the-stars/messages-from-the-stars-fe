@@ -48,7 +48,6 @@ RSpec.describe 'message new page' do
         click_button('Send Message')
 
         expect(current_path).to eq('/users/dashboard')
-        expect(page).to have_content("Message sent!")
     end
 
     it 'will not let you send a blank message' do
