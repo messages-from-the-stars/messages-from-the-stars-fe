@@ -1,6 +1,6 @@
-# Message From The Stars
+   <img src= "/app/assets/images/satellite_logo.png" alt="Messages From The Stars">
 
-<img src= "/app/assets/images/satellite_logo.png" alt="Message From The Stars">
+# Messages From The Stars
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -14,7 +14,7 @@
 
 ## Overview
 
-Have you ever wanted to leave a permanent message in space, like a message in a bottle but sent out to the stars instead of the sea? Ever miss looking out into the skies to see stars and satellites pass along into space?
+Have you ever wanted to leave a message in space, like a letter in a bottle but sent out to the stars instead of the sea? Ever miss looking out into the skies to see stars and satellites pass along into space?
 
 This application intends to satisfy that desire. Messages From the Stars lets you attach messages directly to satellites that are close to your location. You find a specific satellite from using our Discover Satellites feature and type a message that will be directly connected to that's satellite's coordinates and will follow it along its orbital journey in space. So how does this work exactly?
 
@@ -83,18 +83,18 @@ We call upon the attributes in the above saved object inside of html pages that 
 
 Here are the refined mocks we used for our websites design & layout, courtesy of Mike K.
 
-<img src="/app/assets/images/discover_satellites.png" width="500">
-<img src="/app/assets/images/home_user_dash.png" width="500">
-<img src="/app/assets/images/message_show.png" width="500">
-<img src="/app/assets/images/satellite_show.png" width="500">
-<img src="/app/assets/images/new_message_page.png" width="500">
+   <img src="/app/assets/images/discover_satellites.png" width="500">
+   <img src="/app/assets/images/home_user_dash.png" width="500">
+   <img src="/app/assets/images/message_show.png" width="500">
+   <img src="/app/assets/images/satellite_show.png" width="500">
+   <img src="/app/assets/images/new_message_page.png" width="500">
 
 ## Notes
 
 Here are some images of earlier notes Alex B. has made about consuming APIs from N2YO and OpenWeather.
 
-              <img src="/app/assets/images/api_notes_1.png" width="500">
-              <img src="/app/assets/images/api_notes_2.png" width="500">
+   <img src="/app/assets/images/api_notes_1.png" width="500">
+   <img src="/app/assets/images/api_notes_2.png" width="500">
 
 ## Resources 
 
