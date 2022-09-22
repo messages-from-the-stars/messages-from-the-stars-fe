@@ -101,8 +101,11 @@ Here are some images of earlier notes Alex B. has made about consuming APIs from
 For further resources about any tools / APIs that we utilized, here are some links for the following: 
 
 [Google Map API](https://developers.google.com/maps/get-started "Google Map API Getting Started")
+
 [N2YO API](https://www.n2yo.com/api/ "N2YO API")
+
 [Open Weather Map API](https://openweathermap.org/api "OpenWeatherMap API")
+
 [Geocoder](https://github.com/alexreisner/geocoder#readme "Geocoder Ruby Gem")
 
 
