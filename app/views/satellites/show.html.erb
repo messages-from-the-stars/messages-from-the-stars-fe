@@ -15,11 +15,13 @@
   </script>
   <%= render partial: "shared/nav-hamburger" %>
     <div class="text-center">
+        <% if @satellite != 404 %>
         <h2>Satellite <%= @satellite.name %></h2>
+        <% end %>
     </div>
 </head>
 <body>
-
+   <% if @satellite != 404 %>
   <div class="bg_satshow">
     <div class="satshow_header">
       <p>Satellite <%= @satellite.name %></p>
@@ -93,6 +95,8 @@
     </div>  
     
   </div>
-
+  <% else %>
+    <h3> Oh no! Your satellite is lost is space. Try to find a different one.</h3>
+  <% end %>
 </body>
 </html>
