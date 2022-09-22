@@ -19,13 +19,15 @@
   </div>
 
   <div class="view_message_body">
-      
       <div class ="content">
       <div id="message-content">
-        Message: <%=@message.content%>
+        <p>Message:</p> 
+        <p><%=@message.content%></p>
       </div>
       </div>
+  </div>
 
+  <div class="view_sub_body">
       <div id ="sat-name">
         Satellite Name: <%=@satellite.name%>
       </div>
@@ -46,7 +48,6 @@
         <p>This message has orbited around the world about <%=@message.orbit_count%> times,</p>
         <p>or around <%=@message.miles_traveled%> miles!</p>
       </div>
-
     <div class="lat_wrap"> 
     <div class="start">
       <div id="start-lat">
@@ -79,6 +80,7 @@
     <% else %>
       <p> You broke the space-time continuum and your message disappeared into the void </p>
     <% end %>
+    </div>
   </div> 
 </body>
 </html>
