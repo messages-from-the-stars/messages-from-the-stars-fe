@@ -100,13 +100,13 @@ body, html {
 }
 
 .vis_container {
- width: auto;
- height: auto;
-
- opacity: .7;
-          color: rgb(255, 255, 255);
-          font-family: "Iceland";
-          text-align: center;
+  width: auto;
+  height: auto;
+  opacity: .7;
+  color: rgb(255, 255, 255);
+  font-family: "Iceland";
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .sat_dropdown {
@@ -170,6 +170,11 @@ body, html {
       text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
+.message_font {
+  font-size: 20px;
+  text-align: center;
+}
+
 .bg_dashboard {
     background-image: url("./dashboard_page.jpg");
     height: 100%;
@@ -209,7 +214,7 @@ body, html {
 
 .col-md-4 {
     color: rgb(255, 255, 255);
-    padding: 10px 100px;
+    padding: 10px 10px;
     text-align: center;
     font-size: 22px;
     font-family: "Iceland", Times, serif;
@@ -301,8 +306,6 @@ body, html {
     font-size: 52px;
     font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
-      background: rgba(255, 255, 255, 0.5);
-      margin: 10px 0 0 0;
 }
 
 
@@ -337,7 +340,7 @@ body, html {
 .start {
   padding-top: 50px;
   padding-bottom: 50px;
-  text-align: left;
+  // text-align: left;
 }
 
 .current {
@@ -347,7 +350,9 @@ body, html {
 }
 
 .message_map {
-  padding: 100px 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 }
 
 /* Popup container */
