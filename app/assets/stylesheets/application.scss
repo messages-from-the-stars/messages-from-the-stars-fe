@@ -7,16 +7,40 @@ body, html {
   src: url('Iceland-Regular.ttf');
 }
 
+.landing_header {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 94px;
+    font-family: "Iceland";
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.landing_subheader {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-family: "Iceland";
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.landing_stars {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 94px;
+    font-family: "Iceland";
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
 .landing_container_body {
-  padding: 200px 100px;
+  padding: 50px 100px;
   padding-bottom: 25px;
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 52px;
-  // font-style: italic;
+  font-style: italic;
   font-family: "Iceland";
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
-  
+  font-size: 50px;
 }
 
 .landing_container_login {
@@ -109,16 +133,24 @@ body, html {
 }
 
 .bg_dashboard {
-    background-image: url("./control_center.jpg");
+    background-image: url("./dashboard_page.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
 }
 
+.dashboard_header {
+    font-size: 92px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: "Iceland", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
 .dashboard_container_subheader {
-    padding: 50px 100px;
-    font-size: 36px;
+    font-size: 52px;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -127,9 +159,9 @@ body, html {
 }
 
 .dashboard_container_body {
-    padding: 200px 100px;
+    padding: 10px 100px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 32px;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -141,7 +173,7 @@ body, html {
     color: rgb(255, 255, 255);
     padding: 10px 100px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
@@ -329,6 +361,8 @@ body, html {
   .navbar .navbar-nav {
     display: inline-block;
     float: none;
+    font-family: "Iceland";
+    font-size: 22px;
   }
 
   .navbar-header button.navbar-brand {
