@@ -72,7 +72,16 @@ RSpec.describe 'Dashboard page' do
                 expect(page.all('.satellite')[0]).to have_content("Sep 17, at 8:30 PM")
                 expect(page.all('.satellite')[0]).to have_content("Weather: Clouds")
             end
-        end 
+        end
+
+        it 'has a link to the "about" page, and takes user to the "about" page when clicked' do
+            visit '/users/dashboard'
+
+            click_on ("About Page")
+
+            expect(current_path).to eq("/about")
+        end
+        
     end
 
      context '#sadpath' do
@@ -82,14 +91,4 @@ RSpec.describe 'Dashboard page' do
             expect(current_path).to eq("/")
         end
      end
-    
-    context '#about page link' do
-        it 'has a link to the "about" page, and takes user to the "about" page when clicked' do
-            visit '/users/dashboard'
-
-            click_on ("About Page")
-
-            expect(current_path).to eq("/about")
-        end
-    end
 end  
