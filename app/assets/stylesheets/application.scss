@@ -2,24 +2,52 @@ body, html {
     height: 100%;
 }
 
+@font-face {
+  font-family: 'Iceland';
+  src: url('Iceland-Regular.ttf');
+}
+
+.landing_header {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 94px;
+    font-family: "Iceland";
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.landing_subheader {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-family: "Iceland";
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.landing_stars {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 94px;
+    font-family: "Iceland";
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
 
 .landing_container_body {
-  padding: 200px 100px;
+  padding: 50px 100px;
   padding-bottom: 25px;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 40px;
+  font-size: 52px;
   font-style: italic;
-  font-family: "Arial Black";
+  font-family: "Iceland";
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
-  
+  font-size: 50px;
 }
 
 .landing_container_login {
   padding: 0px 100px;
   text-align: center;
   text-decoration: none;
-  font-family:"Arial Black", Times, serif;
+  font-family:"Iceland", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   }
 
@@ -44,13 +72,26 @@ body, html {
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
-  color: white;
+  font-family: "Iceland";
+}
+
+.satshow_header {
+  padding: 20px 100px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Iceland", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+    font-size: 52px;
+    color: white;
 }
 
 .satshow_container {
   padding: 40px 40px;
   display: inline-grid;
   align-items: baseline;
+  font-family: "Iceland";
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .vis_container {
@@ -59,11 +100,16 @@ body, html {
 
  opacity: .7;
           color: rgb(255, 255, 255);
+          font-family: "Iceland";
+          text-align: center;
 }
 
 .sat_dropdown {
   display: inline-block;
-  text-align: center;
+    font-family: "Iceland";
+      text-align: center;
+      font-size: 24px;
+      text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .sat_info {
@@ -78,6 +124,8 @@ body, html {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 8px 8px;
   z-index: 1;
+  font-family: "Iceland";
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   text-align: center;
   border-radius: 5px;
 }
@@ -87,9 +135,13 @@ body, html {
 }
 
 .satpop_container {
-  padding: 10px 10px;
+  padding: 5px 10px;
   display: inline-grid;
   align-items: baseline;
+  font-family: "Iceland";
+  text-align: center;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .sat_headers {
@@ -99,34 +151,54 @@ body, html {
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+  font-family: "Iceland";
+  text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+  font-size: 24px;
+}
+
+.satshow_button {
+    padding: 10px 100px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-family: "Iceland", Times, serif;
+      text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .bg_dashboard {
-    background-image: url("./control_center.jpg");
+    background-image: url("./dashboard_page.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
 }
 
-.dashboard_container_subheader {
-    padding: 50px 100px;
-    font-size: 36px;
+.dashboard_header {
+    font-size: 92px;
     text-align: center;
     text-decoration: none;
     color: white;
-    font-family: "Arial Black", Times, serif;
-    text-shadow: 1px 1px 1px rgb(0, 208, 255), 1px 1px 1px rgb(0, 0, 0);
+    font-family: "Iceland", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.dashboard_container_subheader {
+    font-size: 52px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: "Iceland", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .dashboard_container_body {
-    padding: 200px 100px;
+    padding: 10px 100px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 32px;
     text-align: center;
     text-decoration: none;
     color: white;
-    font-family: "Arial Black", Times, serif;
+    font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
@@ -134,14 +206,14 @@ body, html {
     color: rgb(255, 255, 255);
     padding: 10px 100px;
     text-align: center;
-    font-size: 18px;
-    font-family: "Arial Black", Times, serif;
+    font-size: 22px;
+    font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .col-sm-4 {
   text-align: center;
-  font-family: "Arial Black", Times, serif;
+  font-family: "Iceland", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   font-size: 16px;
 }
@@ -155,28 +227,29 @@ body, html {
 }
 
 .discover_container_header {
-    padding: 30px 100px;
+
     text-align: center;
     color: white;
-    font-size: 40px;
-    font-family: "Arial Black", Times, serif;
+    font-size: 62px;
+    font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .discover_container_subheader {
-  padding: 30px 100px;
+  padding: 10px 100px;
   text-align: center;
   color: white;
-  font-size: 24px;
-  font-family: "Arial Black", Times, serif;
+  font-size: 32px;
+  font-family: "Iceland", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .col-md-6 {
   color: rgb(255, 255, 255);
-  padding: 10px 100px;
+  padding: 5px 50px;
   text-align: center;
-  font-size: 18px;
+  font-size: 23px;
+  font-family: "Iceland";
 }
 
 .discover-button {
@@ -188,7 +261,7 @@ body, html {
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 52px;
-      font-family: "Arial Black", Times, serif;
+      font-family: "Iceland", Times, serif;
         text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
@@ -197,7 +270,7 @@ body, html {
   text-align: center;
   color: white;
   font-size: 20px;
-        font-family: "Arial Black", Times, serif;
+        font-family: "Iceland", Times, serif;
 }
 
 .bg_new_message {
@@ -221,8 +294,10 @@ body, html {
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 52px;
-    font-family: "Arial Black", Times, serif;
+    font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+      background: rgba(255, 255, 255, 0.5);
+      margin: 10px 0 0 0;
 }
 
 
@@ -230,9 +305,18 @@ body, html {
   padding: 0px 100px;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 24px;
-  font-family: "Arial Black", Times, serif;
+  font-size: 32px;
+  font-family: "Iceland", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+}
+
+.view_sub_body {
+  padding: 0px 100px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-family: "Iceland", Times, serif;
+    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
 }
 
 .content {
@@ -321,6 +405,8 @@ body, html {
   .navbar .navbar-nav {
     display: inline-block;
     float: none;
+    font-family: "Iceland";
+    font-size: 22px;
   }
 
   .navbar-header button.navbar-brand {

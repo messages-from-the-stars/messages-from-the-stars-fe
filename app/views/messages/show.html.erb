@@ -12,29 +12,22 @@
 <body>
 
 <div class="bg_view_message">
-
-<div class="text-center">
-  <h1> Message show </h1>
-</div>
-  <div class="text-center">
     <% if @message != 404 %>
-    <div id ="sat-name">
-      Satellite Name: <%=@satellite.name%>
-    </div>
-
 
   <div class="view_message_header">
     <p>Intercepted Message</p>
   </div>
 
   <div class="view_message_body">
-      
       <div class ="content">
       <div id="message-content">
-        Message: <%=@message.content%>
+        <p>Message:</p> 
+        <p><%=@message.content%></p>
       </div>
       </div>
+  </div>
 
+  <div class="view_sub_body">
       <div id ="sat-name">
         Satellite Name: <%=@satellite.name%>
       </div>
@@ -55,7 +48,6 @@
         <p>This message has orbited around the world about <%=@message.orbit_count%> times,</p>
         <p>or around <%=@message.miles_traveled%> miles!</p>
       </div>
-
     <div class="lat_wrap"> 
     <div class="start">
       <div id="start-lat">
@@ -85,16 +77,10 @@
     </div>
   </div>
 </div> 
-    <div id="message-orbits">
-      This message has orbited around the world about <%=@message.orbit_count%> times, or around <%=@message.miles_traveled%> miles!
-    </div>
-    
-    <div id="map">
-      <%=image_tag(@map_url)%>
-    </div>
     <% else %>
       <p> You broke the space-time continuum and your message disappeared into the void </p>
     <% end %>
+    </div>
   </div> 
 </body>
 </html>
