@@ -14,11 +14,6 @@
     }
   </script>
   <%= render partial: "shared/nav-hamburger" %>
-    <div class="text-center">
-        <% if @satellite != 404 %>
-        <h2>Satellite <%= @satellite.name %></h2>
-        <% end %>
-    </div>
 </head>
 <body>
    <% if @satellite != 404 %>
@@ -27,23 +22,24 @@
       <p>Satellite <%= @satellite.name %></p>
     </div>
 
-    <div class="vis_container">
-
-        <div class="satpop_container">
-          <p>NORAD ID <%= @satellite.norad_id %></p>
-        </div>
-
-        <div class="satpop_container">
-          <div class="popup" onclick="myFunction()">What's a NORAD ID?
-            <span class="popuptext" id="myPopup">NORAD is the North American Aeropsace Defense Command, an organization that provides aerospace warning, air sovereignty & protection to Canada & the U.S. The NORAD ID refers to the catalog number (known as the Satellite Catalog Number -SATCAT-) that is assigned by a differnet organization, the U.S. Space Command.</span>
-          </div> 
+    <div class="text-center">
+      <div class="satpop_container">
+        <p>NORAD ID <%= @satellite.norad_id %></p>
+      </div>
+      <div class="satpop_container">
+        <div class="popup" onclick="myFunction()">What's a NORAD ID?
+          <span class="popuptext" id="myPopup">NORAD is the North American Aeropsace Defense Command, an organization that provides aerospace warning, air sovereignty & protection to Canada & the U.S. The NORAD ID refers to the catalog number (known as the Satellite Catalog Number -SATCAT-) that is assigned by a differnet organization, the U.S. Space Command.</span>
         </div> 
+      </div> 
+    </div>
+
+    <div class="vis_container">
       <div class="satshow_button">
         <%= button_to "Cast a New Message", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
       </div>
     </div>
 
-    <div class="satshow_container">
+    <div class="satshow_container satshow_center">
 
       <div class="sat_headers">
 
