@@ -81,7 +81,7 @@
       </div>
         <% @messages.each_with_index do |m, idx| %>
           <div id="messages<%= idx %>">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <p>Message <%= link_to m.id, "/messages/#{m.id}" %></p>
             </div> 
         <% end %>
