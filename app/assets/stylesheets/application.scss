@@ -311,4 +311,15 @@ body, html {
   to {opacity: 1;}
 }
 
+@media (min-width: 768px) {
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+  }
+
+  .navbar-header button.navbar-brand {
+    text-align: left;
+  }
+}
+
 @import "bootstrap";
