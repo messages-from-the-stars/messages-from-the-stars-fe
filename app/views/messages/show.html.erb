@@ -59,6 +59,12 @@
       </div>
     </div>
 
+    <div class="message_map">
+      <div id="map">
+        <%=image_tag(@map_url)%>
+      </div>
+    </div>
+    
     <div class="current">
       <div id="current-lat">
         Current Lat: <%=@satellite.sat_lat%>
@@ -70,11 +76,6 @@
     </div>
     </div>
 
-    <div class="message_map">
-      <div id="map">
-        <%=image_tag(@map_url)%>
-      </div>
-    </div>
   </div>
 </div> 
     <% else %>
