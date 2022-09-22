@@ -32,9 +32,8 @@
             <div class="satellite">
 
         <div class="col-md-4 text-center">
-            <h3>Satellite Id: <%= s.id %> </h3>
             <h4>Norad Id: <%= s.norad_id %> </h4> 
-            <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p><br>
+            <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p>
             <% msg_collector = [] %>
             <% if @message_count != nil %>
                 <% @message_count.each do |msg| %>
@@ -44,19 +43,19 @@
                 <% end %>
             <% end %>
             <p><%= msg_collector.count %> Messages<p>
-            <h4>Visibility in the next 7 days</h4>
+            <%# <h4>Visibility in the next 7 days</h4>
             <% @visible_times[0..9].each do |vis_time| %>
-            <div class="col-sm-4">
+            <%# <div class="col-sm-4">
                 <% if s.id == vis_time.sat_id %>
-                    <p><%= vis_time.starting_time %></p>
-                    <% @weather_forecasts.each do |forecast| %>
-                        <% if vis_time.starting_time.include?(forecast.date) %>
-                            <p>Weather: <%= forecast.status %> </p>
-                        <% end %>
-                    <% end %>
-                <% end %>
-            </div>
-            <% end %>
+                    <%# <p><%= vis_time.starting_time</p> %>
+                    <%# <% @weather_forecasts.each do |forecast| %>
+                        <%# <% if vis_time.starting_time.include?(forecast.date) %>
+                            <%# <p>Weather: <%= forecast.status </p>  %>
+                        <%# <% end %> 
+                    <%# <% end %> 
+                <%# <% end %> 
+            <%# </div> %> 
+            <%# <% end %> 
         </div>
         <% end %>
     <% end %>
