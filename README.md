@@ -1,8 +1,8 @@
 # Message From The Stars
 
 ## Table of Contents
-1. [Example](#example)
-2. [Example2](#example2)
+1. [Overview]
+2. [Location, Location]
 
 ## Overview
 Have you ever wanted to leave a permanent message in space, like a message in a bottle but sent out to the stars instead of the sea?
