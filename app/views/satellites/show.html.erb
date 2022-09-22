@@ -14,11 +14,13 @@
     }
   </script>
   <%= render partial: "shared/nav-hamburger" %>
+    <div class="text-center">
+        <h2>Satellite <%= @satellite.name %></h2>
+    </div>
 </head>
 <body>
 
   <div class="bg_satshow">
-
     <div class="satshow_header">
       <p>Satellite <%= @satellite.name %></p>
     </div>
@@ -35,14 +37,16 @@
           </div> 
         </div> 
       <div class="satshow_button">
-        <%= button_to "Add New Message to #{@satellite.name}", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
+        <%= button_to "Cast a New Message", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
       </div>
     </div>
 
     <div class="satshow_container">
 
       <div class="sat_headers">
+
         <p>Visibility in the next 10 days</p>
+
       </div>
 
         <p class="text-center"> (Hover over date to view forecast)</p>
@@ -51,7 +55,7 @@
             <div id="visibility<%= idx%>">
               <div class="text-center">
                 <div class="sat_dropdown">
-                  <p><%= v.starting_time %></p>
+                  <p><%= v.starting_time %></p><br>
                   <% @weather_forecasts.each do |forecast| %>
                     <% if v.starting_time.include?(forecast.date)%>
                     <div class="satdropdown-content">

@@ -37,7 +37,7 @@ RSpec.describe 'Dashboard page' do
             visit '/users/dashboard'
 
             expect(current_path).to eq("/users/dashboard")
-            expect(page).to have_content("Your Satellites")
+            expect(page).to have_content("Tracked Satellites")
 
             within ("#satellites") do 
                 expect(page.all('.satellite')[0]).to have_content("128366")
