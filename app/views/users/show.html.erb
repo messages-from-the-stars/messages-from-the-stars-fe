@@ -36,8 +36,10 @@
             <div class="satellite">
 
         <div class="col-md-4">
-            <h4>Norad Id: <%= s.norad_id %> </h4> 
-            <p><%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %><p>
+            <p>Norad Id: <%= s.norad_id %> </p> 
+            <div class="button">
+            <%= button_to "View This Satellite's Info", '/satellite', params: {:sat_id => s.norad_id}, method: :get, local: true %>
+            </div>
             <% msg_collector = [] %>
             <% if @message_count != nil %>
                 <% @message_count.each do |msg| %>

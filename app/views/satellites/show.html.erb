@@ -36,7 +36,9 @@
   <% if @satellite != 404 %>
   <div class="vis_container">
       <div class="satshow_button">
+      <div class="button">
         <%= button_to "Cast a New Message", "/messages/new", params: {:sat_id => @sat_id}, method: :get, local: true %>
+        </div>
       </div>
   </div>  
 
