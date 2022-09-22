@@ -83,6 +83,7 @@ RSpec.describe 'Discover page' do
         expect(page).to have_content("Messages")
       end
     end
+    
   end 
 
   context '#sadpath' do
