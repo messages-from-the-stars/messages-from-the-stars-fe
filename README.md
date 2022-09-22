@@ -83,18 +83,18 @@ We call upon the attributes in the above saved object inside of html pages that 
 
 Here are the refined mocks we used for our websites design & layout, courtesy of Mike K.
 
-<img src="/app/assets/images/discover_satellites.png, width="400">
-<img src="/app/assets/images/home_user_dash.png, width="400">
-<img src="/app/assets/images/message_show.png, width="400">
-<img src="/app/assets/images/satellite_show.png, width="400">
-<img src="/app/assets/images/new_message_page.png, width="400">
+<img src="/app/assets/images/discover_satellites.png" width="400">
+<img src="/app/assets/images/home_user_dash.png" width="400">
+<img src="/app/assets/images/message_show.png" width="400">
+<img src="/app/assets/images/satellite_show.png" width="400">
+<img src="/app/assets/images/new_message_page.png" width="400">
 
 ## Notes
 
 Here are some images of earlier notes Alex B. has made about consuming APIs from N2YO and OpenWeather.
 
-<img src="/app/assets/images/api_notes_1.png, width="400">
-<img src="/app/assets/images/api_notes_2.png, width="400">
+<img src="/app/assets/images/api_notes_1.png" width="400">
+<img src="/app/assets/images/api_notes_2.png" width="400">
 
 ## Resources 
 
