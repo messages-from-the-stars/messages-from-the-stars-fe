@@ -62,14 +62,14 @@ RSpec.describe 'Satellite Show Page' do
 
     it 'can show a satellites messages' do
       visit "/satellite"
-
+  
       expect(page).to have_content("13 Total Messages")
 
       within "#messages0" do
-        expect(page).to have_content("What a piece of work is man! How noble in reason, how infinite in faculty!")
+        expect(page).to have_content("Message 1")
       end
       within "#messages4" do
-        expect(page).to have_content("Neither a borrower nor a lender be; For loan oft loses both itself and friend")
+        expect(page).to have_content("Message 5")
       end
     end
 
@@ -88,7 +88,7 @@ RSpec.describe 'Satellite Show Page' do
       visit "/satellite"
 
       within "#messages0" do
-        click_on "What a piece of work is man!"
+        click_on "1"
         expect(current_path).to eq("/messages/1")
       end
     end
@@ -96,10 +96,8 @@ RSpec.describe 'Satellite Show Page' do
     it 'has an image thats a map of its current location' do
       visit "/satellite"
 
-      within "#map" do
-        expect(page).to have_content("Current Location")
-        expect(page).to have_css("img")
-      end 
+      expect(page).to have_content("Current Location")
+      expect(page).to have_css("img")
     end
   end
 

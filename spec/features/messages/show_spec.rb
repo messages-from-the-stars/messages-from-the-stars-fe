@@ -35,8 +35,8 @@ RSpec.describe 'message show page' do
 
     it 'displays message content' do
       visit "/messages/#{@message_id}" 
-
-      expect(page).to have_content("Message: What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.")
+      
+      expect(page).to have_content("What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.")
     end
     
     it 'displays starting lat/lng for message'do
