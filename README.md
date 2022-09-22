@@ -43,6 +43,7 @@ So where does this tie in to our original application idea? Well this is where o
 
 This side of our application is primarily responsible for the API consumption from the previously mentioned APIs (Google Maps, OpenWeather, N2YO). We initially started with building fixtures ( a way to organize data ) with real data from an actual API call to understand how we are retreiving the data. 
 Here's an example of data that you would get from a API call to the satellite positions endpoint that was shown earlier:
+
   `# https://api.n2yo.com/rest/v1/satellite/positions/(add coordinates) 
    
        "info": {
@@ -63,6 +64,5 @@ Here's an example of data that you would get from a API call to the satellite po
             "eclipsed": false
         }
     ]
-}
-  `
+}`
 
