@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resource :users do
     get '/dashboard', to: "users#show"
     get '/discover', to: "discover#index"
-    # post '/satellites', to: "satellites#create"
   end
   
   resources :messages, only: [:show, :new]
