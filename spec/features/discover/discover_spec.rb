@@ -36,7 +36,7 @@ RSpec.describe 'Discover page' do
 
         visit discover_users_path
 
-        expect(page).to have_content("Satellites Above You")
+        expect(page).to have_content("Scan the Skies")
       end
 
       it 'should display max ten satellites in range of user' do
@@ -71,7 +71,7 @@ RSpec.describe 'Discover page' do
         end
        
         expect(current_path).to eq('/satellite')
-        expect(page).to have_content("NORAD ID: 25544")
+        expect(page).to have_content("NORAD ID 25544")
       end
     end
 
