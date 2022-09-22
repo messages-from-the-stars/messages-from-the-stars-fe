@@ -20,7 +20,11 @@ RSpec.describe 'About Page' do
 
   it 'has a link to contributors githubs', :vcr do
     within "#contributors" do
-      expect(page).to have_link()
+      expect(page).to have_link("@tig-o")
+      expect(page).to have_link("@philmarcu")
+      expect(page).to have_link("@mikekoul")
+      expect(page).to have_link("@jonathanmpope")
+      expect(page).to have_link("@alepbloyd")
     end
   end
 end
