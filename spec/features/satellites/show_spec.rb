@@ -74,14 +74,14 @@ RSpec.describe 'Satellite Show Page' do
     end
 
     it 'can link to the send a message page' do
-     visit "/satellite"
+      visit "/satellite"
 
-      click_on "Add New Message"
+      click_on "Cast a New Message"
 
       expect(current_path).to eq("/messages/new")
-      expect(page).to have_content("Create a New Message")
+      expect(page).to have_content("Cast a New Message")
       expect(page).to have_button("Send Message")
-      expect(find('form')).to have_content("Message")
+      expect(page).to have_field(:message)
     end
 
     it 'can link to a specific message show page' do

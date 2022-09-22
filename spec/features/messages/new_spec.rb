@@ -40,7 +40,7 @@ RSpec.describe 'message new page' do
 
         click_button("View DELTA 1 DEB's Info")
         
-        click_on "Add New Message"
+        click_on "Cast a New Message"
 
         expect(current_path).to eq("/messages/new")
 
