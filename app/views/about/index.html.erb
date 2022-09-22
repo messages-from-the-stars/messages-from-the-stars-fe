@@ -18,7 +18,39 @@
 <body>
 
   <div class="guide">
+    If this is your first time here, your "Tracked Satellites" on the dashboard is going to be empty - let's fix that!
 
+    To get started, click on "Scan the Skies" on the navigation bar at the top of your screen.
+    
+    This page uses your current location, and determines what satellites are above you at this exact moment in time (more specifically, within a 15 degree angle above you).
+
+    (scan results image)
+
+    Let's click on one of these overhead satellites for more information.
+
+    After clicking on a "more info" button, we are taken to a page showing us a couple of interesting pieces of information:
+    
+    1. A map with this satellite's current location.
+    2. A 10 day 'visibility forecast'
+
+      - How do we determine 'visibility'?
+
+      - Similar to 'scanning the skies', these visible passes are based on your location while using the app. A 'visible pass' of a satellite occurs when a satellite enters a viewer's local horizon (the portion of the sky you can see from your location), during a time when the satellite is not in Earth's shadow (so it can reflect sunlight), and during a time when the sky in your area *might* be dark enough to see the light reflected off of the satellite against a dark background. 
+
+      
+    3. A button to 'cast a new message'
+    4. Links to existing messages
+
+    
+
+    <div class="about-orbits">
+    
+      Satellites in LEO (low earth orbit), like the International Space Station, travel around the world in about 90 minutes at around 17,500 miles per hour! So, the exact collection of satellites you see on this page will be different every time you load it and start a new scan, as some of these LEO satellites will orbit out of your area and others will orbit into your area very quickly! If you are in New York City and see a LEO satellite above you, it could be as far away as London within 15 minutes, and then back over you again a little over an hour after that.
+
+      Satellites in *geosynchronous* orbit, like many weather satellites, orbit at the exact same speed as the Earth, meaning they will remain above the same location at all times. If you are in the area of one of these satellites, it will not orbit in and out of your area, but will always show up when you scan the skies in the same location!
+
+      For more information on orbits, check out the European Space Agency's great page explaining different types of orbits <%= link_to "at this link", "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits#orbits"%>.
+    </div>
   </div>
 
   <div class="credits">
