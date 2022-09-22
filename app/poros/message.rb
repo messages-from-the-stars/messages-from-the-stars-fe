@@ -29,12 +29,19 @@ class Message
     (today - datetime).to_i
   end
 
+  def travel_time_seconds
+    datetime = DateTime.parse(@created_at)
+    now = DateTime.now
+
+    (now - datetime).days.seconds.to_i
+  end
+
   def orbit_count
     travel_time_days * 16
   end
 
   def miles_traveled
-    orbit_count * 24_902
+    (travel_time_seconds * 4.86).to_i
   end
 
 end

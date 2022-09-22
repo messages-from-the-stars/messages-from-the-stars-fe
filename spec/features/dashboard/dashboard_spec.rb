@@ -44,35 +44,6 @@ RSpec.describe 'Dashboard page' do
                 expect(page.all('.satellite')[1]).to have_content("123456")
             end 
         end 
-        
-        it 'show when my satellites will be visible in the next 10 days' do
-            visit '/users/dashboard'
-
-            within ("#satellites") do 
-                expect(page.all('.satellite')[0]).to have_content("128366")
-                expect(page.all('.satellite')[0]).to have_content("Visibility in the next 7 days")
-                expect(page.all('.satellite')[0]).to have_content("Sep 16, at 5:41 PM")
-                expect(page.all('.satellite')[0]).to have_content("Sep 16, at 7:23 PM")
-                expect(page.all('.satellite')[0]).to have_content("Sep 17, at 6:47 PM")
-                expect(page.all('.satellite')[0]).to have_content("Sep 17, at 8:30 PM")
-            end
-        end 
-
-        it 'shows the weather for each' do
-            visit '/users/dashboard'
-           
-            within ("#satellites") do 
-                expect(page.all('.satellite')[0]).to have_content("Visibility in the next 7 days")
-                expect(page.all('.satellite')[0]).to have_content("Sep 16, at 5:41 PM")
-                expect(page.all('.satellite')[0]).to have_content("Weather: Clear")
-                expect(page.all('.satellite')[0]).to have_content("Sep 16, at 7:23 PM")
-                expect(page.all('.satellite')[0]).to have_content("Weather: Clear")
-                expect(page.all('.satellite')[0]).to have_content("Sep 17, at 6:47 PM")
-                expect(page.all('.satellite')[0]).to have_content("Weather: Clouds")
-                expect(page.all('.satellite')[0]).to have_content("Sep 17, at 8:30 PM")
-                expect(page.all('.satellite')[0]).to have_content("Weather: Clouds")
-            end
-        end
 
         it 'has a link to the "about" page, and takes user to the "about" page when clicked' do
             visit '/users/dashboard'

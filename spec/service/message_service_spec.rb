@@ -32,6 +32,12 @@ RSpec.describe MessageService do
       expect(message[:data][:attributes]).to have_key(:created_at)
       expect(message[:data][:attributes][:created_at]).to be_a(String)
     end
+
+    it 'returns an integer if a message call is invaled', :vcr do
+      message = MessageService.get_message(9999999)
+      
+      expect(message).to be_a(Integer)
+    end 
   end
 
   describe '#create_message' do
