@@ -2,6 +2,9 @@
 
 # Messages From The Stars
 
+[Home Page](https://messages-from-the-stars.herokuapp.com/ "Messages From The Stars")
+[Backend Repository](https://github.com/messages-from-the-stars/messages-from-the-stars-be "Backend Repo")
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Location, Location](#location,-location)
@@ -10,6 +13,7 @@
 5. [Mock Drafts](#mock-drafts)
 6. [Notes](#notes)
 7. [Resources](#resources)
+8. [Contributors](#contributors)
 
 
 ## Overview
@@ -107,5 +111,13 @@ For further resources about any tools / APIs that we utilized, here are some lin
 [Open Weather Map API](https://openweathermap.org/api "OpenWeatherMap API")
 
 [Geocoder](https://github.com/alexreisner/geocoder#readme "Geocoder Ruby Gem")
+
+## Contributors
+
+[@tig-o](https://github.com/tig-o)
+[@philmarcu](https://github.com/philmarcu)
+[@mikekoul](https://github.com/mikekoul)
+[@alepbloyd](https://github.com/alepbloyd)
+[@jonathanmpope](https://github.com/jonathanmpope)
 
 
