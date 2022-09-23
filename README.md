@@ -6,6 +6,8 @@
 
 [Backend Repository](https://github.com/messages-from-the-stars/messages-from-the-stars-be "Backend Repo")
 
+[Click this link for a more detailed explanation of how to interact with our app](https://messages-from-the-stars.herokuapp.com/about)
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Location, Location](#location,-location)
