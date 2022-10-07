@@ -209,8 +209,6 @@ body, html {
     color: white;
     font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
-    // background-image: url("./dashboard_page.jpg");
-    // background-position: center;
 }
 
 .dashboard_container_subheader {
@@ -265,8 +263,6 @@ body, html {
     background-image: url("./dis_other.jpg");
     height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .discover_container_header {
@@ -292,6 +288,10 @@ body, html {
   text-align: center;
   font-size: 22px;
   font-family: "Iceland";
+  border: 2px solid black;
+    width: 50%;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .discover-button {
