@@ -2,6 +2,7 @@ body, html {
     height: 100%;
     color: #000;
     background-color: #000;
+    background-size: cover;
 }
 
 @font-face {
@@ -46,7 +47,7 @@ body, html {
 
 .landing_container_body {
   padding: 50px 100px;
-  padding-bottom: 25px;
+  padding-bottom: 50px;
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 52px;
@@ -54,6 +55,10 @@ body, html {
   font-family: "Iceland";
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
   font-size: 50px;
+  background: #7f7f7f;
+  background: rgba(0, 0, 0, 0.5);
+  width: 1000px;
+  margin: auto;
 }
 
 .landing_container_login {
@@ -69,7 +74,7 @@ body, html {
   background-image: url("./landing_final.jpg");
   height: 100%;
   background-position: center;
-  background-size: cover;
+  // background-size: cover;
   // background-color: black;
 }
 
@@ -122,6 +127,7 @@ body, html {
   font-family: "Iceland";
   text-align: center;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+  padding-bottom: 25px;
 }
 
 .sat_dropdown {
