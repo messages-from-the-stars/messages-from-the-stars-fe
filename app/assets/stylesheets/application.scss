@@ -13,7 +13,6 @@ body, html {
 .logo {
   width: 100%;
   margin:  0 auto 0 auto;
-  // background-image: url("./landing_final.jpg");
 }
 
 .text_formating {
@@ -74,8 +73,6 @@ body, html {
   background-image: url("./landing_final.jpg");
   height: 100%;
   background-position: center;
-  // background-size: cover;
-  // background-color: black;
 }
 
 .link_text {
@@ -198,11 +195,10 @@ body, html {
 }
 
 .bg_dashboard {
-    background-image: url("./dashboard_page.jpg");
     height: 100%;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
+      color: #000;
+      background-color: #000;
+      background-size: cover;
 }
 
 .dashboard_header {
@@ -212,6 +208,8 @@ body, html {
     color: white;
     font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+    background-image: url("./dashboard_page.jpg");
+    background-position: center;
 }
 
 .dashboard_container_subheader {
@@ -232,6 +230,10 @@ body, html {
     color: white;
     font-family: "Iceland", Times, serif;
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+      background: #7f7f7f;
+        background: rgba(0, 0, 0, 0.5);
+        width: 1000px;
+        margin: auto;
 }
 
 .col-md-4 {
