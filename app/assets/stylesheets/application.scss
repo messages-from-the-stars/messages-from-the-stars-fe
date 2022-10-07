@@ -1,10 +1,22 @@
 body, html {
     height: 100%;
+    color: #000;
+    background-color: #000;
 }
 
 @font-face {
   font-family: 'Iceland';
   src: url('Iceland-Regular.ttf');
+}
+
+.logo {
+  width: 100%;
+  margin:  0 auto 0 auto;
+  // background-image: url("./landing_final.jpg");
+}
+
+.text_formating {
+  margin: -25px;
 }
 
 .landing_header {
@@ -13,6 +25,7 @@ body, html {
     font-size: 94px;
     font-family: "Iceland";
     text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+
 }
 
 .landing_subheader {
@@ -44,19 +57,20 @@ body, html {
 }
 
 .landing_container_login {
-  padding: 0px 100px;
+  padding: 100px 0px 100px 0px;
   text-align: center;
   text-decoration: none;
   font-family:"Iceland", Times, serif;
   text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+  font-size: 52px;
   }
 
 .bg_landing {
   background-image: url("./landing_final.jpg");
   height: 100%;
   background-position: center;
-  background-repeat: repeat-1000px;
   background-size: cover;
+  // background-color: black;
 }
 
 .link_text {
