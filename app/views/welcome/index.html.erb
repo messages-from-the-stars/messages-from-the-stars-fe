@@ -10,26 +10,27 @@
 </head>
 <body>
 <div class="bg_landing">
-  <p class="py-5 text-center"></p>
+  <div class="logo">
     <div class="landing_header">
-      <p>MESSAGES</p>
+      <p class="text_formating">MESSAGES</p>
     </div>
     <div class="landing_subheader">
-      <p>FROM THE</p>
+      <p class="text_formating">FROM </p>
+      <p class="text_formating">THE</p>
     </div>
     <div class="landing_stars">
-      <p>STARS</p>
+      <p class="text_formating">STARS</p>
     </div>
+  </div>
 
-
-    <div class="landing_container_body">
-      <p>Catch a satellite</p>
-      <p>Create a message</p>
-      <p>Cast your message into the cosmic ocean</p>
-      <p>Log in to begin exploring the skies</p>
+    <div class="landing_container_body text_formating">
+      <p class="text_formating">Catch a satellite</p>
+      <p class="text_formating">Create a message</p>
+      <p class="text_formating">Cast your message into the cosmic ocean</p>
+      <p class="text_formating">Log in to begin exploring the skies</p>
     </div>
     <div class="landing_container_login">
-      <h1><%= link_to 'Log In', '/auth/google_oauth2', class: 'link_text' %></h1>
+      <p><%= link_to 'Log In', '/auth/google_oauth2', class: 'link_text' %></p>
     </div>
 </div>
 </body>
