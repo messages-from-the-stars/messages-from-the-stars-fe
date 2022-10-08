@@ -83,23 +83,21 @@ body, html {
 }
 
 .bg_satshow {
-  background-image: url("./satellite_show_page.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
-  font-family: "Iceland";
-  color: white;
-}
-
-.satshow_header {
-  padding: 20px 100px;
-    text-align: center;
-    text-decoration: none;
-    font-family: "Iceland", Times, serif;
-    text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
-    font-size: 52px;
-    color: white;
+    height: 100%;
+      color: rgb(255, 255, 255);
+      background-color: #000;
+      background-position: center;
+    }
+    
+    .satshow_header {
+      padding: 20px 100px;
+      text-align: center;
+      text-decoration: none;
+      font-family: "Iceland", Times, serif;
+      text-shadow: 1px 1px 1px rgb(0, 208, 255), 2px 2px 1px rgb(0, 0, 0);
+      font-size: 52px;
+      color: rgb(255, 255, 255);
+      background-image: url("./satellite_1.jpg");
 }
 
 .satshow_container {
@@ -266,6 +264,7 @@ body, html {
 }
 
 .discover_container_header {
+    background-image: url("./dis_other.jpg");
     text-align: center;
     color: white;
     font-size: 62px;
